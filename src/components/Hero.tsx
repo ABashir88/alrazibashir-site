@@ -37,6 +37,14 @@ export function Hero() {
             >
               {hero.secondaryCta.label}
             </Link>
+            {hero.tertiaryCta && (
+              <Link
+                href={hero.tertiaryCta.href}
+                className="inline-flex items-center justify-center rounded-full px-3 py-2 text-xs font-semibold text-neutral-600 underline-offset-4 hover:underline sm:text-sm"
+              >
+                {hero.tertiaryCta.label}
+              </Link>
+            )}
           </div>
           <p className="text-xs text-neutral-500">
             Or reach me directly at{" "}

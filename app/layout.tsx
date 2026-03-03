@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     url: siteConfig.baseUrl,
     siteName: siteConfig.name,
     type: "website",
+    locale: "en_US",
   },
 };
 

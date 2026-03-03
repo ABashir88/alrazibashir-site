@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Alrazi Bashir",
-  title: "Alrazi Bashir – Product & Growth Engineering",
+  title: "Alrazi Bashir | Enterprise AI & Revenue Systems",
   description:
-    "Product-minded engineer helping B2B companies design, ship, and scale revenue-critical systems.",
+    "Enterprise account executive and systems thinker focused on AI infrastructure, CX platforms, and revenue operations.",
   email: "alrazi@alrazibashir.com",
   baseUrl: "https://alrazibashir.com",
   resumeUrl: "/resume.pdf",
@@ -21,10 +21,10 @@ export const siteConfig = {
     searvis: "https://searvis.io",
   },
   hero: {
-    eyebrow: "Product & Growth Engineering",
-    headline: "I help B2B teams turn complex revenue problems into simple systems.",
+    eyebrow: "Enterprise AI · Voice Infrastructure · Revenue Systems",
+    headline: "I help enterprise teams turn AI, voice infrastructure, and revenue systems into reliable growth engines.",
     subheadline:
-      "Hands-on builder with a track record shipping revenue-critical workflows for sales, support, and operations.",
+      "Enterprise account executive focused on AI-driven customer experience, voice infrastructure, and revenue operations—pairing GTM strategy with the systems, workflows, and integrations that actually move pipeline and NRR.",
     primaryCta: {
       label: "Email me",
       href: "mailto:alrazi@alrazibashir.com",
@@ -33,37 +33,41 @@ export const siteConfig = {
       label: "View resume",
       href: "/resume.pdf",
     },
+    tertiaryCta: {
+      label: "Connect on LinkedIn",
+      href: "https://www.linkedin.com/in/alrazibashir",
+    },
   },
   proofBar: {
-    label: "Previously helped teams at",
+    label: "Experience building and selling with",
     items: ["Telnyx", "Cyara", "Twilio"],
   },
   sections: {
     whatIDo: {
       eyebrow: "What I do",
-      title: "I specialize in making complex revenue systems feel straightforward.",
+      title: "I design and operationalize enterprise AI and revenue systems.",
       body:
-        "Usually as the engineer who can sit with sales, support, or ops, understand the mess, and then design and ship something durable.",
+        "Usually as the enterprise AE who can sit with product, RevOps, and CX teams, map the real workflows, and then drive the commercial and technical decisions that make systems reliable and revenue-aligned.",
     },
     experience: {
       eyebrow: "Experience",
-      title: "Shipping and owning systems where revenue is on the line.",
+      title: "Enterprise AI, CX infrastructure, and revenue systems where dollars are on the line.",
     },
     wins: {
       eyebrow: "Selected wins",
-      title: "A few anonymized projects where I owned the outcome.",
+      title: "A few anonymized, outcome-first stories from complex enterprise environments.",
     },
     projects: {
       eyebrow: "Projects",
-      title: "A few things I’ve shipped recently or still think about.",
+      title: "Concepts and experiments that reflect how I think about GTM systems and CX platforms.",
       visitLabel: "Visit",
     },
     contact: {
       eyebrow: "Contact",
       title:
-        "If you’re thinking about your next system, I’d love to talk.",
+        "If you’re leading GTM, CX, or AI initiatives and need a partner who speaks both systems and deals, I’d love to talk.",
       body:
-        "The best way to reach me is over email with a bit of context on your team, the problem, and any timelines.",
+        "Best fit: founders, GTM leaders, and CX/AI teams working on AI infrastructure, conversational platforms, or revenue-critical workflows. Send a short note with your context and timelines.",
       ctaPrefix: "Email",
       responseNote: "I usually respond within a few days.",
     },
@@ -74,95 +78,99 @@ export const siteConfig = {
   },
   whatIDo: [
     {
-      title: "Revenue workflows",
+      title: "Enterprise GTM systems",
       description:
-        "Design and implement resilient workflows across CRM, billing, support, and internal tools so teams can move faster with less chaos.",
+        "Design end-to-end GTM systems across CRM, CPQ, billing, and data to give leadership real pipeline visibility, reduce handoff friction, and keep reps selling instead of reconciling tools.",
     },
     {
-      title: "Product discovery",
+      title: "AI & CX platform commercialization",
       description:
-        "Partner with GTM and product to clarify the problem, define success, and ship what actually matters to customers.",
+        "Bridge AI/voice platform capabilities with real enterprise use cases—packaging, pricing, and positioning offerings so buyers understand value, risk, and how they’ll operationalize the stack.",
     },
     {
-      title: "Technical execution",
+      title: "Revenue operations & automation",
       description:
-        "Own the full stack from data models and APIs to polished UIs, with an obsession for reliability and maintainability.",
+        "Partner with RevOps to automate approvals, routing, and reporting—shrinking time-to-decision from weeks to days and creating workflows that are auditable, predictable, and easy to iterate on.",
     },
   ],
   experience: [
     {
       company: "Telnyx",
-      title: "Senior Software Engineer",
+      title: "Enterprise Account Executive, AI & Voice Infrastructure",
       period: "2022 – 2025",
       location: "Remote",
       bullets: [
-        "Led engineering for revenue-critical internal tooling used daily by sales and support.",
-        "Reduced manual deal processing time by double-digit percentage through workflow automation.",
+        "Owned strategic AI and voice infrastructure accounts, helping revenue and CX leaders design platforms that could handle high-volume, high-stakes interactions.",
+        "Partnered with RevOps and product teams to implement workflows that reduced manual deal handling time by ~30% and improved forecasting accuracy.",
+        "Drove multi-stakeholder cycles (product, security, procurement) from initial design reviews to go-live, shortening complex enterprise deals from months to weeks where possible.",
       ],
     },
     {
       company: "Cyara",
-      title: "Software Engineer",
+      title: "Enterprise Account Executive, CX Testing & Monitoring",
       period: "2020 – 2022",
       location: "Remote",
       bullets: [
-        "Built features for CX testing and monitoring platform used by enterprise contact centers.",
-        "Improved reliability of key services through better observability and guardrails.",
+        "Worked with enterprise contact center teams to commercialize CX testing and monitoring programs that improved reliability of critical journeys by double-digit percentages.",
+        "Helped customers move from ad-hoc testing to structured, automated CX assurance—compressing incident detection from days to hours.",
+        "Collaborated with solutions and product teams to package offers that aligned engineering effort with measurable CX and NPS outcomes.",
       ],
     },
     {
       company: "Twilio",
-      title: "Software Engineer",
+      title: "Account Executive & Solutions Partner, Communications APIs",
       period: "2017 – 2020",
       location: "San Francisco, CA",
       bullets: [
-        "Shipped features for communications APIs powering high-volume messaging and voice use cases.",
-        "Collaborated with product and customer teams to design scalable patterns for new workloads.",
+        "Partnered with product and engineering to help high-growth companies design messaging and voice architectures that could scale from pilot to millions of interactions.",
+        "Led deal cycles where API design, compliance, and reliability were as important as commercials, aligning stakeholders on clear success metrics.",
+        "Helped customers move from siloed, channel-specific tools to unified communications patterns that supported new revenue streams.",
       ],
     },
   ],
   wins: [
     {
-      title: "Shortening enterprise deal cycles",
-      role: "Lead engineer & partner to sales ops",
+      title: "Reduced enterprise deal friction and time-to-close",
+      role: "Enterprise AE & RevOps partner",
       summary:
-        "For a B2B SaaS company with long, bespoke contracts, fragmented tools and manual approvals made deals slow and error-prone.",
+        "For a B2B platform selling into complex enterprises, bespoke contracts and fragmented approval flows made deals unpredictable and slow.",
       outcome:
-        "Standardized deal workflows, automated approvals, and centralized visibility, cutting cycle time and reducing surprises late in the process.",
+        "Standardized and automated deal workflows with RevOps, improving approval clarity and cutting cycle time by roughly weeks while reducing late-stage surprises.",
     },
     {
-      title: "Stabilizing critical support tooling",
-      role: "Hands-on owner for internal apps",
+      title: "Stabilized mission-critical CX tooling for high-volume teams",
+      role: "Partner to CX leadership and platform teams",
       summary:
-        "Support teams were juggling multiple consoles and brittle scripts to resolve customer issues on shared infrastructure.",
+        "Support teams were resolving high-stakes incidents across multiple consoles and brittle scripts, with leadership lacking a reliable view of impact or risk.",
       outcome:
-        "Consolidated workflows into a single tool, improved safety rails, and reduced escalations while keeping engineers in the loop only when needed.",
+        "Drove adoption of a unified console and safer workflows, reducing escalations, shrinking time-to-resolution, and giving CX leaders clearer, near real-time incident visibility.",
     },
     {
-      title: "Designing a unified data backbone",
-      role: "Partner to data and product",
+      title: "Gave leadership a trustworthy revenue and CX signal",
+      role: "Partner to data, product, and RevOps",
       summary:
-        "Leaders lacked a reliable view of revenue performance across CRM, billing, and product usage.",
+        "Revenue and CX leaders lacked a single, trusted view across CRM, billing, and product usage to make confident bets.",
       outcome:
-        "Collaborated on a shared data model and pipelines that made it possible to ship meaningful reporting and forecasting tools.",
+        "Partnered on a unified data model and reporting cadence that enabled meaningful forecasting, cohort analysis, and board-ready views of pipeline and retention.",
     },
   ],
   projects: [
     {
       name: "Deal Command Center",
       description:
-        "An opinionated internal console pattern for running complex B2B deals with clarity.",
+        "A concept for a single pane of glass where GTM and RevOps leaders can see risk, approvals, and blockers across complex B2B deals in real time.",
       hrefKey: "dealCommandCenter" as const,
     },
     {
       name: "Searvis.io",
       description:
-        "A small product experiment exploring service discovery and transparent pricing.",
+        "An early CX consulting and platform concept exploring how buyers evaluate voice/AI vendors and how to make reliability and pricing radically clearer.",
       hrefKey: "searvis" as const,
     },
     {
       name: "GitHub",
-      description: "Open source work, experiments, and small tools.",
+      description:
+        "Open-source experiments, small tools, and prototypes that show how I think about systems, developer ergonomics, and GTM workflows.",
       hrefKey: "github" as const,
     },
   ],

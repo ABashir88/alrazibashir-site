@@ -1,6 +1,8 @@
 import { siteConfig } from "../config";
 
 export function Wins() {
+  const { sections, wins } = siteConfig;
+
   return (
     <section
       id="wins"
@@ -13,14 +15,14 @@ export function Wins() {
             id="wins-heading"
             className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500"
           >
-            Selected wins
+            {sections.wins.eyebrow}
           </h2>
           <p className="text-2xl font-medium tracking-tight text-neutral-900 sm:text-3xl">
-            A few anonymized projects where I owned the outcome.
+            {sections.wins.title}
           </p>
         </div>
         <div className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-3">
-          {siteConfig.wins.map((win) => (
+          {wins.map((win) => (
             <article
               key={win.title}
               className="flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 sm:p-5"

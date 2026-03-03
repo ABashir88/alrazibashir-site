@@ -5,6 +5,8 @@ const hrefFromKey = (key: keyof typeof siteConfig.social) =>
   siteConfig.social[key];
 
 export function Projects() {
+  const { sections, projects } = siteConfig;
+
   return (
     <section
       id="projects"
@@ -17,14 +19,14 @@ export function Projects() {
             id="projects-heading"
             className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500"
           >
-            Projects
+            {sections.projects.eyebrow}
           </h2>
           <p className="text-2xl font-medium tracking-tight text-neutral-900 sm:text-3xl">
-            A few things I&apos;ve shipped recently or still think about.
+            {sections.projects.title}
           </p>
         </div>
         <div className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-3">
-          {siteConfig.projects.map((project) => (
+          {projects.map((project) => (
             <article
               key={project.name}
               className="flex flex-col justify-between gap-3 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 sm:p-5"
@@ -42,7 +44,7 @@ export function Projects() {
                   href={hrefFromKey(project.hrefKey)}
                   className="inline-flex text-xs font-semibold text-neutral-900 underline-offset-4 hover:underline sm:text-sm"
                 >
-                  Visit
+                  {sections.projects.visitLabel}
                   <span aria-hidden="true" className="ml-1">
                     ↗
                   </span>

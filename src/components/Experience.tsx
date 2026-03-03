@@ -1,6 +1,8 @@
 import { siteConfig } from "../config";
 
 export function Experience() {
+  const { sections, experience } = siteConfig;
+
   return (
     <section
       id="experience"
@@ -13,14 +15,14 @@ export function Experience() {
             id="experience-heading"
             className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500"
           >
-            Experience
+            {sections.experience.eyebrow}
           </h2>
           <p className="text-2xl font-medium tracking-tight text-neutral-900 sm:text-3xl">
-            Shipping and owning systems where revenue is on the line.
+            {sections.experience.title}
           </p>
         </div>
         <div className="mt-8 space-y-6 sm:mt-10">
-          {siteConfig.experience.map((role) => (
+          {experience.map((role) => (
             <article
               key={role.company}
               className="flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:p-5"

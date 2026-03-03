@@ -2,7 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "../config";
 
 export function Contact() {
-  const { email } = siteConfig;
+  const { email, sections } = siteConfig;
 
   return (
     <section
@@ -16,15 +16,13 @@ export function Contact() {
             id="contact-heading"
             className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500"
           >
-            Contact
+            {sections.contact.eyebrow}
           </h2>
           <p className="text-2xl font-medium tracking-tight text-neutral-900 sm:text-3xl">
-            If you&apos;re thinking about your next system, I&apos;d love to
-            talk.
+            {sections.contact.title}
           </p>
           <p className="text-sm leading-relaxed text-neutral-600 sm:text-base">
-            The best way to reach me is over email with a bit of context on
-            your team, the problem, and any timelines.
+            {sections.contact.body}
           </p>
         </div>
         <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
@@ -32,10 +30,10 @@ export function Contact() {
             href={`mailto:${email}`}
             className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
-            Email {email}
+            {sections.contact.ctaPrefix} {email}
           </Link>
           <p className="text-xs text-neutral-500 sm:text-sm">
-            I usually respond within a few days.
+            {sections.contact.responseNote}
           </p>
         </div>
       </div>
