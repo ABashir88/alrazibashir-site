@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "../config";
 
 export function Hero() {
@@ -10,7 +11,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="border-b border-neutral-200 bg-white"
     >
-      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 pb-12 pt-10 sm:px-6 sm:pt-16 sm:pb-16 lg:px-8 lg:flex-row lg:items-center">
+      <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 pb-12 pt-10 sm:px-6 sm:pt-16 sm:pb-16 lg:px-8 lg:flex-row lg:items-center">
         <div className="flex-1 space-y-6">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">
             {hero.eyebrow}
@@ -56,6 +57,18 @@ export function Hero() {
             </a>
             .
           </p>
+        </div>
+        <div className="flex justify-start lg:justify-end">
+          <div className="relative h-40 w-40 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 sm:h-48 sm:w-48 lg:h-56 lg:w-56">
+            <Image
+              src="/alrazi-headshot.jpg"
+              alt="Alrazi Bashir"
+              fill
+              sizes="(min-width: 1024px) 224px, (min-width: 640px) 192px, 160px"
+              priority
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
