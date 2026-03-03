@@ -16,8 +16,8 @@ export const siteConfig = {
     { label: "Contact", href: "#contact" },
   ],
   social: {
-    github: "https://github.com/alrazi",
-    dealCommandCenter: "https://dealcommand.center",
+    github: "https://github.com/ABashir88",
+    dealCommandCenter: "/deal-command-center.xlsx",
     searvis: "https://searvis.io",
   },
   hero: {
