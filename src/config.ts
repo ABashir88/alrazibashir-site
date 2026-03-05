@@ -1,8 +1,9 @@
 export const siteConfig = {
   name: "Alrazi Bashir",
-  title: "Alrazi Bashir | Enterprise AI & Revenue Systems",
+  title:
+    "Alrazi Bashir | Enterprise Account Executive – AI Voice, CPaaS, CCaaS, Conversational AI",
   description:
-    "Enterprise account executive and systems thinker focused on AI infrastructure, CX platforms, and revenue operations.",
+    "Enterprise Account Executive specializing in AI voice infrastructure, CPaaS/CCaaS, and conversational AI—running engineering-led sales motions for $65K–$550K ACV deals across 5–9 month enterprise cycles.",
   email: "alrazi@alrazibashir.com",
   baseUrl: "https://alrazibashir.com",
   resumeUrl: "/resume.pdf",
@@ -21,11 +22,18 @@ export const siteConfig = {
     searvis: "https://searvis.io",
   },
   hero: {
-    eyebrow: "Enterprise AI · Voice Platforms · Revenue Systems",
+    eyebrow: "Enterprise Account Executive · AI Voice · CPaaS/CCaaS",
     headline:
-      "I help enterprise teams turn AI infrastructure, voice platforms, and GTM systems into reliable revenue engines.",
+      "Enterprise Account Executive turning AI infrastructure, voice platforms, and contact center systems into revenue.",
     subheadline:
-      "Technical enterprise revenue operator with experience across AI voice platforms, CPaaS/CCaaS, and contact center transformation—leading engineering-led sales motions that connect infrastructure decisions to pipeline and NRR.",
+      "I specialize in AI voice infrastructure, CPaaS/CCaaS, and conversational AI—running engineering-led enterprise cycles that connect architecture decisions to pipeline, NRR, and transformation outcomes.",
+    metrics: [
+      { label: "Annual quota", value: "$1.2M" },
+      { label: "Deal size", value: "$65K–$550K ACV" },
+      { label: "Cycle length", value: "5–9 month enterprise cycles" },
+      { label: "Segments", value: "Mid-market & Fortune 1000" },
+      { label: "Focus", value: "AI voice, CPaaS, CCaaS, conversational AI" },
+    ],
     primaryCta: {
       label: "Email me",
       href: "mailto:alrazi@alrazibashir.com",
@@ -40,43 +48,44 @@ export const siteConfig = {
     },
   },
   proofBar: {
-    label: "Experience building and selling with",
+    label: "Enterprise experience with",
     items: ["Telnyx", "Cyara", "Twilio"],
   },
   sections: {
     whatIDo: {
       eyebrow: "What I do",
-      title: "I design and operationalize enterprise AI and revenue systems.",
+      title: "I sell complex AI and communications platforms into the enterprise.",
       body:
-        "Usually as the enterprise AE who can sit with product, RevOps, and CX teams, map the real workflows, and then drive the commercial and technical decisions that make systems reliable and revenue-aligned.",
+        "I work with product, engineering, CX, and RevOps teams to turn AI voice, CPaaS/CCaaS, and conversational AI platforms into production-grade revenue systems—aligning architecture, risk, and commercial outcomes.",
     },
     sellingModel: {
       eyebrow: "How I sell",
-      title: "How I sell enterprise technology",
+      title: "How I sell enterprise AI and communications platforms",
       body:
-        "My career has been a deliberate progression from cloud engagement plumbing, to CX reliability, to AI voice infrastructure—now aimed at orchestration layers that sit between AI systems and customer engagement.",
+        "My career has moved from cloud engagement plumbing (Twilio), to CX reliability and conversational AI assurance (Cyara), to AI voice infrastructure (Telnyx)—building an orchestration-layer view of how platforms, data, and conversations drive enterprise outcomes.",
     },
     experience: {
       eyebrow: "Experience",
-      title: "Enterprise AI, CX infrastructure, and revenue systems where dollars are on the line.",
+      title: "Enterprise AI, communications, and automation sales where dollars are on the line.",
     },
     wins: {
       eyebrow: "Selected wins",
-      title: "A few anonymized, outcome-first stories from complex enterprise environments.",
+      title: "A few anonymized enterprise deals where I owned the outcome.",
     },
     projects: {
       eyebrow: "Projects",
-      title: "Concepts and experiments that reflect how I think about GTM systems and CX platforms.",
+      title: "A few GTM artifacts and experiments that show how I think about enterprise sales systems.",
       visitLabel: "Visit",
     },
     contact: {
       eyebrow: "Contact",
       title:
-        "If you’re leading GTM, CX, or AI initiatives and need a partner who speaks both systems and deals, I’d love to talk.",
+        "If you’re hiring for enterprise AE or GTM roles in AI infrastructure, conversational AI, or CPaaS/CCaaS, I’d love to talk.",
       body:
-        "Best fit: founders, GTM leaders, and CX/AI teams working on AI infrastructure, conversational platforms, or revenue-critical workflows. Send a short note with your context and timelines.",
+        "Best fit: enterprise AE roles, GTM operator roles, and early sales hires at AI infrastructure, conversational AI, CPaaS/CCaaS, and contact center transformation companies. Share a short note on your product, motion, and where you need help.",
       ctaPrefix: "Email",
-      responseNote: "I usually respond within a few days.",
+      responseNote:
+        "Open to enterprise AE / GTM roles in AI infrastructure, conversational AI, and CPaaS.",
     },
     footer: {
       copyrightName: "Alrazi Bashir",
@@ -85,101 +94,134 @@ export const siteConfig = {
   },
   whatIDo: [
     {
-      title: "Enterprise GTM systems",
+      title: "Sell complex platforms into complex enterprises",
       description:
-        "Design end-to-end GTM systems across CRM, CPQ, billing, and data to give leadership real pipeline visibility, reduce handoff friction, and keep reps selling instead of reconciling tools.",
+        "Own full-cycle enterprise sales for AI voice, CPaaS/CCaaS, and conversational AI platforms—running multi-month, multi-stakeholder cycles from technical discovery through commercial close.",
     },
     {
-      title: "AI & CX platform commercialization",
+      title: "Connect architecture to revenue",
       description:
-        "Bridge AI/voice platform capabilities with real enterprise use cases—packaging, pricing, and positioning offerings so buyers understand value, risk, and how they’ll operationalize the stack.",
+        "Translate latency, reliability, routing, and integration requirements into clear commercial value for economic buyers—so infrastructure decisions map directly to pipeline, NRR, and cost-to-serve.",
     },
     {
-      title: "Revenue operations & automation",
+      title: "De-risk transformation programs",
       description:
-        "Partner with RevOps to automate approvals, routing, and reporting—shrinking time-to-decision from weeks to days and creating workflows that are auditable, predictable, and easy to iterate on.",
+        "Position AI and communications platforms as risk mitigation layers during contact center and CX transformation—focusing on reliability, observability, and governance rather than just new features.",
     },
   ],
   experience: [
     {
-      company: "Telnyx",
-      title: "Enterprise Account Executive, AI & Voice Infrastructure",
-      period: "2022 – 2025",
+      company: "Telnyx · AI Voice & Communications Infrastructure",
+      title: "Enterprise Account Executive",
+      period: "Jan 2025 – Present",
       location: "Remote",
       bullets: [
-        "Owned strategic AI and voice infrastructure accounts, helping revenue and CX leaders design platforms that could handle high-volume, high-stakes interactions.",
-        "Partnered with RevOps and product teams to implement workflows that reduced manual deal handling time by ~30% and improved forecasting accuracy.",
-        "Drove multi-stakeholder cycles (product, security, procurement) from initial design reviews to go-live, shortening complex enterprise deals from months to weeks where possible.",
+        "Carry a $1.2M annual quota and manage an enterprise territory across mid-market and large enterprise segments, running 6–9 month evaluation cycles with multi-stakeholder buying committees spanning engineering, product, and CX leadership.",
+        "Lead engineering-driven technical discovery across production requirements—latency, carrier-grade reliability, and scalability—to close AI voice infrastructure and conversational AI deployments in the $65K–$550K ACV range.",
+        "Displace incumbent CPaaS and legacy telecom providers by positioning Telnyx on cost efficiency, low-latency routing, and enterprise uptime, resulting in multi-year committed agreements.",
+        "Manage the full sales motion from PoC scoping through commercial close with VP and C-suite economic buyers across parallel technical and business evaluation tracks.",
       ],
     },
     {
-      company: "Cyara",
-      title: "Enterprise Account Executive, CX Testing & Monitoring",
-      period: "2020 – 2022",
+      company: "Cyara · AI-Powered Chatbots + Contact Center Testing",
+      title: "Enterprise Account Executive",
+      period: "Jan 2023 – Dec 2024",
       location: "Remote",
       bullets: [
-        "Worked with enterprise contact center teams to commercialize CX testing and monitoring programs that improved reliability of critical journeys by double-digit percentages.",
-        "Helped customers move from ad-hoc testing to structured, automated CX assurance—compressing incident detection from days to hours.",
-        "Collaborated with solutions and product teams to package offers that aligned engineering effort with measurable CX and NPS outcomes.",
+        "Led full-cycle sales of AI contact center testing, LLM-based conversational AI validation, and CCaaS monitoring into Fortune 1000 organizations, managing $75K–$225K ACV deals across 5–7 month multi-stakeholder cycles.",
+        "Engaged VP- and C-level buyers across IT, CX, and QA to align automated testing strategy with CCaaS transformation roadmaps on platforms like Genesys Cloud and Amazon Connect, structuring multi-year agreements to maximize TCV.",
+        "Scoped IVR automation, regression testing, and QA frameworks across CPaaS-integrated enterprise environments in partnership with professional services.",
+        "Quota Attainment: 102% | Multi-Year Contracts: 9 closed (3-year terms) | Career TCV: $1M+",
       ],
     },
     {
-      company: "Twilio",
-      title: "Account Executive & Solutions Partner, Communications APIs",
-      period: "2017 – 2020",
+      company: "INTERLINK · RPA & Intelligent Automation",
+      title: "Mid Market Account Executive",
+      period: "Mar 2021 – Aug 2022",
+      location: "Remote",
+      bullets: [
+        "Drove net new business in regulated mid-market accounts through consultative sales motions, managing $60K–$180K ACV deals across 4–6 month cycles aligned to digital transformation mandates.",
+        "Closed 6 net new logos through structured technical discovery and value-based sales in compliance-driven verticals.",
+        "Quota Attainment: 95% | Career Deals Closed: $850,000+",
+      ],
+    },
+    {
+      company: "Twilio · Contact Center, Cloud Communications, SIP Trunking",
+      title: "Enterprise Account Executive",
+      period: "Mar 2019 – Feb 2021",
       location: "San Francisco, CA",
       bullets: [
-        "Partnered with product and engineering to help high-growth companies design messaging and voice architectures that could scale from pilot to millions of interactions.",
-        "Led deal cycles where API design, compliance, and reliability were as important as commercials, aligning stakeholders on clear success metrics.",
-        "Helped customers move from siloed, channel-specific tools to unified communications patterns that supported new revenue streams.",
+        "Sold CPaaS, real-time communications, programmable messaging (SMS/MMS/2FA), SIP trunking, and contact center solutions to engineering and C-suite buyers in healthcare and fintech, managing $90K–$420K ACV deals across 6–9 month cycles.",
+        "Executed 40+ enterprise discovery cycles and advanced opportunities through technical and executive buying committees to close $1M+ in revenue supporting large-scale digital transformation.",
+        "Career Deals Closed: $1M+ | Quota Attainment: 92%",
+      ],
+    },
+    {
+      company: "Motive · IoT, Fleet Telematics Platform",
+      title: "Mid-Market Sales Development Manager",
+      period: "Feb 2017 – Feb 2019",
+      location: "Remote",
+      bullets: [
+        "Built and coached an SDR team through structured performance development and pipeline accountability, contributing to $450K+ in closed-won revenue in Year 1.",
+        "Facilitated the promotion of 2 SDRs to Commercial Account Executive roles.",
+      ],
+    },
+    {
+      company: "Samsara · IoT, Fleet Telematics Platform",
+      title: "Mid-Market Sales Development",
+      period: "Apr 2017 – Dec 2017",
+      location: "Remote",
+      bullets: [
+        "Sourced $500K in qualified pipeline with 50% meeting-to-opportunity conversion, presenting AI-enabled fleet management and telematics platforms to mid-market logistics accounts.",
+        "Quota Attainment: 96%",
       ],
     },
   ],
   wins: [
     {
-      title: "De-risked contact center transformation for a national membership brand",
-      role: "Enterprise AE for CX transformation program",
+      title: "De-risked a Genesys Cloud and conversational AI migration",
+      role: "Enterprise AE · Conversational AI assurance & CCaaS testing",
       summary:
-        "Worked with AAA Auto Club Enterprises and partners to move critical customer journeys toward a Genesys Cloud architecture while keeping risk tolerable for operations, QA, and leadership.",
+        "At Cyara, partnered with a large membership brand migrating from on-prem IVR to Genesys Cloud while launching conversational AI and SMS deflection to reduce call volume.",
       outcome:
-        "Shepherded a multi-stakeholder, ~10-month evaluation and deployment cycle that resulted in a multi-year agreement and a clearer, testable path for migrating high-volume voice traffic.",
+        "Reframed the platform as Conversational AI Assurance, led an engineering-led evaluation, and closed a 3-year, ~$205K ARR / $617K ACV agreement over a 10-month cycle to make AI-driven journeys testable and safe to launch.",
     },
     {
-      title: "Proved reliability of conversational AI assurance at enterprise scale",
-      role: "Enterprise AE, Cyara conversational AI & CX assurance",
+      title: "Replaced an incumbent carrier for a Voice AI platform",
+      role: "Enterprise AE · AI voice infrastructure & SIP trunking",
       summary:
-        "For large contact centers experimenting with conversational AI, leaders needed proof that new bots and journeys would not damage NPS or blow up handle times.",
+        "At Telnyx, worked with a fintech deploying AI-driven voice automation that needed programmable, low-latency telephony for sensitive customer interactions.",
       outcome:
-        "Led engineering-led discovery and pilots that showed how automated CX testing could catch regressions before go-live, positioning the platform as a risk-reduction layer rather than another tool.",
+        "Led deep technical discovery on routing, latency, failover, and economics, and closed a 2-year Voice AI + SIP deal worth ~$185K ARR / $370K ACV, replacing the incumbent carrier and becoming the foundation for their AI voice roadmap.",
     },
     {
-      title: "Moved a voice AI platform off an incumbent carrier",
-      role: "Enterprise AE, AI voice infrastructure at Telnyx",
+      title: "Closed a Flex contact center modernization deal",
+      role: "Enterprise AE · Cloud contact center & CPaaS",
       summary:
-        "An AI voice automation provider needed programmable, reliable telephony to support sensitive conversational workloads while reducing cost and operational drag from an incumbent carrier.",
+        "At Twilio, worked with an enterprise shifting from legacy contact center infrastructure to a programmable cloud model using Flex, with voice and digital channels.",
       outcome:
-        "Led a complex enterprise cycle across product, architecture, security, and procurement to land a multi-year, high-ACV deal that became a foundation for their AI voice roadmap.",
+        "Aligned stakeholders on a programmable contact center architecture and pricing model, and closed a 2-year Flex agreement worth ~$365K ARR / $730K ACV to support their modernization program.",
     },
   ],
   projects: [
     {
       name: "Deal Command Center",
       description:
-        "A thinking framework and template for mapping $65K–$550K+ ACV enterprise deals across stakeholders, risk, approvals, and next actions.",
+        "A structured view of $65K–$550K+ ACV enterprise deals—mapping stakeholders, technical and commercial risk, approvals, and next actions so multi-month cycles stay controlled.",
       hrefKey: "dealCommandCenter" as const,
-      ctaLabel: "Download enterprise deal command center template",
+      ctaLabel: "Download enterprise deal command center template →",
     },
     {
       name: "Searvis.io",
       description:
-        "A framework for how buyers evaluate CX and AI platforms—surfacing reliability, integration, and commercial tradeoffs beyond marketing claims.",
+        "A simple framework for how enterprises evaluate CX and AI platforms—making reliability, integration effort, and commercial tradeoffs visible beyond vendor marketing.",
       hrefKey: "searvis" as const,
       ctaLabel: "Visit →",
     },
     {
       name: "GitHub",
       description:
-        "Technical experiments, small tools, and prototypes that explore GTM systems, AI infrastructure, and how developers actually adopt platforms.",
+        "Technical experiments, small tools, and prototypes that explore GTM systems, AI infrastructure, and how developers actually adopt communications and AI platforms.",
       hrefKey: "github" as const,
       ctaLabel: "Visit →",
     },
@@ -188,17 +230,17 @@ export const siteConfig = {
     {
       title: "Engineering-led discovery",
       description:
-        "Start with architecture, data flows, and constraints—working with product and engineering to map what’s actually possible, then translating that into clear business tradeoffs for GTM and executive sponsors.",
+        "Start with architecture diagrams, data flows, latency and reliability requirements—partnering with product and engineering to define what is actually feasible before translating options into clear tradeoffs for GTM and executive sponsors.",
     },
     {
       title: "Multi-stakeholder enterprise deals",
       description:
-        "Run cycles that keep architecture, QA, operations, security, finance, and procurement aligned—so technical risk, commercial terms, and day-two operations are all visible and de-risked.",
+        "Run 5–9 month cycles that keep architecture, QA, contact center operations, security, finance, and procurement aligned—so technical risk, commercial terms, and day-two operations are all visible and de-risked.",
     },
     {
       title: "Transformation risk mitigation",
       description:
-        "Position AI infrastructure, CPaaS/CCaaS, and conversational platforms as ways to reduce operational and transformation risk—not just add features—grounded in reliability, observability, and clear success metrics.",
+        "Position AI infrastructure, CPaaS/CCaaS, and conversational platforms as ways to reduce operational and transformation risk—grounded in reliability, observability, governance, and success metrics that executives and boards care about.",
     },
   ],
 };

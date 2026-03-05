@@ -37,6 +37,16 @@ export function Hero() {
           <p className="max-w-xl text-sm leading-relaxed text-neutral-600 sm:text-base">
             {hero.subheadline}
           </p>
+          {hero.metrics && (
+            <dl className="mt-4 grid max-w-xl grid-cols-1 gap-x-6 gap-y-2 text-xs text-neutral-700 sm:grid-cols-2 sm:text-xs">
+              {hero.metrics.map((item) => (
+                <div key={item.label} className="flex items-baseline gap-1">
+                  <dt className="font-medium text-neutral-900">{item.label}:</dt>
+                  <dd className="text-neutral-700">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
           <div className="space-y-2">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
