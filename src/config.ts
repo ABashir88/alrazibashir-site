@@ -21,10 +21,11 @@ export const siteConfig = {
     searvis: "https://searvis.io",
   },
   hero: {
-    eyebrow: "Enterprise AI · Voice Infrastructure · Revenue Systems",
-    headline: "I help enterprise teams turn AI, voice infrastructure, and revenue systems into reliable growth engines.",
+    eyebrow: "Enterprise AI · Voice Platforms · Revenue Systems",
+    headline:
+      "I help enterprise teams turn AI infrastructure, voice platforms, and GTM systems into reliable revenue engines.",
     subheadline:
-      "Enterprise account executive focused on AI-driven customer experience, voice infrastructure, and revenue operations—pairing GTM strategy with the systems, workflows, and integrations that actually move pipeline and NRR.",
+      "Technical enterprise revenue operator with experience across AI voice platforms, CPaaS/CCaaS, and contact center transformation—leading engineering-led sales motions that connect infrastructure decisions to pipeline and NRR.",
     primaryCta: {
       label: "Email me",
       href: "mailto:alrazi@alrazibashir.com",
@@ -48,6 +49,12 @@ export const siteConfig = {
       title: "I design and operationalize enterprise AI and revenue systems.",
       body:
         "Usually as the enterprise AE who can sit with product, RevOps, and CX teams, map the real workflows, and then drive the commercial and technical decisions that make systems reliable and revenue-aligned.",
+    },
+    sellingModel: {
+      eyebrow: "How I sell",
+      title: "How I sell enterprise technology",
+      body:
+        "My career has been a deliberate progression from cloud engagement plumbing, to CX reliability, to AI voice infrastructure—now aimed at orchestration layers that sit between AI systems and customer engagement.",
     },
     experience: {
       eyebrow: "Experience",
@@ -130,48 +137,68 @@ export const siteConfig = {
   ],
   wins: [
     {
-      title: "Reduced enterprise deal friction and time-to-close",
-      role: "Enterprise AE & RevOps partner",
+      title: "De-risked contact center transformation for a national membership brand",
+      role: "Enterprise AE for CX transformation program",
       summary:
-        "For a B2B platform selling into complex enterprises, bespoke contracts and fragmented approval flows made deals unpredictable and slow.",
+        "Worked with AAA Auto Club Enterprises and partners to move critical customer journeys toward a Genesys Cloud architecture while keeping risk tolerable for operations, QA, and leadership.",
       outcome:
-        "Standardized and automated deal workflows with RevOps, improving approval clarity and cutting cycle time by roughly weeks while reducing late-stage surprises.",
+        "Shepherded a multi-stakeholder, ~10-month evaluation and deployment cycle that resulted in a multi-year agreement and a clearer, testable path for migrating high-volume voice traffic.",
     },
     {
-      title: "Stabilized mission-critical CX tooling for high-volume teams",
-      role: "Partner to CX leadership and platform teams",
+      title: "Proved reliability of conversational AI assurance at enterprise scale",
+      role: "Enterprise AE, Cyara conversational AI & CX assurance",
       summary:
-        "Support teams were resolving high-stakes incidents across multiple consoles and brittle scripts, with leadership lacking a reliable view of impact or risk.",
+        "For large contact centers experimenting with conversational AI, leaders needed proof that new bots and journeys would not damage NPS or blow up handle times.",
       outcome:
-        "Drove adoption of a unified console and safer workflows, reducing escalations, shrinking time-to-resolution, and giving CX leaders clearer, near real-time incident visibility.",
+        "Led engineering-led discovery and pilots that showed how automated CX testing could catch regressions before go-live, positioning the platform as a risk-reduction layer rather than another tool.",
     },
     {
-      title: "Gave leadership a trustworthy revenue and CX signal",
-      role: "Partner to data, product, and RevOps",
+      title: "Moved a voice AI platform off an incumbent carrier",
+      role: "Enterprise AE, AI voice infrastructure at Telnyx",
       summary:
-        "Revenue and CX leaders lacked a single, trusted view across CRM, billing, and product usage to make confident bets.",
+        "An AI voice automation provider needed programmable, reliable telephony to support sensitive conversational workloads while reducing cost and operational drag from an incumbent carrier.",
       outcome:
-        "Partnered on a unified data model and reporting cadence that enabled meaningful forecasting, cohort analysis, and board-ready views of pipeline and retention.",
+        "Led a complex enterprise cycle across product, architecture, security, and procurement to land a multi-year, high-ACV deal that became a foundation for their AI voice roadmap.",
     },
   ],
   projects: [
     {
       name: "Deal Command Center",
       description:
-        "A concept for a single pane of glass where GTM and RevOps leaders can see risk, approvals, and blockers across complex B2B deals in real time.",
+        "A thinking framework and template for mapping $65K–$550K+ ACV enterprise deals across stakeholders, risk, approvals, and next actions.",
       hrefKey: "dealCommandCenter" as const,
+      ctaLabel: "Download enterprise deal command center template",
     },
     {
       name: "Searvis.io",
       description:
-        "An early CX consulting and platform concept exploring how buyers evaluate voice/AI vendors and how to make reliability and pricing radically clearer.",
+        "A framework for how buyers evaluate CX and AI platforms—surfacing reliability, integration, and commercial tradeoffs beyond marketing claims.",
       hrefKey: "searvis" as const,
+      ctaLabel: "Visit →",
     },
     {
       name: "GitHub",
       description:
-        "Open-source experiments, small tools, and prototypes that show how I think about systems, developer ergonomics, and GTM workflows.",
+        "Technical experiments, small tools, and prototypes that explore GTM systems, AI infrastructure, and how developers actually adopt platforms.",
       hrefKey: "github" as const,
+      ctaLabel: "Visit →",
+    },
+  ],
+  sellingModel: [
+    {
+      title: "Engineering-led discovery",
+      description:
+        "Start with architecture, data flows, and constraints—working with product and engineering to map what’s actually possible, then translating that into clear business tradeoffs for GTM and executive sponsors.",
+    },
+    {
+      title: "Multi-stakeholder enterprise deals",
+      description:
+        "Run cycles that keep architecture, QA, operations, security, finance, and procurement aligned—so technical risk, commercial terms, and day-two operations are all visible and de-risked.",
+    },
+    {
+      title: "Transformation risk mitigation",
+      description:
+        "Position AI infrastructure, CPaaS/CCaaS, and conversational platforms as ways to reduce operational and transformation risk—not just add features—grounded in reliability, observability, and clear success metrics.",
     },
   ],
 };

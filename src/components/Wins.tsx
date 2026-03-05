@@ -25,7 +25,7 @@ export function Wins() {
           {wins.map((win) => (
             <article
               key={win.title}
-              className="flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 sm:p-5"
+              className="flex flex-col gap-3 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-5 sm:p-5"
             >
               <h3 className="text-sm font-semibold text-neutral-900">
                 {win.title}

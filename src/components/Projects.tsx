@@ -29,7 +29,7 @@ export function Projects() {
           {projects.map((project) => (
             <article
               key={project.name}
-              className="flex flex-col justify-between gap-3 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-4 sm:p-5"
+              className="flex flex-col justify-between gap-3 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-5 sm:p-5"
             >
               <div className="space-y-1">
                 <h3 className="text-sm font-semibold text-neutral-900">
@@ -44,10 +44,7 @@ export function Projects() {
                   href={hrefFromKey(project.hrefKey)}
                   className="inline-flex text-xs font-semibold text-neutral-900 underline-offset-4 hover:underline sm:text-sm"
                 >
-                  {sections.projects.visitLabel}
-                  <span aria-hidden="true" className="ml-1">
-                    ↗
-                  </span>
+                  {project.ctaLabel ?? sections.projects.visitLabel}
                 </Link>
               </div>
             </article>

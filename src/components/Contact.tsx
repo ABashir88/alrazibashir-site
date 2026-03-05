@@ -25,6 +25,9 @@ export function Contact() {
             {sections.contact.body}
           </p>
         </div>
+        <p className="mt-4 text-xs text-neutral-500 sm:text-sm">
+          Currently focused on AI infrastructure, conversational platforms, and enterprise GTM systems.
+        </p>
         <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
           <Link
             href={`mailto:${email}`}

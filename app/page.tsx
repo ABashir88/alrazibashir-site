@@ -2,6 +2,7 @@ import { NavBar } from "../src/components/NavBar";
 import { Hero } from "../src/components/Hero";
 import { ProofBar } from "../src/components/ProofBar";
 import { WhatIDo } from "../src/components/WhatIDo";
+import { SellingModel } from "../src/components/SellingModel";
 import { Experience } from "../src/components/Experience";
 import { Wins } from "../src/components/Wins";
 import { Projects } from "../src/components/Projects";
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <ProofBar />
         <WhatIDo />
+        <SellingModel />
         <Experience />
         <Wins />
         <Projects />

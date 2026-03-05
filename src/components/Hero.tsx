@@ -22,29 +22,45 @@ export function Hero() {
           >
             {hero.headline}
           </h1>
+          <div className="mt-4 flex justify-center lg:hidden">
+            <div className="relative h-40 w-40 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
+              <Image
+                src="/alrazi-headshot.jpg"
+                alt="Alrazi Bashir"
+                fill
+                sizes="160px"
+                priority
+                className="object-cover"
+              />
+            </div>
+          </div>
           <p className="max-w-xl text-sm leading-relaxed text-neutral-600 sm:text-base">
             {hero.subheadline}
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              href={hero.primaryCta.href}
-              className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-            >
-              {hero.primaryCta.label}
-            </Link>
-            <Link
-              href={hero.secondaryCta.href}
-              className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:border-neutral-900 hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-            >
-              {hero.secondaryCta.label}
-            </Link>
-            {hero.tertiaryCta && (
+          <div className="space-y-2">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
-                href={hero.tertiaryCta.href}
-                className="inline-flex items-center justify-center rounded-full px-3 py-2 text-xs font-semibold text-neutral-600 underline-offset-4 hover:underline sm:text-sm"
+                href={hero.primaryCta.href}
+                className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
-                {hero.tertiaryCta.label}
+                {hero.primaryCta.label}
               </Link>
+              <Link
+                href={hero.secondaryCta.href}
+                className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-900 transition hover:border-neutral-900 hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              >
+                {hero.secondaryCta.label}
+              </Link>
+            </div>
+            {hero.tertiaryCta && (
+              <div>
+                <Link
+                  href={hero.tertiaryCta.href}
+                  className="text-xs font-semibold text-neutral-700 underline-offset-4 hover:underline sm:text-sm"
+                >
+                  {hero.tertiaryCta.label}
+                </Link>
+              </div>
             )}
           </div>
           <p className="text-xs text-neutral-500">
@@ -57,8 +73,15 @@ export function Hero() {
             </a>
             .
           </p>
+          <p className="mt-3 text-xs text-neutral-500 sm:text-sm">
+            Experience building enterprise deals with{" "}
+            <span className="font-medium text-neutral-800">
+              {siteConfig.proofBar.items.join(" · ")}
+            </span>
+            .
+          </p>
         </div>
-        <div className="flex justify-start lg:justify-end">
+        <div className="hidden justify-start lg:flex lg:justify-end">
           <div className="relative h-40 w-40 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 sm:h-48 sm:w-48 lg:h-56 lg:w-56">
             <Image
               src="/alrazi-headshot.jpg"
