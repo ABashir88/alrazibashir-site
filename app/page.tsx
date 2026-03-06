@@ -7,25 +7,30 @@ import { Experience } from "../src/components/Experience";
 import { Wins } from "../src/components/Wins";
 import { Projects } from "../src/components/Projects";
 import { Contact } from "../src/components/Contact";
+import { ScrollReveal } from "../src/components/ScrollReveal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)", color: "var(--color-text)" }}>
       <NavBar />
       <main>
         <Hero />
         <ProofBar />
-        <WhatIDo />
-        <SellingModel />
-        <Experience />
-        <Wins />
-        <Projects />
-        <Contact />
+        <ScrollReveal><WhatIDo /></ScrollReveal>
+        <ScrollReveal><SellingModel /></ScrollReveal>
+        <ScrollReveal><Experience /></ScrollReveal>
+        <ScrollReveal><Wins /></ScrollReveal>
+        <ScrollReveal><Projects /></ScrollReveal>
+        <ScrollReveal><Contact /></ScrollReveal>
       </main>
-      <footer className="border-t border-neutral-200 bg-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-6 text-xs text-neutral-500 sm:px-6 lg:px-8">
-          <p>© {new Date().getFullYear()} Alrazi Bashir.</p>
-          <p className="hidden sm:block">Built with Next.js.</p>
+      <footer style={{ borderTop: "1px solid var(--color-border)", backgroundColor: "var(--color-bg)" }}>
+        <div style={{ maxWidth: "1024px", margin: "0 auto", padding: "1.5rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <p style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", margin: 0 }}>
+            © {new Date().getFullYear()} Alrazi Bashir.
+          </p>
+          <p style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", margin: 0 }}>
+            Built with Next.js.
+          </p>
         </div>
       </footer>
     </div>

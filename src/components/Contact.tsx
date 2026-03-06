@@ -1,46 +1,76 @@
+"use client";
 import Link from "next/link";
 import { siteConfig } from "../config";
 
 export function Contact() {
   const { email, sections } = siteConfig;
-
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-heading"
-      className="bg-white"
-    >
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="max-w-xl space-y-3">
-          <h2
-            id="contact-heading"
-            className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500"
-          >
+    <section id="contact" aria-labelledby="contact-heading" style={{
+      position: "relative", overflow: "hidden",
+      background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(232,160,32,0.07) 0%, transparent 70%), var(--color-surface)",
+      padding: "clamp(4rem, 8vw, 7rem) 1.5rem",
+      textAlign: "center"
+    }}>
+      {/* Top accent */}
+      <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: "120px", height: "2px", background: "linear-gradient(90deg, transparent, var(--color-accent), transparent)" }} />
+
+      <div style={{ maxWidth: "680px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <div style={{ width: "20px", height: "2px", backgroundColor: "var(--color-accent)" }} />
+          <h2 id="contact-heading" style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", margin: 0, fontFamily: "var(--font-body)" }}>
             {sections.contact.eyebrow}
           </h2>
-          <p className="text-2xl font-medium tracking-tight text-neutral-900 sm:text-3xl">
-            {sections.contact.title}
-          </p>
-          <p className="text-sm leading-relaxed text-neutral-600 sm:text-base">
-            {sections.contact.body}
-          </p>
+          <div style={{ width: "20px", height: "2px", backgroundColor: "var(--color-accent)" }} />
         </div>
-        <p className="mt-4 text-xs text-neutral-500 sm:text-sm">
-          Currently focused on AI infrastructure, conversational platforms, and enterprise GTM systems.
+
+        <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, color: "var(--color-text)", margin: 0, lineHeight: 1.2 }}>
+          {sections.contact.title}
         </p>
-        <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
+
+        <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)", maxWidth: "520px" }}>
+          {sections.contact.body}
+        </p>
+
+        <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", margin: 0, fontFamily: "var(--font-body)" }}>
+          Currently focused on AI infrastructure, conversational platforms, and enterprise GTM.
+        </p>
+
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center", marginTop: "0.5rem" }}>
           <Link
             href={`mailto:${email}`}
-            className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            style={{
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
+              backgroundColor: "var(--color-accent)", color: "#000",
+              fontWeight: 700, fontSize: "0.9rem", padding: "0.8rem 2rem",
+              borderRadius: "999px", fontFamily: "var(--font-body)",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(232,160,32,0.35)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
           >
             {sections.contact.ctaPrefix} {email}
           </Link>
-          <p className="text-xs text-neutral-500 sm:text-sm">
-            {sections.contact.responseNote}
-          </p>
+          <Link
+            href="https://www.linkedin.com/in/alrazibashir"
+            target="_blank"
+            style={{
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
+              border: "1px solid var(--color-border-strong)", color: "var(--color-text)",
+              fontWeight: 600, fontSize: "0.9rem", padding: "0.8rem 1.75rem",
+              borderRadius: "999px", fontFamily: "var(--font-body)",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-accent-border)"; (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border-strong)"; (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
+          >
+            LinkedIn →
+          </Link>
         </div>
+
+        <p style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", margin: 0, fontFamily: "var(--font-body)" }}>
+          {sections.contact.responseNote}
+        </p>
       </div>
     </section>
   );
 }
-
