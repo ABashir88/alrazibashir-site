@@ -15,6 +15,7 @@ export const siteConfig = {
     { label: "Wins", href: "#wins" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
+    { label: "Hiring", href: "/hiring" },
   ],
   social: {
     github: "https://github.com/ABashir88",
@@ -80,7 +81,7 @@ export const siteConfig = {
     contact: {
       eyebrow: "Contact",
       title:
-        "If you’re hiring for enterprise AE or GTM roles in AI infrastructure, conversational AI, or CPaaS/CCaaS, I’d love to talk.",
+        "If you're hiring for enterprise AE or GTM roles in AI infrastructure, conversational AI, or CPaaS/CCaaS, I'd love to talk.",
       body:
         "Best fit: enterprise AE roles, GTM operator roles, and early sales hires at AI infrastructure, conversational AI, CPaaS/CCaaS, and contact center transformation companies. Share a short note on your product, motion, and where you need help.",
       ctaPrefix: "Email",
