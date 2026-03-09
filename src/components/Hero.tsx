@@ -92,7 +92,7 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
       {/* FIX 1: Smaller headline so portrait aligns with it */}
       <h1 id="hero-heading" style={{
         fontFamily: "var(--font-display)",
-        fontSize: "clamp(1.75rem, 3.8vw, 2.85rem)",
+        fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)",
         fontWeight: 400, lineHeight: 1.18, color: "var(--color-text)",
         margin: "0 0 1rem", letterSpacing: "-0.01em"
       }}>
