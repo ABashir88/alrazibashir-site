@@ -11,7 +11,6 @@ export function Contact() {
       padding: "clamp(4rem, 8vw, 7rem) 1.5rem",
       textAlign: "center"
     }}>
-      {/* Top accent */}
       <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: "120px", height: "2px", background: "linear-gradient(90deg, transparent, var(--color-accent), transparent)" }} />
 
       <div style={{ maxWidth: "680px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}>
@@ -35,20 +34,21 @@ export function Contact() {
           Currently focused on AI infrastructure, conversational platforms, and enterprise GTM.
         </p>
 
+        {/* ── FIX 6: Stronger, intentional CTA language ── */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center", marginTop: "0.5rem" }}>
           <Link
             href={`mailto:${email}`}
             style={{
               display: "inline-flex", alignItems: "center", justifyContent: "center",
               backgroundColor: "var(--color-accent)", color: "#000",
-              fontWeight: 700, fontSize: "0.9rem", padding: "0.8rem 2rem",
+              fontWeight: 700, fontSize: "0.95rem", padding: "0.9rem 2.25rem",
               borderRadius: "999px", fontFamily: "var(--font-body)",
               transition: "all 0.2s ease"
             }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 24px rgba(232,160,32,0.35)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
           >
-            {sections.contact.ctaPrefix} {email}
+            Let's talk about your team →
           </Link>
           <Link
             href="https://www.linkedin.com/in/alrazibashir"
@@ -56,14 +56,14 @@ export function Contact() {
             style={{
               display: "inline-flex", alignItems: "center", justifyContent: "center",
               border: "1px solid var(--color-border-strong)", color: "var(--color-text)",
-              fontWeight: 600, fontSize: "0.9rem", padding: "0.8rem 1.75rem",
+              fontWeight: 600, fontSize: "0.9rem", padding: "0.9rem 1.75rem",
               borderRadius: "999px", fontFamily: "var(--font-body)",
               transition: "all 0.2s ease"
             }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-accent-border)"; (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "var(--color-border-strong)"; (e.currentTarget as HTMLElement).style.color = "var(--color-text)"; }}
           >
-            LinkedIn →
+            Connect on LinkedIn →
           </Link>
         </div>
 
