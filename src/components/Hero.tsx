@@ -8,14 +8,12 @@ export function Hero() {
 
   return (
     <section id="top" aria-labelledby="hero-heading" className="hero-gradient" style={{ position: "relative", overflow: "hidden" }}>
-      {/* Decorative accent line */}
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, var(--color-accent), transparent)" }} />
 
       <div style={{
         maxWidth: "1024px", margin: "0 auto",
         padding: "clamp(3rem, 8vw, 6rem) 1.5rem clamp(3rem, 6vw, 5rem)",
-        display: "flex", flexDirection: "column", gap: "2.5rem",
-        alignItems: "flex-start"
+        display: "flex", flexDirection: "column", gap: "2.5rem", alignItems: "flex-start"
       }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "0", width: "100%" }}>
 
@@ -37,35 +35,55 @@ export function Hero() {
           {/* Main layout: headline + headshot */}
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "3rem", width: "100%" }}>
             <div style={{ flex: 1 }}>
+
               {/* Headline */}
-              <h1 id="hero-heading"
-                style={{
-                  fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                  fontWeight: 400, lineHeight: 1.15, color: "var(--color-text)",
-                  margin: "0 0 1.5rem", letterSpacing: "-0.01em", maxWidth: "680px"
-                }}
-              >
+              <h1 id="hero-heading" style={{
+                fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                fontWeight: 400, lineHeight: 1.15, color: "var(--color-text)",
+                margin: "0 0 1rem", letterSpacing: "-0.01em", maxWidth: "680px"
+              }}>
                 {hero.headline.split("turning").map((part, i) => i === 0 ? (
                   <span key={i}>{part}<span style={{ color: "var(--color-accent)", fontStyle: "italic" }}>turning</span></span>
                 ) : <span key={i}>{part}</span>)}
               </h1>
 
+              {/* ── HIGH PRIORITY FIX 1: Social proof stat line ── */}
+              <div style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                backgroundColor: "var(--color-accent-dim)", border: "1px solid var(--color-accent-border)",
+                borderRadius: "999px", padding: "0.4rem 1rem", marginBottom: "1.5rem"
+              }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "var(--color-accent)", flexShrink: 0 }} />
+                <span style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--color-accent)", fontFamily: "var(--font-body)", letterSpacing: "0.02em" }}>
+                  $3M+ in enterprise AI deals · CPaaS · CCaaS · AI Voice Infrastructure
+                </span>
+              </div>
+
               {/* Subheadline */}
-              <p style={{ fontSize: "clamp(0.9rem, 2vw, 1.05rem)", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 2rem", maxWidth: "580px", fontFamily: "var(--font-body)" }}>
+              <p style={{ fontSize: "clamp(0.9rem, 2vw, 1.05rem)", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 1.75rem", maxWidth: "580px", fontFamily: "var(--font-body)" }}>
                 {hero.subheadline}
               </p>
 
-              {/* Metrics */}
-              {hero.metrics && (
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0.75rem 2rem", marginBottom: "2.5rem", maxWidth: "580px" }}>
-                  {hero.metrics.map((item) => (
-                    <div key={item.label} style={{ display: "flex", gap: "0.4rem", alignItems: "baseline" }}>
-                      <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: "var(--font-body)", whiteSpace: "nowrap" }}>{item.label}:</span>
-                      <span style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", fontFamily: "var(--font-body)", fontWeight: 500 }}>{item.value}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              {/* ── HIGH PRIORITY FIX 1: Key stats as visual blocks ── */}
+              <div style={{
+                display: "flex", flexWrap: "wrap", gap: "0.75rem",
+                marginBottom: "2rem", maxWidth: "580px"
+              }}>
+                {[
+                  { value: "$1.2M", label: "Annual Quota" },
+                  { value: "$550K", label: "Max ACV" },
+                  { value: "5–9mo", label: "Avg Cycle" },
+                ].map((stat) => (
+                  <div key={stat.label} style={{
+                    display: "flex", flexDirection: "column", alignItems: "center",
+                    backgroundColor: "var(--color-surface-card)", border: "1px solid var(--color-border)",
+                    borderRadius: "12px", padding: "0.75rem 1.25rem", minWidth: "90px"
+                  }}>
+                    <span style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)", lineHeight: 1 }}>{stat.value}</span>
+                    <span style={{ fontSize: "0.65rem", fontWeight: 600, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "var(--font-body)", marginTop: "0.3rem" }}>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
 
               {/* CTAs */}
               <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", gap: "0.75rem", alignItems: "center", marginBottom: "1.5rem" }}>
@@ -130,7 +148,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "60px", background: "linear-gradient(to bottom, transparent, var(--color-bg))", pointerEvents: "none" }} />
 
       <style>{`
