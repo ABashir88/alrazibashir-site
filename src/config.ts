@@ -8,7 +8,7 @@ export const siteConfig = {
   baseUrl: "https://alrazibashir.com",
   resumeUrl: "/resume.pdf",
   resumeLabel: "Resume",
-  logoInitials: "AR",
+  logoInitials: "AB",
   nav: [
     { label: "What I Do", href: "#what-i-do" },
     { label: "Experience", href: "#experience" },
