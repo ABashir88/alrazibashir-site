@@ -60,7 +60,7 @@ export function NavBar() {
               fontSize: "0.65rem", fontWeight: 700,
               display: "flex", alignItems: "center", justifyContent: "center",
               fontFamily: "var(--font-body)", letterSpacing: "0.05em"
-            }}>AR</span>
+            }}>{siteConfig.logoInitials}</span>
             <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>
               {siteConfig.name}
             </span>
