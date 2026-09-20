@@ -1,6 +1,32 @@
 "use client";
 import Link from "next/link";
-import { siteConfig } from "../../src/config";
+import { siteConfig } from "../src/config";
+
+const valueAreas = [
+  {
+    title: "Enterprise AI infrastructure sales",
+    body: "Proven track record selling AI voice platforms, conversational AI infrastructure, and developer-first communications platforms to engineering and product organizations. I translate architecture decisions into commercial outcomes that resonate with both technical evaluators and economic buyers."
+  },
+  {
+    title: "CPaaS & CCaaS platform deals",
+    body: "Deep experience selling communications APIs, contact center platforms, and CX infrastructure into enterprises modernizing customer engagement systems. I understand the competitive landscape, the procurement dynamics, and how to position platforms against entrenched incumbents."
+  },
+  {
+    title: "Engineering-led discovery",
+    body: "I run technical discovery using architecture diagrams, data flows, latency requirements, and operational constraints before any commercial discussion begins. This builds credibility with engineering teams and ensures the solution is scoped correctly before it reaches procurement."
+  },
+  {
+    title: "Multi-stakeholder enterprise sales cycles",
+    body: "Experienced running 5–9 month enterprise evaluation cycles that keep engineering, security, operations, CX leadership, finance, and procurement aligned. I manage parallel technical and business tracks so deals don't stall at the finish line."
+  },
+];
+
+const dealProfile = [
+  { label: "Deal sizes", value: "$65K – $550K+ ACV" },
+  { label: "Sales cycles", value: "5–9 months" },
+  { label: "Buyer groups", value: "Engineering, CX leadership, product, finance, procurement" },
+  { label: "Focus areas", value: "AI voice infrastructure, CPaaS/CCaaS, conversational AI systems" },
+];
 
 export default function HiringPage() {
   return (
@@ -8,136 +34,102 @@ export default function HiringPage() {
 
       {/* Nav back */}
       <div style={{ borderBottom: "1px solid var(--color-border)", padding: "0.875rem 1.5rem" }}>
-        <div style={{ maxWidth: "1024px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <Link href="/"
-            style={{ fontSize: "0.82rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", fontWeight: 500, transition: "color 0.2s" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "var(--color-accent)")}
+            style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", fontWeight: 500 }}
+            onMouseEnter={e => (e.currentTarget.style.color = "var(--color-text)")}
             onMouseLeave={e => (e.currentTarget.style.color = "var(--color-text-muted)")}
           >← Back to site</Link>
         </div>
       </div>
 
-      <main style={{ maxWidth: "1024px", margin: "0 auto", padding: "clamp(3rem, 6vw, 5rem) 1.5rem" }}>
+      <main style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(3rem, 6vw, 5rem) 1.5rem" }}>
 
-        {/* SECTION 1 — HEADER */}
-        <div style={{ maxWidth: "680px", marginBottom: "4rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.25rem" }}>
-            <div style={{ width: "20px", height: "2px", backgroundColor: "var(--color-accent)" }} />
-            <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", fontFamily: "var(--font-body)" }}>
-              For Hiring Managers
-            </span>
+        {/* Header */}
+        <div style={{ paddingBottom: "3.5rem", borderBottom: "1px solid var(--color-border)", marginBottom: "3.5rem" }}>
+          <div style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-accent)", marginBottom: "1.25rem", fontFamily: "var(--font-body)" }}>
+            For Hiring Managers
           </div>
           <h1 style={{
             fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
-            fontWeight: 400, lineHeight: 1.2, color: "var(--color-text)", margin: "0 0 1.25rem"
+            fontWeight: 400, lineHeight: 1.15, color: "var(--color-text)", margin: "0 0 1.5rem",
+            maxWidth: "640px"
           }}>
             Why companies hire me as an Enterprise Account Executive
           </h1>
-          <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)" }}>
+          <p style={{ fontSize: "1rem", lineHeight: 1.8, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)", maxWidth: "600px" }}>
             I work at the intersection of AI infrastructure, voice platforms, and enterprise revenue systems — helping companies move complex platforms into production inside large organizations. My background spans CPaaS, CCaaS, conversational AI, and AI voice infrastructure, running engineering-led sales cycles with multi-stakeholder buying committees from first call through multi-year close.
           </p>
         </div>
 
-        {/* SECTION 2 — CORE VALUE AREAS */}
-        <div style={{ marginBottom: "4rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2rem" }}>
-            <div style={{ width: "20px", height: "2px", backgroundColor: "var(--color-accent)" }} />
-            <h2 style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", margin: 0, fontFamily: "var(--font-body)" }}>
-              Core Value Areas
-            </h2>
+        {/* Core Value Areas */}
+        <div style={{ marginBottom: "3.5rem" }}>
+          <div style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "2rem", fontFamily: "var(--font-body)" }}>
+            Core Value Areas
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
-            {[
-              {
-                n: "01",
-                title: "Enterprise AI infrastructure sales",
-                body: "Proven track record selling AI voice platforms, conversational AI infrastructure, and developer-first communications platforms to engineering and product organizations. I translate architecture decisions into commercial outcomes that resonate with both technical evaluators and economic buyers."
-              },
-              {
-                n: "02",
-                title: "CPaaS & CCaaS platform deals",
-                body: "Deep experience selling communications APIs, contact center platforms, and CX infrastructure into enterprises modernizing customer engagement systems. I understand the competitive landscape, the procurement dynamics, and how to position platforms against entrenched incumbents."
-              },
-              {
-                n: "03",
-                title: "Engineering-led discovery",
-                body: "I run technical discovery using architecture diagrams, data flows, latency requirements, and operational constraints before any commercial discussion begins. This builds credibility with engineering teams and ensures the solution is scoped correctly before it reaches procurement."
-              },
-              {
-                n: "04",
-                title: "Multi-stakeholder enterprise sales cycles",
-                body: "Experienced running 5–9 month enterprise evaluation cycles that keep engineering, security, operations, CX leadership, finance, and procurement aligned. I manage parallel technical and business tracks so deals don't stall at the finish line."
-              }
-            ].map((card) => (
-              <article key={card.n} style={{
-                border: "1px solid var(--color-border)",
-                borderLeft: "3px solid var(--color-accent)",
-                borderRadius: "16px",
-                backgroundColor: "var(--color-surface-card)",
-                padding: "1.5rem",
-                display: "flex", flexDirection: "column", gap: "0.75rem",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease"
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {valueAreas.map((area, i) => (
+              <div key={area.title} style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 2fr",
+                gap: "2rem",
+                padding: "2rem 0",
+                borderTop: i === 0 ? "1px solid var(--color-border)" : "none",
+                borderBottom: "1px solid var(--color-border)",
               }}
-                className="card-hover"
+              className="value-row"
               >
-                <span style={{ fontSize: "0.65rem", fontWeight: 700, color: "var(--color-accent)", letterSpacing: "0.1em", fontFamily: "var(--font-body)" }}>{card.n}</span>
-                <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text)", margin: 0, fontFamily: "var(--font-body)", lineHeight: 1.4 }}>{card.title}</h3>
-                <p style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)" }}>{card.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* SECTION 3 — DEAL PROFILE */}
-        <div style={{ marginBottom: "4rem" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2rem" }}>
-            <div style={{ width: "20px", height: "2px", backgroundColor: "var(--color-accent)" }} />
-            <h2 style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", margin: 0, fontFamily: "var(--font-body)" }}>
-              Typical Enterprise Deal Profile
-            </h2>
-          </div>
-          <div style={{
-            border: "1px solid var(--color-border)",
-            borderRadius: "16px",
-            backgroundColor: "var(--color-surface)",
-            padding: "2rem",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "1.5rem 2rem"
-          }}>
-            {[
-              { label: "Deal sizes", value: "$65K – $550K+ ACV" },
-              { label: "Sales cycles", value: "5–9 months" },
-              { label: "Buyer groups", value: "Engineering, CX leadership, product, finance, procurement" },
-              { label: "Focus areas", value: "AI voice infrastructure, CPaaS/CCaaS, conversational AI systems" },
-            ].map((item) => (
-              <div key={item.label}>
-                <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", margin: "0 0 0.35rem", fontFamily: "var(--font-body)" }}>{item.label}</p>
-                <p style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text)", margin: 0, fontFamily: "var(--font-body)", lineHeight: 1.5 }}>{item.value}</p>
+                <h3 style={{ fontSize: "0.925rem", fontWeight: 700, color: "var(--color-text)", margin: 0, fontFamily: "var(--font-body)", lineHeight: 1.4, paddingRight: "1rem" }}>
+                  {area.title}
+                </h3>
+                <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)" }}>
+                  {area.body}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* SECTION 4 — CTA */}
-        <div style={{
-          borderTop: "1px solid var(--color-border)",
-          paddingTop: "3rem",
-          display: "flex", flexDirection: "column", gap: "1.5rem", alignItems: "flex-start"
-        }}>
-          <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 3vw, 1.75rem)", fontWeight: 400, color: "var(--color-text)", margin: 0, lineHeight: 1.35, maxWidth: "580px" }}>
+        {/* Deal Profile */}
+        <div style={{ marginBottom: "4rem" }}>
+          <div style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "2rem", fontFamily: "var(--font-body)" }}>
+            Typical Enterprise Deal Profile
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0", borderTop: "1px solid var(--color-border)" }} className="deal-profile-grid">
+            {dealProfile.map((item, i) => (
+              <div key={item.label} style={{
+                padding: "1.75rem 0",
+                borderBottom: "1px solid var(--color-border)",
+                borderRight: i < dealProfile.length - 1 ? "1px solid var(--color-border)" : "none",
+                paddingRight: i < dealProfile.length - 1 ? "1.5rem" : "0",
+                paddingLeft: i > 0 ? "1.5rem" : "0",
+              }}>
+                <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "8px", fontFamily: "var(--font-body)" }}>
+                  {item.label}
+                </div>
+                <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--color-text)", fontFamily: "var(--font-body)", lineHeight: 1.5 }}>
+                  {item.value}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div style={{ paddingTop: "3rem", borderTop: "1px solid var(--color-border)" }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem, 2.5vw, 1.65rem)", fontWeight: 400, color: "var(--color-text)", margin: "0 0 2rem", lineHeight: 1.4, maxWidth: "560px" }}>
             If you're hiring enterprise sales talent for AI infrastructure, conversational platforms, or developer-focused communications, I'm always open to connecting.
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", alignItems: "center" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", alignItems: "center", marginBottom: "1rem" }}>
             <Link href={siteConfig.resumeUrl} target="_blank"
               style={{
                 display: "inline-flex", alignItems: "center",
-                backgroundColor: "var(--color-accent)", color: "#000",
+                backgroundColor: "var(--color-accent)", color: "#fff",
                 fontWeight: 700, fontSize: "0.85rem", padding: "0.65rem 1.5rem",
                 borderRadius: "999px", fontFamily: "var(--font-body)", transition: "all 0.2s ease"
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(232,160,32,0.35)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; }}
             >
               View resume
             </Link>
@@ -162,11 +154,24 @@ export default function HiringPage() {
       </main>
 
       <footer style={{ borderTop: "1px solid var(--color-border)", marginTop: "4rem" }}>
-        <div style={{ maxWidth: "1024px", margin: "0 auto", padding: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto", padding: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <p style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", margin: 0, fontFamily: "var(--font-body)" }}>© {new Date().getFullYear()} Alrazi Bashir.</p>
-          <Link href="/" style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)" }}>← Back to site</Link>
+          <Link href="/" style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)" }}
+            onMouseEnter={e => (e.currentTarget.style.color = "var(--color-text)")}
+            onMouseLeave={e => (e.currentTarget.style.color = "var(--color-text-muted)")}
+          >← Back to site</Link>
         </div>
       </footer>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .value-row { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+          .deal-profile-grid { grid-template-columns: 1fr 1fr !important; }
+          .deal-profile-grid > div { border-right: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+          .deal-profile-grid > div:nth-child(odd) { padding-right: 1rem !important; }
+        }
+      `}</style>
     </div>
   );
 }
+
