@@ -69,46 +69,36 @@ function WinCard({ win, index }: { win: typeof wins[0]; index: number }) {
         background: "var(--color-surface-card)",
         border: "1px solid var(--color-border)",
         borderRadius: "12px",
-        borderTop: "2px solid var(--color-accent)",
-        padding: "24px",
+        padding: "28px",
         display: "flex",
         flexDirection: "column",
-        gap: "18px",
+        gap: "20px",
       }}
     >
-      {/* Top: company + role badge */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", flexWrap: "wrap" }}>
-        <div>
-          <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, marginBottom: "6px" }}>
-            {win.company}
-          </div>
-          <h3 style={{ fontSize: "clamp(1rem, 1.6vw, 1.1rem)", fontWeight: 700, color: "var(--color-text)", margin: 0, lineHeight: 1.3 }}>
-            {win.title}
-          </h3>
+      {/* Top: company + title */}
+      <div>
+        <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
+          {win.company}
         </div>
-        <span style={{
-          fontSize: "11px", padding: "3px 10px", borderRadius: "20px", whiteSpace: "nowrap",
-          background: "var(--color-accent-dim)", color: "var(--color-accent)",
-          border: "1px solid var(--color-accent-border)", fontWeight: 600
-        }}>
-          {win.role}
-        </span>
+        <h3 style={{ fontSize: "clamp(1rem, 1.6vw, 1.1rem)", fontWeight: 700, color: "var(--color-text)", margin: 0, lineHeight: 1.3 }}>
+          {win.title}
+        </h3>
       </div>
 
       {/* Stats */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-        <div style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "8px", padding: "12px 14px" }}>
-          <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: "4px" }}>ARR</div>
-          <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--color-accent)", lineHeight: 1 }}>{win.arr}</div>
+        <div style={{ padding: "14px 16px", borderRadius: "8px", background: "var(--color-surface)", border: "1px solid var(--color-border)" }}>
+          <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--color-text-muted)", marginBottom: "6px", fontWeight: 600 }}>ARR</div>
+          <div style={{ fontSize: "1.4rem", fontWeight: 700, color: "var(--color-text)", lineHeight: 1 }}>{win.arr}</div>
         </div>
-        <div style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "8px", padding: "12px 14px" }}>
-          <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", marginBottom: "4px" }}>{win.acvLabel}</div>
-          <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--color-accent)", lineHeight: 1 }}>{win.acvValue}</div>
+        <div style={{ padding: "14px 16px", borderRadius: "8px", background: "var(--color-surface)", border: "1px solid var(--color-border)" }}>
+          <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--color-text-muted)", marginBottom: "6px", fontWeight: 600 }}>{win.acvLabel}</div>
+          <div style={{ fontSize: "1.4rem", fontWeight: 700, color: "var(--color-text)", lineHeight: 1 }}>{win.acvValue}</div>
         </div>
       </div>
 
       {/* Description */}
-      <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--color-text-secondary)", margin: 0 }}>
+      <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: 0 }}>
         {win.description}
       </p>
 
@@ -116,23 +106,17 @@ function WinCard({ win, index }: { win: typeof wins[0]; index: number }) {
       <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
         {win.tags.map((tag) => (
           <span key={tag} style={{
-            fontSize: "11px", padding: "3px 9px", borderRadius: "4px",
-            background: "var(--color-surface)", color: "var(--color-text-muted)",
-            border: "1px solid var(--color-border)"
+            fontSize: "11px", padding: "3px 10px", borderRadius: "4px",
+            background: "transparent", color: "var(--color-text-muted)",
+            border: "1px solid var(--color-border)", fontWeight: 500,
           }}>{tag}</span>
         ))}
       </div>
 
       {/* Footer: cycle + term */}
-      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", borderTop: "1px solid var(--color-border)", paddingTop: "14px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          <span style={{ color: "var(--color-text-muted)", fontSize: "13px" }}>⏱</span>
-          <span style={{ fontSize: "12px", color: "var(--color-text-secondary)" }}>{win.cycle}</span>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          <span style={{ color: "var(--color-text-muted)", fontSize: "13px" }}>📋</span>
-          <span style={{ fontSize: "12px", color: "var(--color-text-secondary)" }}>{win.term}</span>
-        </div>
+      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", borderTop: "1px solid var(--color-border)", paddingTop: "16px" }}>
+        <span style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{win.cycle}</span>
+        <span style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>{win.term}</span>
       </div>
     </div>
   );
