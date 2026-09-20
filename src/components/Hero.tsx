@@ -18,7 +18,7 @@ export function Hero() {
         <div className="mobile-hero">
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.75rem" }}>
             <div style={{
-              width: "100px", height: "100px",
+              width: "115px", height: "115px",
               borderRadius: "50%", overflow: "hidden",
               border: "2px solid var(--color-border-strong)",
               boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
@@ -36,8 +36,8 @@ export function Hero() {
           {/* Portrait + name stacked */}
           <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", paddingTop: "0.5rem" }}>
             <div style={{
-              width: "260px",
-              height: "260px",
+              width: "300px",
+              height: "300px",
               borderRadius: "50%",
               overflow: "hidden",
               border: "2px solid var(--color-border-strong)",
