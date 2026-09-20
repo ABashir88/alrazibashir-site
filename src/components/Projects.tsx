@@ -19,8 +19,9 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" style={{ padding: "80px 0", background: "var(--color-surface)" }}>
+    <section id="projects" style={{ padding: "80px 0", background: "var(--color-bg)" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "0 24px" }}>
+
         {/* Header */}
         <div
           ref={headerRef}
@@ -28,7 +29,7 @@ export function Projects() {
             opacity: headerVisible ? 1 : 0,
             transform: headerVisible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.6s ease, transform 0.6s ease",
-            marginBottom: "40px",
+            marginBottom: "48px",
           }}
         >
           <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, marginBottom: "12px" }}>
@@ -47,116 +48,112 @@ export function Projects() {
           href={siteConfig.social.dealCommandCenter}
           download
           style={{
-            display: "block",
-            padding: "28px",
-            background: "var(--color-surface-card)",
-            border: "1px solid var(--color-border)",
-            borderLeft: "3px solid var(--color-accent)",
-            borderRadius: "12px",
-            marginBottom: "16px",
+            display: "grid",
+            gridTemplateColumns: "1fr auto",
+            gap: "2rem",
+            alignItems: "start",
+            padding: "32px 0",
+            borderTop: "1px solid var(--color-border)",
+            borderBottom: "1px solid var(--color-border)",
+            marginBottom: "0",
             textDecoration: "none",
-            transition: "box-shadow 0.2s ease, border-color 0.2s ease",
           }}
-          onMouseEnter={e => {
-            (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.07)";
-          }}
-          onMouseLeave={e => {
-            (e.currentTarget as HTMLElement).style.boxShadow = "none";
-          }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.75"; }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
         >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", flexWrap: "wrap", marginBottom: "12px" }}>
-            <div>
-              <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, marginBottom: "6px" }}>
-                Featured
-              </div>
-              <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--color-text)", margin: 0 }}>
-                Deal Command Center
-              </h3>
+          <div>
+            <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
+              Featured tool
             </div>
-            <span style={{
-              fontSize: "11px", padding: "3px 10px", borderRadius: "20px",
-              background: "var(--color-accent-dim)", color: "var(--color-accent)",
-              border: "1px solid var(--color-accent-border)", fontWeight: 600,
-              whiteSpace: "nowrap",
-            }}>
-              Download .xlsx
-            </span>
+            <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 10px", fontFamily: "var(--font-body)" }}>
+              Deal Command Center
+            </h3>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 16px", maxWidth: "480px" }}>
+              A single spreadsheet that does what most CRMs can't: track deal stage, stakeholder mapping, multi-threading coverage, next steps, and close probability in one view. Built to run $65K–$550K enterprise cycles.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
+              {["Enterprise Pipeline", "Multi-threading", "Stakeholder Mapping", "Close Planning"].map(t => (
+                <span key={t} style={{
+                  fontSize: "11px", padding: "2px 8px", borderRadius: "3px",
+                  background: "transparent", color: "var(--color-text-muted)",
+                  border: "1px solid var(--color-border)", fontWeight: 500,
+                }}>{t}</span>
+              ))}
+            </div>
           </div>
-          <p style={{ fontSize: "0.9rem", lineHeight: 1.65, color: "var(--color-text-secondary)", margin: "0 0 16px", maxWidth: "560px" }}>
-            A single spreadsheet that does what most CRMs can't: track deal stage, stakeholder mapping, multi-threading coverage, next steps, and close probability in one view. Built to run $65K–$550K enterprise cycles.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-            {["Enterprise Pipeline", "Multi-threading", "Stakeholder Mapping", "Close Planning"].map(t => (
-              <span key={t} style={{
-                fontSize: "11px", padding: "3px 9px", borderRadius: "4px",
-                background: "var(--color-surface)", color: "var(--color-text-muted)",
-                border: "1px solid var(--color-border)"
-              }}>{t}</span>
-            ))}
+          <div style={{ flexShrink: 0, paddingTop: "4px" }}>
+            <span style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", whiteSpace: "nowrap" }}>
+              Download .xlsx ↓
+            </span>
           </div>
         </a>
 
-        {/* Secondary grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "14px" }}>
-          {/* Searvis */}
+        {/* Secondary: Searvis + GitHub */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid var(--color-border)" }} className="projects-grid">
           <a
             href={siteConfig.social.searvis}
             target="_blank"
             rel="noopener noreferrer"
             style={{
               display: "block",
-              padding: "22px",
-              background: "var(--color-surface-card)",
-              border: "1px solid var(--color-border)",
-              borderRadius: "10px",
+              padding: "32px 32px 32px 0",
+              borderRight: "1px solid var(--color-border)",
               textDecoration: "none",
-              transition: "box-shadow 0.2s ease",
+              transition: "opacity 0.2s ease",
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(0,0,0,0.07)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.75"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
           >
-            <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
+            <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
               Startup
             </div>
-            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px" }}>Searvis.io</h3>
-            <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--color-text-secondary)", margin: "0 0 14px" }}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px", fontFamily: "var(--font-body)" }}>
+              Searvis.io
+            </h3>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 16px" }}>
               AI-powered search built for enterprise sales teams. Research accounts, stakeholders, and triggers in seconds.
             </p>
-            <span style={{ fontSize: "12px", color: "var(--color-accent)", fontWeight: 600 }}>
+            <span style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-body)" }}>
               searvis.io →
             </span>
           </a>
 
-          {/* GitHub */}
           <a
             href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
             style={{
               display: "block",
-              padding: "22px",
-              background: "var(--color-surface-card)",
-              border: "1px solid var(--color-border)",
-              borderRadius: "10px",
+              padding: "32px 0 32px 32px",
               textDecoration: "none",
-              transition: "box-shadow 0.2s ease",
+              transition: "opacity 0.2s ease",
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(0,0,0,0.07)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = "0.75"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
           >
-            <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
+            <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
               Open Source
             </div>
-            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px" }}>GitHub</h3>
-            <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--color-text-secondary)", margin: "0 0 14px" }}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px", fontFamily: "var(--font-body)" }}>
+              GitHub
+            </h3>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 16px" }}>
               Scripts, automations, and GTM tools I've built to move faster in enterprise sales cycles.
             </p>
-            <span style={{ fontSize: "12px", color: "var(--color-accent)", fontWeight: 600 }}>
+            <span style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-body)" }}>
               github.com/ABashir88 →
             </span>
           </a>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .projects-grid { grid-template-columns: 1fr !important; }
+          .projects-grid a:first-child { border-right: none !important; border-bottom: 1px solid var(--color-border); padding: 28px 0 !important; }
+          .projects-grid a:last-child { padding: 28px 0 !important; }
+        }
+      `}</style>
     </section>
   );
 }
