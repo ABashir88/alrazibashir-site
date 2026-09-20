@@ -76,25 +76,10 @@ export function Hero() {
 function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: string }) {
   return (
     <div>
-      {/* Social proof pill */}
-      <div style={{
-        display: "inline-flex", alignItems: "center", gap: "0.5rem",
-        backgroundColor: "var(--color-accent-dim)", border: "1px solid var(--color-accent-border)",
-        borderRadius: "999px", padding: "0.35rem 0.9rem", marginBottom: "1rem"
-      }}>
-        <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "var(--color-accent)", flexShrink: 0 }} />
-        <span style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--color-accent)", fontFamily: "var(--font-body)", letterSpacing: "0.02em" }}>
-          $3M+ in enterprise AI deals · CPaaS · CCaaS · AI Voice
-        </span>
-      </div>
-
       {/* Eyebrow */}
-      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.9rem" }}>
-        <div style={{ width: "24px", height: "2px", backgroundColor: "var(--color-accent)", flexShrink: 0 }} />
-        <p style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", margin: 0, fontFamily: "var(--font-body)" }}>
-          {hero.eyebrow}
-        </p>
-      </div>
+      <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-accent)", margin: "0 0 1rem", fontFamily: "var(--font-body)" }}>
+        {hero.eyebrow}
+      </p>
 
       <h1 id="hero-heading" style={{
         fontFamily: "var(--font-display)",

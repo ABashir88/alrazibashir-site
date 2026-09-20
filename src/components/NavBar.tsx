@@ -62,8 +62,8 @@ export function NavBar() {
         <div style={innerStyle}>
           {/* Logo */}
           <Link href="#top" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
-            <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-display)", letterSpacing: "-0.01em" }}>
-              AB
+            <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text)", fontFamily: "var(--font-body)", letterSpacing: "0" }}>
+              Alrazi Bashir
             </span>
           </Link>
 
