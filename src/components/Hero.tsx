@@ -107,7 +107,7 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         color: "var(--color-text-secondary)", margin: "0 0 1.25rem",
         fontFamily: "var(--font-body)", maxWidth: "520px"
       }}>
-        Engineering-led enterprise sales across AI voice, CPaaS, and CCaaS — $65K to $550K ACV across 5–9 month cycles with Fortune 1000 and mid-market buyers.
+        Engineering-led enterprise sales across AI voice, CPaaS, and CCaaS — $65K to $550K ACV across 6–10 month cycles with Fortune 1000 and mid-market buyers.
       </p>
 
       {/* FIX 4: Stats tighter so they stay above the fold */}
@@ -115,7 +115,7 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         {[
           { value: "$1.2M", label: "Annual Quota" },
           { value: "$550K", label: "Max ACV" },
-          { value: "5–9mo", label: "Avg Cycle" },
+          { value: "6–10mo", label: "Avg Cycle" },
         ].map((stat) => (
           <div key={stat.label} style={{
             display: "flex", flexDirection: "column", alignItems: "center",
