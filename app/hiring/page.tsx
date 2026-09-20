@@ -231,9 +231,9 @@ export default function HiringPage() {
 
       {/* ── DEAL RECORD ── */}
       <section id="wins" style={{ maxWidth: 1024, margin: "0 auto", padding: "56px 24px" }}>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "#9ca3af", marginBottom: 8, fontFamily: "var(--font-body)" }}>Enterprise Deal Record</p>
+        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "#9ca3af", marginBottom: 8, fontFamily: "var(--font-body)" }}>Enterprise Wins</p>
         <h2 style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 700, letterSpacing: "-0.02em", color: "#0d1117", marginBottom: 6, fontFamily: "var(--font-body)" }}>
-          Representative enterprise wins
+          Enterprise Wins
         </h2>
         <p style={{ fontSize: 15, color: "#6b7280", marginBottom: 40, maxWidth: 500, lineHeight: 1.6, fontFamily: "var(--font-body)" }}>
           Multi-stakeholder buying groups, technical discovery, and multi-month commercial cycles across all three.
@@ -459,7 +459,7 @@ export default function HiringPage() {
       {/* ── FOOTER ── */}
       <footer style={{ backgroundColor: "#0d1117", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "20px 24px" }}>
         <div style={{ maxWidth: 1024, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontSize: 13, color: "#4b5563", fontFamily: "var(--font-body)" }}>Alrazi Bashir &mdash; Enterprise Account Executive</span>
+          <span style={{ fontSize: 13, color: "#4b5563", fontFamily: "var(--font-body)" }}>Alrazi Bashir &bull; Enterprise Account Executive</span>
           <div style={{ display: "flex", gap: 20 }}>
             <Link href="/" style={{ fontSize: 13, color: "#4b5563", textDecoration: "none", fontFamily: "var(--font-body)" }}>Main Site</Link>
             <a href="https://linkedin.com/in/alrazibashir" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: "#4b5563", textDecoration: "none", fontFamily: "var(--font-body)" }}>LinkedIn</a>
