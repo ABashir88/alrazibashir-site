@@ -102,9 +102,9 @@ function HiringNav() {
           .h-cta-btns { flex-direction: column !important; align-items: stretch !important; }
           .h-cta-btns a { text-align: center !important; }
         }
+        .telnyx-logo { filter: none; }
+        @media (prefers-color-scheme: dark) { .telnyx-logo { filter: invert(1) brightness(2); } }
       `}
-          .telnyx-logo { filter: none; }
-          @media (prefers-color-scheme: dark) { .telnyx-logo { filter: invert(1) brightness(2); } }
         </style>
     </>
   );
