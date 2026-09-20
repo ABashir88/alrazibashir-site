@@ -55,7 +55,7 @@ const roles = [
   },
 ];
 
-function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
+function RoleRow({ role, index, total }: { role: typeof roles[0]; index: number; total: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -70,70 +70,81 @@ function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
     return () => obs.disconnect();
   }, []);
 
+  const isLast = index === total - 1;
+
   return (
     <div
       ref={ref}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateX(0)" : "translateX(-16px)",
-        transition: `opacity 0.55s ease ${index * 0.08}s, transform 0.55s ease ${index * 0.08}s`,
-        padding: "22px 24px",
-        background: "var(--color-surface-card)",
-        border: "1px solid var(--color-border)",
-        borderLeft: role.current ? "3px solid var(--color-accent)" : "3px solid transparent",
-        borderRadius: "10px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "12px",
+        transform: visible ? "translateY(0)" : "translateY(16px)",
+        transition: `opacity 0.5s ease ${index * 0.08}s, transform 0.5s ease ${index * 0.08}s`,
+        display: "grid",
+        gridTemplateColumns: "140px 20px 1fr",
+        gap: "0 1.5rem",
       }}
     >
-      {/* Top row */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "8px" }}>
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "4px" }}>
-            <span style={{ fontSize: "1.05rem", fontWeight: 700, color: role.current ? "var(--color-accent)" : "var(--color-text)" }}>
-              {role.company}
-            </span>
-            {role.current && (
-              <span style={{
-                fontSize: "10px", padding: "2px 8px", borderRadius: "20px", fontWeight: 700,
-                background: "var(--color-accent-dim)", color: "var(--color-accent)",
-                border: "1px solid var(--color-accent-border)",
-                textTransform: "uppercase", letterSpacing: "0.06em"
-              }}>Current</span>
-            )}
-          </div>
-          <div style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)", fontWeight: 500 }}>{role.title}</div>
-        </div>
-        <div style={{ fontSize: "12px", color: "var(--color-text-muted)", whiteSpace: "nowrap" }}>{role.period}</div>
+      {/* Date column */}
+      <div style={{ paddingTop: "2px", textAlign: "right" }}>
+        <span style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", whiteSpace: "nowrap" }}>
+          {role.period}
+        </span>
       </div>
 
-      {/* Tags */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-        {role.tags.map((tag) => (
-          <span key={tag} style={{
-            fontSize: "11px", padding: "3px 9px", borderRadius: "4px",
-            background: "var(--color-surface)", color: "var(--color-text-muted)",
-            border: "1px solid var(--color-border)"
-          }}>{tag}</span>
-        ))}
-      </div>
-
-      {/* Summary */}
-      <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--color-text-secondary)", margin: 0 }}>
-        {role.summary}
-      </p>
-
-      {/* Metrics */}
-      {role.metrics && (
+      {/* Timeline rail */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <div style={{
-          fontSize: "12px", color: "var(--color-accent)", fontWeight: 600,
-          borderTop: "1px solid var(--color-border)", paddingTop: "12px",
-          letterSpacing: "0.01em"
-        }}>
-          {role.metrics}
+          width: role.current ? "10px" : "8px",
+          height: role.current ? "10px" : "8px",
+          borderRadius: "50%",
+          background: role.current ? "var(--color-accent)" : "var(--color-border-strong)",
+          flexShrink: 0,
+          marginTop: "4px",
+        }} />
+        {!isLast && (
+          <div style={{ width: "1px", flex: 1, background: "var(--color-border)", marginTop: "6px", minHeight: "24px" }} />
+        )}
+      </div>
+
+      {/* Content */}
+      <div style={{ paddingBottom: isLast ? 0 : "2.5rem" }}>
+        <div style={{ display: "flex", alignItems: "baseline", gap: "0.6rem", marginBottom: "2px", flexWrap: "wrap" }}>
+          <span style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>
+            {role.company}
+          </span>
+          {role.current && (
+            <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--color-accent)", fontFamily: "var(--font-body)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              Now
+            </span>
+          )}
         </div>
-      )}
+        <div style={{ fontSize: "0.825rem", color: "var(--color-text-muted)", fontWeight: 500, marginBottom: "12px", fontFamily: "var(--font-body)" }}>
+          {role.title}
+        </div>
+
+        <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 12px", maxWidth: "520px" }}>
+          {role.summary}
+        </p>
+
+        {/* Tags */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "5px", marginBottom: role.metrics ? "12px" : 0 }}>
+          {role.tags.map((tag) => (
+            <span key={tag} style={{
+              fontSize: "11px", padding: "2px 8px", borderRadius: "3px",
+              background: "transparent", color: "var(--color-text-muted)",
+              border: "1px solid var(--color-border)", fontWeight: 500,
+              fontFamily: "var(--font-body)",
+            }}>{tag}</span>
+          ))}
+        </div>
+
+        {/* Metrics */}
+        {role.metrics && (
+          <div style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", borderTop: "1px solid var(--color-border)", paddingTop: "10px" }}>
+            {role.metrics}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
@@ -156,20 +167,19 @@ export default function Experience() {
   return (
     <section id="experience" style={{ padding: "80px 0", background: "var(--color-surface)" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto", padding: "0 24px" }}>
-        {/* Header */}
         <div
           ref={headerRef}
           style={{
             opacity: headerVisible ? 1 : 0,
             transform: headerVisible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.6s ease, transform 0.6s ease",
-            marginBottom: "40px",
+            marginBottom: "48px",
           }}
         >
           <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, marginBottom: "12px" }}>
             CAREER
           </div>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-text)", margin: "0 0 16px" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-text)", margin: "0 0 14px" }}>
             From CPaaS to AI Voice to Contact Center AI
           </h2>
           <p style={{ fontSize: "1rem", color: "var(--color-text-secondary)", maxWidth: "540px", lineHeight: 1.65, margin: 0 }}>
@@ -177,13 +187,19 @@ export default function Experience() {
           </p>
         </div>
 
-        {/* Roles */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+        <div>
           {roles.map((role, i) => (
-            <RoleCard key={role.company + role.period} role={role} index={i} />
+            <RoleRow key={role.company + role.period} role={role} index={i} total={roles.length} />
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .exp-row { grid-template-columns: 16px 1fr !important; }
+          .exp-date { display: none !important; }
+        }
+      `}</style>
     </section>
   );
 }
