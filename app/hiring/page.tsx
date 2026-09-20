@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { siteConfig } from "../src/config";
+import { siteConfig } from "@/config";
 
 export default function HiringPage() {
   return (
