@@ -36,13 +36,13 @@ export function Hero() {
           <div style={{ flexShrink: 0, paddingTop: "0.25rem" }}>
             <div style={{
               position: "relative",
-              width: "clamp(200px, 22vw, 260px)",
-              height: "clamp(200px, 22vw, 260px)",
+              width: "clamp(220px, 24vw, 280px)",
+              height: "clamp(220px, 24vw, 280px)",
               borderRadius: "50%", overflow: "hidden",
               border: "2px solid var(--color-border-strong)",
               boxShadow: "0 4px 24px rgba(0,0,0,0.1)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="260px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="280px" priority className="object-cover" style={{ objectPosition: "center 10%" }} />
             </div>
           </div>
           {/* Text content */}

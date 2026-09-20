@@ -61,18 +61,8 @@ export function NavBar() {
       <nav style={navStyle} aria-label="Main navigation">
         <div style={innerStyle}>
           {/* Logo */}
-          <Link href="#top" style={{ display: "flex", alignItems: "center", gap: "0.55rem", flexShrink: 0 }}>
-            <div style={{
-              width: "32px", height: "32px", borderRadius: "50%",
-              background: "var(--color-accent)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              flexShrink: 0,
-            }}>
-              <span style={{ fontSize: "12px", fontWeight: 700, color: "#fff", fontFamily: "var(--font-body)", letterSpacing: "0.03em" }}>
-                {siteConfig.logoInitials}
-              </span>
-            </div>
-            <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>
+          <Link href="#top" style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
+            <span style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)", letterSpacing: "-0.01em" }}>
               {siteConfig.name}
             </span>
           </Link>
