@@ -10,7 +10,7 @@ const roles = [
     current: true,
     tags: ["AI Voice", "CPaaS", "SIP", "Communications Infrastructure"],
     summary:
-      "Sold AI voice infrastructure and enterprise communications into complex technical environments. Led discovery with engineering, CX, product, and executive stakeholders. Closed competitive replacements and multi-year committed agreements.",
+      "Sold AI voice infrastructure and enterprise communications into complex technical environments. Led discovery with engineering, CX, product, and executive stakeholders across regulated and high-scale environments.",
     metrics: "$1.2M quota · $65K–$550K ACV · 6–9 month cycles · 6 multi-year agreements · $900K+ TCV",
   },
   {
@@ -30,7 +30,7 @@ const roles = [
     current: false,
     tags: ["CPaaS", "Programmable Communications", "Contact Center"],
     summary:
-      "Sold programmable communications and contact center platforms to technical and executive buyers in regulated industries. Ran 40+ enterprise discovery cycles across healthcare and fintech.",
+      "Sold programmable communications and contact center platforms to technical and executive buyers in regulated industries. Covered healthcare and fintech verticals with deep technical discovery across 40+ enterprise accounts.",
     metrics: "92% quota · $90K–$420K ACV · 6–9 month cycles · $1M+ closed",
   },
   {

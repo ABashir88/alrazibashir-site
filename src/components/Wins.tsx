@@ -172,7 +172,7 @@ export default function Wins() {
             Revenue proof, not promises
           </h2>
           <p style={{ fontSize: "1rem", color: "var(--color-text-secondary)", maxWidth: "560px", lineHeight: 1.65, margin: 0 }}>
-            $120K–$365K ARR · $240K–$730K ACV · 5–10 month cycles
+            $120K–$365K ARR · $240K–$730K ACV · 6–10 month cycles
           </p>
         </div>
 
