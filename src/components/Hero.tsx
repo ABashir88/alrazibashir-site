@@ -24,7 +24,7 @@ export function Hero() {
               boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
               backgroundImage: "url('/alrazi-headshot.jpg')",
               backgroundSize: "106%",
-              backgroundPosition: "center 22%",
+              backgroundPosition: "center 37%",
               backgroundRepeat: "no-repeat",
             }} role="img" aria-label="Alrazi Bashir" />
           </div>
@@ -44,7 +44,7 @@ export function Hero() {
               boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
               backgroundImage: "url('/alrazi-headshot.jpg')",
               backgroundSize: "106%",
-              backgroundPosition: "center 22%",
+              backgroundPosition: "center 37%",
               backgroundRepeat: "no-repeat",
             }} role="img" aria-label="Alrazi Bashir" />
             <div style={{ textAlign: "center" }}>
