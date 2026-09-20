@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { siteConfig } from "../config";
 
 export function Hero() {
@@ -19,13 +18,15 @@ export function Hero() {
         <div className="mobile-hero">
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.75rem" }}>
             <div style={{
-              position: "relative", width: "100px", height: "100px",
+              width: "100px", height: "100px",
               borderRadius: "50%", overflow: "hidden",
               border: "2px solid var(--color-border-strong)",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.1)"
-            }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="100px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
-            </div>
+              boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
+              backgroundImage: "url('/alrazi-headshot.jpg')",
+              backgroundSize: "170%",
+              backgroundPosition: "center 18%",
+              backgroundRepeat: "no-repeat",
+            }} role="img" aria-label="Alrazi Bashir" />
           </div>
           <HeroContent hero={hero} email={email} />
         </div>
@@ -35,16 +36,17 @@ export function Hero() {
           {/* Portrait + name stacked */}
           <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", paddingTop: "0.5rem" }}>
             <div style={{
-              position: "relative",
               width: "260px",
               height: "260px",
               borderRadius: "50%",
               overflow: "hidden",
               border: "2px solid var(--color-border-strong)",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
-            }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="240px" priority className="object-cover" style={{ objectPosition: "center 20%" }} />
-            </div>
+              boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+              backgroundImage: "url('/alrazi-headshot.jpg')",
+              backgroundSize: "170%",
+              backgroundPosition: "center 18%",
+              backgroundRepeat: "no-repeat",
+            }} role="img" aria-label="Alrazi Bashir" />
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>Alrazi Bashir</div>
               <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", marginTop: "2px" }}>Enterprise Account Executive</div>
