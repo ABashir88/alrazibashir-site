@@ -24,7 +24,7 @@ export function Hero() {
               border: "2px solid var(--color-accent-border)",
               boxShadow: "0 0 40px rgba(232,160,32,0.12)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="120px" priority className="object-cover" />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="120px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
             </div>
           </div>
           <HeroContent hero={hero} email={email} />
@@ -36,13 +36,13 @@ export function Hero() {
           <div style={{ flexShrink: 0, paddingTop: "0.25rem" }}>
             <div style={{
               position: "relative",
-              width: "clamp(160px, 18vw, 210px)",
-              height: "clamp(160px, 18vw, 210px)",
+              width: "clamp(200px, 22vw, 260px)",
+              height: "clamp(200px, 22vw, 260px)",
               borderRadius: "50%", overflow: "hidden",
               border: "2px solid var(--color-accent-border)",
               boxShadow: "0 0 60px rgba(232,160,32,0.14)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="210px" priority className="object-cover" />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="260px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
             </div>
           </div>
           {/* Text content */}
