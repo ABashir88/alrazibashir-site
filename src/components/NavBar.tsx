@@ -9,159 +9,211 @@ export function NavBar() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Track active section via IntersectionObserver
   useEffect(() => {
-    const sectionIds = siteConfig.nav
-      .map(item => item.href.replace("#", ""))
-      .filter(id => !id.startsWith("/"));
-
-    const observers: IntersectionObserver[] = [];
-
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
-        { threshold: 0.3, rootMargin: "-60px 0px -60px 0px" }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach(o => o.disconnect());
+    const ids = siteConfig.nav
+      .filter((n) => n.href.startsWith("#"))
+      .map((n) => n.href.slice(1));
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id); });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    ids.forEach((id) => { const el = document.getElementById(id); if (el) obs.observe(el); });
+    return () => obs.disconnect();
   }, []);
 
-  const isActive = (href: string) => {
-    if (href.startsWith("/")) return false;
-    return activeSection === href.replace("#", "");
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  const navStyle: React.CSSProperties = {
+    position: "sticky",
+    top: 0,
+    zIndex: 100,
+    width: "100%",
+    backgroundColor: scrolled ? "rgba(255,255,255,0.96)" : "#ffffff",
+    borderBottom: `1px solid ${scrolled ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.06)"}`,
+    boxShadow: scrolled ? "0 1px 8px rgba(0,0,0,0.06)" : "none",
+    transition: "box-shadow 0.2s ease, border-color 0.2s ease",
+    backdropFilter: scrolled ? "blur(8px)" : "none",
+  };
+
+  const innerStyle: React.CSSProperties = {
+    maxWidth: "1024px",
+    margin: "0 auto",
+    padding: "0 1.5rem",
+    height: "58px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "1rem",
   };
 
   return (
     <>
-      <header style={{
-        position: "sticky", top: 0, zIndex: 50,
-        borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
-        backgroundColor: scrolled ? "rgba(8, 13, 26, 0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        transition: "all 0.3s ease",
-      }}>
-        <div style={{ maxWidth: "1024px", margin: "0 auto", padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-
+      <nav style={navStyle} aria-label="Main navigation">
+        <div style={innerStyle}>
           {/* Logo */}
-          <Link href="#top" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
-            <span style={{
+          <Link href="#top" style={{ display: "flex", alignItems: "center", gap: "0.55rem", flexShrink: 0 }}>
+            <div style={{
               width: "32px", height: "32px", borderRadius: "50%",
-              backgroundColor: "var(--color-accent)", color: "#000",
-              fontSize: "0.65rem", fontWeight: 700,
+              background: "var(--color-accent)",
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontFamily: "var(--font-body)", letterSpacing: "0.05em"
-            }}>{siteConfig.logoInitials}</span>
+              flexShrink: 0,
+            }}>
+              <span style={{ fontSize: "12px", fontWeight: 700, color: "#fff", fontFamily: "var(--font-body)", letterSpacing: "0.03em" }}>
+                {siteConfig.logoInitials}
+              </span>
+            </div>
             <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>
               {siteConfig.name}
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav aria-label="Primary" style={{ display: "none", alignItems: "center", gap: "2rem" }} className="desktop-nav">
+          {/* Desktop nav */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.25rem" }} className="desktop-nav">
             {siteConfig.nav.map((item) => {
-              const active = isActive(item.href);
+              const isActive = item.href.startsWith("#") && activeSection === item.href.slice(1);
               return (
-                <Link key={item.href} href={item.href}
+                <Link
+                  key={item.href}
+                  href={item.href}
                   style={{
-                    fontSize: "0.85rem", fontFamily: "var(--font-body)", fontWeight: active ? 600 : 500,
-                    color: active ? "var(--color-accent)" : "var(--color-text-secondary)",
-                    transition: "color 0.2s ease",
-                    borderBottom: active ? "1px solid var(--color-accent)" : "1px solid transparent",
-                    paddingBottom: "2px"
+                    fontSize: "0.825rem",
+                    fontWeight: isActive ? 600 : 500,
+                    color: isActive ? "var(--color-accent)" : "var(--color-text-secondary)",
+                    padding: "0.35rem 0.65rem",
+                    borderRadius: "6px",
+                    transition: "color 0.15s ease, background 0.15s ease",
+                    fontFamily: "var(--font-body)",
+                    position: "relative",
                   }}
-                  onMouseEnter={e => { if (!active) e.currentTarget.style.color = "var(--color-text)"; }}
-                  onMouseLeave={e => { if (!active) e.currentTarget.style.color = "var(--color-text-secondary)"; }}
+                  onMouseEnter={e => {
+                    if (!isActive) {
+                      (e.currentTarget as HTMLElement).style.color = "var(--color-text)";
+                      (e.currentTarget as HTMLElement).style.background = "var(--color-surface)";
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    if (!isActive) {
+                      (e.currentTarget as HTMLElement).style.color = "var(--color-text-secondary)";
+                      (e.currentTarget as HTMLElement).style.background = "transparent";
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>
               );
             })}
-            <Link href={siteConfig.resumeUrl} target="_blank"
+
+            <Link
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
-                fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-body)",
+                marginLeft: "0.5rem",
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                color: "var(--color-accent)",
                 border: "1px solid var(--color-accent-border)",
-                color: "var(--color-accent)", padding: "0.4rem 1rem", borderRadius: "999px",
-                transition: "all 0.2s ease", backgroundColor: "var(--color-accent-dim)"
+                padding: "0.35rem 0.9rem",
+                borderRadius: "999px",
+                fontFamily: "var(--font-body)",
+                transition: "background 0.15s ease, border-color 0.15s ease",
               }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = "var(--color-accent)"; e.currentTarget.style.color = "#000"; }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = "var(--color-accent-dim)"; e.currentTarget.style.color = "var(--color-accent)"; }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.background = "var(--color-accent-dim)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--color-accent)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.background = "transparent";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--color-accent-border)";
+              }}
             >
               Resume
             </Link>
-          </nav>
+          </div>
 
           {/* Mobile hamburger */}
-          <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+          <button
+            className="mobile-menu-btn"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
             style={{
-              background: "none", border: "1px solid var(--color-border-strong)",
-              color: "var(--color-text)", padding: "0.4rem 0.7rem", borderRadius: "8px",
-              cursor: "pointer", fontSize: "1rem"
+              background: "none", border: "none", cursor: "pointer",
+              padding: "0.4rem", color: "var(--color-text)", display: "none",
             }}
           >
-            {menuOpen ? "✕" : "☰"}
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              {menuOpen
+                ? <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
+                : <><line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" /></>}
+            </svg>
           </button>
         </div>
-      </header>
+      </nav>
 
-      {/* Mobile menu overlay */}
+      {/* Mobile overlay */}
       {menuOpen && (
-        <div style={{
-          position: "fixed", inset: 0, zIndex: 40,
-          backgroundColor: "rgba(8, 13, 26, 0.97)",
-          backdropFilter: "blur(16px)",
-          display: "flex", flexDirection: "column",
-          alignItems: "center", justifyContent: "center", gap: "0.5rem",
-          animation: "fadeIn 0.2s ease"
-        }}
-          onClick={() => setMenuOpen(false)}
+        <div
+          style={{
+            position: "fixed", inset: 0, zIndex: 99,
+            background: "rgba(255,255,255,0.98)",
+            backdropFilter: "blur(4px)",
+            display: "flex", flexDirection: "column",
+            padding: "80px 2rem 2rem",
+          }}
+          onClick={(e) => { if (e.target === e.currentTarget) setMenuOpen(false); }}
         >
-          {siteConfig.nav.map((item) => {
-            const active = isActive(item.href);
-            return (
-              <Link key={item.href} href={item.href}
-                style={{
-                  fontSize: "1.5rem", fontFamily: "var(--font-display)", fontWeight: 400,
-                  color: active ? "var(--color-accent)" : "var(--color-text)",
-                  padding: "0.5rem 1.5rem", borderRadius: "8px",
-                  backgroundColor: active ? "var(--color-accent-dim)" : "transparent",
-                  border: active ? "1px solid var(--color-accent-border)" : "1px solid transparent",
-                  transition: "all 0.15s ease",
-                  width: "200px", textAlign: "center"
-                }}
+          <nav style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+            {siteConfig.nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
                 onClick={() => setMenuOpen(false)}
+                style={{
+                  fontSize: "1.1rem", fontWeight: 500,
+                  color: "var(--color-text)",
+                  padding: "0.85rem 1rem",
+                  borderRadius: "8px",
+                  fontFamily: "var(--font-body)",
+                  borderBottom: "1px solid var(--color-border)",
+                }}
               >
-                {active && (
-                  <span style={{ fontSize: "0.6rem", verticalAlign: "middle", marginRight: "0.4rem" }}>●</span>
-                )}
                 {item.label}
               </Link>
-            );
-          })}
-          <Link href={siteConfig.resumeUrl} target="_blank"
-            style={{
-              marginTop: "1.5rem", fontSize: "1rem", fontWeight: 600,
-              border: "1px solid var(--color-accent)", color: "var(--color-accent)",
-              padding: "0.65rem 2rem", borderRadius: "999px", fontFamily: "var(--font-body)"
-            }}
-          >Resume</Link>
+            ))}
+            <Link
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              style={{
+                marginTop: "1rem",
+                fontSize: "0.95rem", fontWeight: 600,
+                color: "#fff", background: "var(--color-accent)",
+                padding: "0.75rem 1rem", borderRadius: "8px",
+                textAlign: "center", fontFamily: "var(--font-body)",
+              }}
+            >
+              Download Resume
+            </Link>
+          </nav>
         </div>
       )}
 
       <style>{`
-        @media (min-width: 640px) {
-          .desktop-nav { display: flex !important; }
-          .mobile-menu-btn { display: none !important; }
+        @media (max-width: 767px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
         }
       `}</style>
     </>

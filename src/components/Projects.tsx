@@ -1,107 +1,160 @@
 "use client";
-import Link from "next/link";
+
+import { useRef, useEffect, useState } from "react";
 import { siteConfig } from "../config";
 
-const hrefFromKey = (key: keyof typeof siteConfig.social) => siteConfig.social[key];
-
-// Deal Command Center gets featured treatment, others are secondary
-const featuredProject = "Deal Command Center";
-
 export function Projects() {
-  const { sections, projects } = siteConfig;
-  const featured = projects.find(p => p.name === featuredProject);
-  const rest = projects.filter(p => p.name !== featuredProject);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setHeaderVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <section id="projects" aria-labelledby="projects-heading" style={{ borderBottom: "1px solid var(--color-border)", padding: "clamp(3rem, 6vw, 5rem) 1.5rem" }}>
-      <div style={{ maxWidth: "1024px", margin: "0 auto" }}>
-        <div style={{ marginBottom: "3rem", maxWidth: "580px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
-            <div style={{ width: "20px", height: "2px", backgroundColor: "var(--color-accent)" }} />
-            <h2 id="projects-heading" style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--color-accent)", margin: 0, fontFamily: "var(--font-body)" }}>
-              GTM Systems
-            </h2>
+    <section id="projects" style={{ padding: "80px 0", background: "var(--color-surface)" }}>
+      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "0 24px" }}>
+        {/* Header */}
+        <div
+          ref={headerRef}
+          style={{
+            opacity: headerVisible ? 1 : 0,
+            transform: headerVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
+            marginBottom: "40px",
+          }}
+        >
+          <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, marginBottom: "12px" }}>
+            PROJECTS
           </div>
-          <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3.5vw, 2.25rem)", fontWeight: 400, color: "var(--color-text)", margin: "0 0 0.75rem", lineHeight: 1.25 }}>
-            How I think about enterprise sales systems.
-          </p>
-          <p style={{ fontSize: "0.9rem", color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)", lineHeight: 1.6 }}>
-            Artifacts and frameworks built from running $65K–$550K ACV enterprise cycles across AI infrastructure and communications platforms.
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 400, color: "var(--color-text)", margin: "0 0 14px" }}>
+            How I think about GTM systems
+          </h2>
+          <p style={{ fontSize: "1rem", color: "var(--color-text-secondary)", maxWidth: "520px", lineHeight: 1.65, margin: 0 }}>
+            Side projects and tools built at the intersection of enterprise sales and engineering.
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-
-          {/* Featured: Deal Command Center */}
-          {featured && (
-            <article className="card-hover" style={{
-              border: "1px solid var(--color-accent-border)",
-              borderLeft: "3px solid var(--color-accent)",
-              borderRadius: "16px",
-              backgroundColor: "var(--color-surface-card)",
-              padding: "2rem",
-              display: "flex", flexDirection: "column", gap: "1rem",
-              background: "linear-gradient(135deg, rgba(232, 160, 32, 0.06), var(--color-surface-card))",
+        {/* Featured: Deal Command Center */}
+        <a
+          href={siteConfig.social.dealCommandCenter}
+          download
+          style={{
+            display: "block",
+            padding: "28px",
+            background: "var(--color-surface-card)",
+            border: "1px solid var(--color-border)",
+            borderLeft: "3px solid var(--color-accent)",
+            borderRadius: "12px",
+            marginBottom: "16px",
+            textDecoration: "none",
+            transition: "box-shadow 0.2s ease, border-color 0.2s ease",
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.07)";
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLElement).style.boxShadow = "none";
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", flexWrap: "wrap", marginBottom: "12px" }}>
+            <div>
+              <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, marginBottom: "6px" }}>
+                Featured
+              </div>
+              <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--color-text)", margin: 0 }}>
+                Deal Command Center
+              </h3>
+            </div>
+            <span style={{
+              fontSize: "11px", padding: "3px 10px", borderRadius: "20px",
+              background: "var(--color-accent-dim)", color: "var(--color-accent)",
+              border: "1px solid var(--color-accent-border)", fontWeight: 600,
+              whiteSpace: "nowrap",
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                <span style={{
-                  fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.1em",
-                  textTransform: "uppercase", color: "#000",
-                  backgroundColor: "var(--color-accent)",
-                  borderRadius: "999px", padding: "0.15rem 0.6rem",
-                  fontFamily: "var(--font-body)"
-                }}>Featured</span>
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 0.5rem", fontFamily: "var(--font-body)" }}>
-                  {featured.name}
-                </h3>
-                <p style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)" }}>
-                  {featured.description}
-                </p>
-              </div>
-              <Link
-                href={hrefFromKey(featured.hrefKey)}
-                style={{
-                  display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  alignSelf: "flex-start",
-                  backgroundColor: "var(--color-accent)", color: "#000",
-                  fontWeight: 700, fontSize: "0.82rem", padding: "0.55rem 1.25rem",
-                  borderRadius: "999px", fontFamily: "var(--font-body)",
-                  transition: "all 0.2s ease"
-                }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(232,160,32,0.3)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
-              >
-                {featured.ctaLabel ?? sections.projects.visitLabel}
-              </Link>
-            </article>
-          )}
-
-          {/* Secondary projects */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1rem" }}>
-            {rest.map((project, i) => (
-              <article key={project.name} className="card-hover" style={{
-                display: "flex", flexDirection: "column", justifyContent: "space-between",
-                gap: "1rem", border: "1px solid var(--color-border)", borderRadius: "16px",
-                backgroundColor: "var(--color-surface)", padding: "1.5rem",
-              }}>
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text)", margin: 0, fontFamily: "var(--font-body)" }}>{project.name}</h3>
-                  <p style={{ fontSize: "0.83rem", lineHeight: 1.65, color: "var(--color-text-secondary)", margin: 0, fontFamily: "var(--font-body)" }}>{project.description}</p>
-                </div>
-                <Link
-                  href={hrefFromKey(project.hrefKey)}
-                  target="_blank"
-                  style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--color-accent)", fontFamily: "var(--font-body)", transition: "opacity 0.2s", display: "inline-flex", alignItems: "center" }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-                >
-                  {project.ctaLabel ?? sections.projects.visitLabel}
-                </Link>
-              </article>
+              Download .xlsx
+            </span>
+          </div>
+          <p style={{ fontSize: "0.9rem", lineHeight: 1.65, color: "var(--color-text-secondary)", margin: "0 0 16px", maxWidth: "560px" }}>
+            A single spreadsheet that does what most CRMs can't: track deal stage, stakeholder mapping, multi-threading coverage, next steps, and close probability in one view. Built to run $65K–$550K enterprise cycles.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+            {["Enterprise Pipeline", "Multi-threading", "Stakeholder Mapping", "Close Planning"].map(t => (
+              <span key={t} style={{
+                fontSize: "11px", padding: "3px 9px", borderRadius: "4px",
+                background: "var(--color-surface)", color: "var(--color-text-muted)",
+                border: "1px solid var(--color-border)"
+              }}>{t}</span>
             ))}
           </div>
+        </a>
+
+        {/* Secondary grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "14px" }}>
+          {/* Searvis */}
+          <a
+            href={siteConfig.social.searvis}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "block",
+              padding: "22px",
+              background: "var(--color-surface-card)",
+              border: "1px solid var(--color-border)",
+              borderRadius: "10px",
+              textDecoration: "none",
+              transition: "box-shadow 0.2s ease",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(0,0,0,0.07)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+          >
+            <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
+              Startup
+            </div>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px" }}>Searvis.io</h3>
+            <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--color-text-secondary)", margin: "0 0 14px" }}>
+              AI-powered search built for enterprise sales teams. Research accounts, stakeholders, and triggers in seconds.
+            </p>
+            <span style={{ fontSize: "12px", color: "var(--color-accent)", fontWeight: 600 }}>
+              searvis.io →
+            </span>
+          </a>
+
+          {/* GitHub */}
+          <a
+            href={siteConfig.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "block",
+              padding: "22px",
+              background: "var(--color-surface-card)",
+              border: "1px solid var(--color-border)",
+              borderRadius: "10px",
+              textDecoration: "none",
+              transition: "box-shadow 0.2s ease",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(0,0,0,0.07)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+          >
+            <div style={{ fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
+              Open Source
+            </div>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px" }}>GitHub</h3>
+            <p style={{ fontSize: "0.85rem", lineHeight: 1.6, color: "var(--color-text-secondary)", margin: "0 0 14px" }}>
+              Scripts, automations, and GTM tools I've built to move faster in enterprise sales cycles.
+            </p>
+            <span style={{ fontSize: "12px", color: "var(--color-accent)", fontWeight: 600 }}>
+              github.com/ABashir88 →
+            </span>
+          </a>
         </div>
       </div>
     </section>

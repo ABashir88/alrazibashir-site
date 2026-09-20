@@ -4,17 +4,39 @@ import { siteConfig } from "../config";
 export function ProofBar() {
   const { proofBar } = siteConfig;
   return (
-    <section aria-label="Proof of work" style={{ borderBottom: "1px solid var(--color-border)", backgroundColor: "var(--color-surface)", padding: "1rem 1.5rem" }}>
-      <div style={{ maxWidth: "1024px", margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "0.75rem" }}>
-        <p style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-text-muted)", margin: 0, fontFamily: "var(--font-body)" }}>
+    <div style={{
+      borderTop: "1px solid var(--color-border)",
+      borderBottom: "1px solid var(--color-border)",
+      background: "var(--color-surface)",
+      padding: "0.9rem 1.5rem",
+    }}>
+      <div style={{
+        maxWidth: "1024px", margin: "0 auto",
+        display: "flex", alignItems: "center", flexWrap: "wrap",
+        gap: "0.75rem 1.25rem",
+      }}>
+        <span style={{
+          fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.1em",
+          textTransform: "uppercase", color: "var(--color-text-muted)",
+          fontFamily: "var(--font-body)", flexShrink: 0,
+        }}>
           {proofBar.label}
-        </p>
-        <ul style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", margin: 0, padding: 0, listStyle: "none" }}>
-          {proofBar.items.map((item) => (
-            <li key={item} style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--color-text-secondary)", fontFamily: "var(--font-body)", letterSpacing: "0.02em" }}>{item}</li>
+        </span>
+        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.5rem 1.25rem" }}>
+          {proofBar.items.map((item, i) => (
+            <span key={item} style={{ display: "flex", alignItems: "center", gap: "1.25rem" }}>
+              <span style={{
+                fontSize: "0.85rem", fontWeight: 600,
+                color: "var(--color-text-secondary)",
+                fontFamily: "var(--font-body)",
+              }}>{item}</span>
+              {i < proofBar.items.length - 1 && (
+                <span style={{ width: "3px", height: "3px", borderRadius: "50%", background: "var(--color-border-strong)", flexShrink: 0 }} />
+              )}
+            </span>
           ))}
-        </ul>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

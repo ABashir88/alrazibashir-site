@@ -77,7 +77,7 @@ function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
         opacity: visible ? 1 : 0,
         transform: visible ? "translateX(0)" : "translateX(-16px)",
         transition: `opacity 0.55s ease ${index * 0.08}s, transform 0.55s ease ${index * 0.08}s`,
-        padding: "24px 28px",
+        padding: "22px 24px",
         background: "var(--color-surface-card)",
         border: "1px solid var(--color-border)",
         borderLeft: role.current ? "3px solid var(--color-accent)" : "3px solid transparent",
@@ -97,7 +97,8 @@ function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
             {role.current && (
               <span style={{
                 fontSize: "10px", padding: "2px 8px", borderRadius: "20px", fontWeight: 700,
-                background: "rgba(232,160,32,0.15)", color: "var(--color-accent)", border: "1px solid rgba(232,160,32,0.3)",
+                background: "var(--color-accent-dim)", color: "var(--color-accent)",
+                border: "1px solid var(--color-accent-border)",
                 textTransform: "uppercase", letterSpacing: "0.06em"
               }}>Current</span>
             )}
@@ -112,7 +113,7 @@ function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
         {role.tags.map((tag) => (
           <span key={tag} style={{
             fontSize: "11px", padding: "3px 9px", borderRadius: "4px",
-            background: "rgba(255,255,255,0.04)", color: "var(--color-text-muted)",
+            background: "var(--color-surface)", color: "var(--color-text-muted)",
             border: "1px solid var(--color-border)"
           }}>{tag}</span>
         ))}

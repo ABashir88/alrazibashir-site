@@ -8,7 +8,7 @@ export function Hero() {
 
   return (
     <section id="top" aria-labelledby="hero-heading" className="hero-gradient" style={{ position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2px", background: "linear-gradient(90deg, transparent, var(--color-accent), transparent)" }} />
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: "var(--color-border)" }} />
 
       <div style={{
         maxWidth: "1024px", margin: "0 auto",
@@ -19,12 +19,12 @@ export function Hero() {
         <div className="mobile-hero">
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.75rem" }}>
             <div style={{
-              position: "relative", width: "120px", height: "120px",
+              position: "relative", width: "100px", height: "100px",
               borderRadius: "50%", overflow: "hidden",
-              border: "2px solid var(--color-accent-border)",
-              boxShadow: "0 0 40px rgba(232,160,32,0.12)"
+              border: "2px solid var(--color-border-strong)",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.1)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="120px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="100px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
             </div>
           </div>
           <HeroContent hero={hero} email={email} />
@@ -39,8 +39,8 @@ export function Hero() {
               width: "clamp(200px, 22vw, 260px)",
               height: "clamp(200px, 22vw, 260px)",
               borderRadius: "50%", overflow: "hidden",
-              border: "2px solid var(--color-accent-border)",
-              boxShadow: "0 0 60px rgba(232,160,32,0.14)"
+              border: "2px solid var(--color-border-strong)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.1)"
             }}>
               <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="260px" priority className="object-cover" style={{ objectPosition: "center 15%" }} />
             </div>
@@ -52,7 +52,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "60px", background: "linear-gradient(to bottom, transparent, var(--color-bg))", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "1px", background: "var(--color-border)" }} />
 
       <style>{`
         .mobile-hero { display: block; }
@@ -118,7 +118,8 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
           <div key={stat.label} style={{
             display: "flex", flexDirection: "column", alignItems: "center",
             backgroundColor: "var(--color-surface-card)", border: "1px solid var(--color-border)",
-            borderRadius: "10px", padding: "0.6rem 1.1rem", minWidth: "85px"
+            borderRadius: "10px", padding: "0.6rem 1.1rem", minWidth: "85px",
+            boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
           }}>
             <span style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)", lineHeight: 1 }}>{stat.value}</span>
             <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "var(--font-body)", marginTop: "0.25rem" }}>{stat.label}</span>
@@ -131,12 +132,12 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         <Link href={hero.primaryCta.href}
           style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center",
-            backgroundColor: "var(--color-accent)", color: "#000",
+            backgroundColor: "var(--color-accent)", color: "#fff",
             fontWeight: 700, fontSize: "0.85rem", padding: "0.6rem 1.4rem",
             borderRadius: "999px", fontFamily: "var(--font-body)",
             transition: "all 0.2s ease", whiteSpace: "nowrap"
           }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(232,160,32,0.35)"; }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(10,102,194,0.3)"; }}
           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
         >{hero.primaryCta.label}</Link>
 
