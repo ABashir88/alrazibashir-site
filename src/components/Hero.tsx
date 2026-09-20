@@ -30,19 +30,24 @@ export function Hero() {
           <HeroContent hero={hero} email={email} />
         </div>
 
-        {/* Desktop layout: portrait LEFT, text RIGHT, both top-aligned */}
-        <div className="desktop-hero" style={{ display: "none", alignItems: "flex-start", gap: "2.5rem" }}>
-          {/* Portrait — left, top-aligned */}
-          <div style={{ flexShrink: 0, paddingTop: "0.25rem" }}>
+        {/* Desktop layout: portrait LEFT with name below, text RIGHT */}
+        <div className="desktop-hero" style={{ display: "none", alignItems: "flex-start", gap: "3rem" }}>
+          {/* Portrait + name stacked */}
+          <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", paddingTop: "0.5rem" }}>
             <div style={{
               position: "relative",
-              width: "clamp(220px, 24vw, 280px)",
-              height: "clamp(220px, 24vw, 280px)",
-              borderRadius: "50%", overflow: "hidden",
+              width: "clamp(200px, 21vw, 250px)",
+              height: "clamp(260px, 27vw, 320px)",
+              borderRadius: "140px",
+              overflow: "hidden",
               border: "2px solid var(--color-border-strong)",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.1)"
+              boxShadow: "0 4px 24px rgba(0,0,0,0.08)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="280px" priority className="object-cover" style={{ objectPosition: "center 10%" }} />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="250px" priority className="object-cover" style={{ objectPosition: "center 8%" }} />
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>Alrazi Bashir</div>
+              <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", marginTop: "2px" }}>Enterprise Account Executive</div>
             </div>
           </div>
           {/* Text content */}
