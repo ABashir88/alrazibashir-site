@@ -23,8 +23,8 @@ export function Hero() {
               border: "2px solid var(--color-border-strong)",
               boxShadow: "0 2px 12px rgba(0,0,0,0.1)",
               backgroundImage: "url('/alrazi-headshot.jpg')",
-              backgroundSize: "170%",
-              backgroundPosition: "center 18%",
+              backgroundSize: "125%",
+              backgroundPosition: "center 15%",
               backgroundRepeat: "no-repeat",
             }} role="img" aria-label="Alrazi Bashir" />
           </div>
@@ -43,8 +43,8 @@ export function Hero() {
               border: "2px solid var(--color-border-strong)",
               boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
               backgroundImage: "url('/alrazi-headshot.jpg')",
-              backgroundSize: "170%",
-              backgroundPosition: "center 18%",
+              backgroundSize: "125%",
+              backgroundPosition: "center 15%",
               backgroundRepeat: "no-repeat",
             }} role="img" aria-label="Alrazi Bashir" />
             <div style={{ textAlign: "center" }}>
