@@ -36,14 +36,14 @@ export function Hero() {
           <div style={{ flexShrink: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", paddingTop: "0.5rem" }}>
             <div style={{
               position: "relative",
-              width: "clamp(200px, 21vw, 240px)",
-              height: "clamp(290px, 32vw, 360px)",
-              borderRadius: "16px",
+              width: "260px",
+              height: "260px",
+              borderRadius: "50%",
               overflow: "hidden",
-              border: "1px solid var(--color-border)",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)"
+              border: "2px solid var(--color-border-strong)",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="240px" priority className="object-cover" style={{ objectPosition: "center 5%" }} />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="240px" priority className="object-cover" style={{ objectPosition: "center 20%" }} />
             </div>
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>Alrazi Bashir</div>
