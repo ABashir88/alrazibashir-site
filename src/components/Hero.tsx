@@ -15,9 +15,8 @@ export function Hero() {
         padding: "clamp(2rem, 5vw, 4rem) 1.5rem clamp(2rem, 4vw, 3.5rem)",
       }}>
 
-        {/* Mobile layout */}
+        {/* Mobile layout: portrait centered above text */}
         <div className="mobile-hero">
-          {/* Portrait centered */}
           <div style={{ display: "flex", justifyContent: "center", marginBottom: "1.75rem" }}>
             <div style={{
               position: "relative", width: "120px", height: "120px",
@@ -31,23 +30,24 @@ export function Hero() {
           <HeroContent hero={hero} email={email} />
         </div>
 
-        {/* Desktop layout */}
-        <div className="desktop-hero" style={{ display: "none", alignItems: "flex-start", justifyContent: "space-between", gap: "3.5rem" }}>
-          <div style={{ flex: 1 }}>
-            <HeroContent hero={hero} email={email} />
-          </div>
-          {/* Portrait aligned to top of content */}
-          <div style={{ flexShrink: 0, paddingTop: "0.5rem" }}>
+        {/* Desktop layout: portrait LEFT, text RIGHT, both top-aligned */}
+        <div className="desktop-hero" style={{ display: "none", alignItems: "flex-start", gap: "2.5rem" }}>
+          {/* Portrait — left, top-aligned */}
+          <div style={{ flexShrink: 0, paddingTop: "0.25rem" }}>
             <div style={{
               position: "relative",
-              width: "clamp(180px, 20vw, 230px)",
-              height: "clamp(180px, 20vw, 230px)",
+              width: "clamp(160px, 18vw, 210px)",
+              height: "clamp(160px, 18vw, 210px)",
               borderRadius: "50%", overflow: "hidden",
               border: "2px solid var(--color-accent-border)",
               boxShadow: "0 0 60px rgba(232,160,32,0.14)"
             }}>
-              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="230px" priority className="object-cover" />
+              <Image src="/alrazi-headshot.jpg" alt="Alrazi Bashir" fill sizes="210px" priority className="object-cover" />
             </div>
+          </div>
+          {/* Text content */}
+          <div style={{ flex: 1 }}>
+            <HeroContent hero={hero} email={email} />
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ export function Hero() {
 function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: string }) {
   return (
     <div>
-      {/* FIX 2: Social proof pill ABOVE headline */}
+      {/* Social proof pill */}
       <div style={{
         display: "inline-flex", alignItems: "center", gap: "0.5rem",
         backgroundColor: "var(--color-accent-dim)", border: "1px solid var(--color-accent-border)",
@@ -89,7 +89,6 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         </p>
       </div>
 
-      {/* FIX 1: Smaller headline so portrait aligns with it */}
       <h1 id="hero-heading" style={{
         fontFamily: "var(--font-display)",
         fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)",
@@ -101,7 +100,6 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         ) : <span key={i}>{part}</span>)}
       </h1>
 
-      {/* FIX 3: Shortened, punchy subheadline */}
       <p style={{
         fontSize: "clamp(0.85rem, 1.8vw, 0.98rem)", lineHeight: 1.65,
         color: "var(--color-text-secondary)", margin: "0 0 1.25rem",
@@ -110,7 +108,7 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         Engineering-led enterprise sales across AI voice, CPaaS, and CCaaS — $65K to $550K ACV across 6–10 month cycles with Fortune 1000 and mid-market buyers.
       </p>
 
-      {/* FIX 4: Stats tighter so they stay above the fold */}
+      {/* Stats */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginBottom: "1.5rem" }}>
         {[
           { value: "$1.2M", label: "Annual Quota" },
