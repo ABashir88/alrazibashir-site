@@ -104,7 +104,7 @@ function HiringNav() {
         }
         .telnyx-logo { filter: none; }
         @media (prefers-color-scheme: dark) { .telnyx-logo { filter: invert(1) brightness(2); } }
-        .twilio-logo { height: 34px !important; width: auto !important; }
+        .twilio-logo { height: 34px !important; width: 120px !important; }
         .cyara-logo { height: 34px !important; width: auto !important; }
         .telnyx-logo { height: 36px !important; width: auto !important; }
               `}
