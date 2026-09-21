@@ -104,9 +104,9 @@ function HiringNav() {
         }
         .telnyx-logo { filter: none; }
         @media (prefers-color-scheme: dark) { .telnyx-logo { filter: invert(1) brightness(2); } }
-        .twilio-logo { height: 34px !important; width: 120px !important; }
-        .cyara-logo { height: 34px !important; width: auto !important; }
-        .telnyx-logo { height: 36px !important; width: auto !important; }
+        .twilio-logo { height: 40px !important; width: auto !important; }
+        .cyara-logo { height: 40px !important; width: auto !important; }
+        .telnyx-logo { height: 40px !important; width: auto !important; }
               `}
         </style>
     </>
@@ -223,7 +223,7 @@ export default function HiringPage() {
               },
             ].map((role) => (
               <div key={role.company} style={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: "24px 22px 22px", transition: "box-shadow 0.18s ease" }}>
-                <div style={{ height: 44, display: "flex", alignItems: "center", marginBottom: 18 }}>
+                <div style={{ height: 48, display: "flex", alignItems: "center", marginBottom: 18 }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={role.logo}
