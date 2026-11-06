@@ -6,7 +6,7 @@ export const siteConfig = {
     "Enterprise Account Executive specializing in AI voice infrastructure, CPaaS/CCaaS, and conversational AI—running engineering-led sales motions for $65K–$550K ACV deals across 5–9 month enterprise cycles.",
   email: "alrazi@alrazibashir.com",
   baseUrl: "https://alrazibashir.com",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/Alrazi Bashir Resume.docx",
   resumeLabel: "Resume",
   logoInitials: "AB",
   nav: [
