@@ -212,7 +212,6 @@ export default function HiringPage() {
                 period: "2023 to 2024",
                 category: "CX Assurance & Conversational AI",
               },
-              { company: "Searvis", alt: "Searvis", logo: "", logoClass: "", logoType: "text", period: "Apr 2026 – Present", category: "Founder & AI Industry Advisor" },
               {
                 company: "Telnyx",
                 alt: "Telnyx",
@@ -222,21 +221,28 @@ export default function HiringPage() {
                 period: "2025 to 2026",
                 category: "AI Voice Infrastructure & Telephony",
               },
+              {
+                company: "Searvis",
+                alt: "Searvis",
+                logo: "",
+                logoClass: "",
+                logoType: "text",
+                period: "Apr 2026 – Present",
+                category: "Founder & AI Industry Advisor",
+              },
             ].map((role) => (
               <div key={role.company} style={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: "24px 22px 22px", transition: "box-shadow 0.18s ease" }}>
                 <div style={{ height: 48, display: "flex", alignItems: "center", marginBottom: 18 }}>
                   {role.logoType === "text" ? (
                     <span style={{ fontSize: 20, fontWeight: 700, color: "#0d1117", fontFamily: "var(--font-body)", letterSpacing: "-0.02em" }}>{role.company}</span>
                   ) : (
-                    <>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={role.logo}
-                        alt={role.alt}
-                        className={role.logoClass}
-                        style={{ width: "auto", maxWidth: 180, objectFit: "contain", objectPosition: "left center" }}
-                      />
-                    </>
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={role.logo}
+                      alt={role.alt}
+                      className={role.logoClass}
+                      style={{ width: "auto", maxWidth: 180, objectFit: "contain", objectPosition: "left center" }}
+                    />
                   )}
                 </div>
                 <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: "#9ca3af", marginBottom: 5, fontFamily: "var(--font-body)" }}>{role.period}</p>
@@ -246,7 +252,7 @@ export default function HiringPage() {
           </div>
 
           <p style={{ fontSize: 14, color: "#374151", marginTop: 20, fontWeight: 500, fontFamily: "var(--font-body)" }}>
-            <strong style={{ color: "#0d1117" }}>The progression:</strong> communications infrastructure &rarr; CX assurance &rarr; production Voice AI.
+            <strong style={{ color: "#0d1117" }}>The progression:</strong> communications infrastructure &rarr; CX assurance &rarr; production Voice AI &rarr; AI advisory &amp; research.
           </p>
         </div>
       </section>
@@ -481,7 +487,7 @@ export default function HiringPage() {
       {/* ── FOOTER ── */}
       <footer style={{ backgroundColor: "#0d1117", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "20px 24px" }}>
         <div style={{ maxWidth: 1024, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontSize: 13, color: "#4b5563", fontFamily: "var(--font-body)" }}>Alrazi Bashir &bull; Founder &amp; AI Industry Advisor</span>
+          <span style={{ fontSize: 13, color: "#4b5563", fontFamily: "var(--font-body)" }}>Alrazi Bashir &bull; Founder & AI Industry Advisor</span>
           <div style={{ display: "flex", gap: 20 }}>
             <Link href="/" style={{ fontSize: 13, color: "#4b5563", textDecoration: "none", fontFamily: "var(--font-body)" }}>Main Site</Link>
             <a href="https://linkedin.com/in/alrazibashir" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: "#4b5563", textDecoration: "none", fontFamily: "var(--font-body)" }}>LinkedIn</a>
