@@ -4,10 +4,20 @@ import { useRef, useEffect, useState } from "react";
 
 const roles = [
   {
+    company: "Searvis",
+    title: "Founder & Independent AI Industry Advisor",
+    period: "Apr 2026 – Present",
+    current: true,
+    tags: ["AI Advisory", "CX Operations", "Voice AI", "Contact Center"],
+    summary:
+      "Independent advisor focused on customer operations failure and AI-driven transformation in contact centers and voice infrastructure. Research practitioner at the intersection of CX, Voice AI, CCaaS, and CPaaS.",
+    metrics: "",
+  },
+  {
     company: "Telnyx",
     title: "Enterprise Account Executive",
-    period: "Jan 2025 – Present",
-    current: true,
+    period: "Jan 2025 – Apr 2026",
+    current: false,
     tags: ["AI Voice", "CPaaS", "SIP", "Communications Infrastructure"],
     summary:
       "Sold AI voice infrastructure and enterprise communications into complex technical environments. Led discovery with engineering, CX, product, and executive stakeholders across regulated and high-scale environments.",
@@ -36,7 +46,7 @@ const roles = [
   {
     company: "Interlink",
     title: "Mid-Market Account Executive",
-    period: "Mar 2021 – Aug 2022",
+    period: "Mar 2021 – Dec 2022",
     current: false,
     tags: ["RPA", "Intelligent Automation"],
     summary:

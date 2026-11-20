@@ -105,13 +105,13 @@ export function Projects() {
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
           >
             <div style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-text-muted)", fontWeight: 600, marginBottom: "8px" }}>
-              Startup
+              Startup / Advisory
             </div>
             <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-text)", margin: "0 0 8px", fontFamily: "var(--font-body)" }}>
               Searvis.io
             </h3>
             <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 16px" }}>
-              AI-powered search built for enterprise sales teams. Research accounts, stakeholders, and triggers in seconds.
+              Researching customer operations failure and how AI is reshaping CX, Voice AI, CCaaS, and CPaaS. Independent advisory practice for teams building or buying in this space.
             </p>
             <span style={{ fontSize: "12px", color: "var(--color-text-muted)", fontFamily: "var(--font-body)" }}>
               searvis.io →

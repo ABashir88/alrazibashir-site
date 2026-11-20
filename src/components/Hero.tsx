@@ -49,7 +49,7 @@ export function Hero() {
             }} role="img" aria-label="Alrazi Bashir" />
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)" }}>Alrazi Bashir</div>
-              <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", marginTop: "2px" }}>Enterprise Account Executive</div>
+              <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", fontFamily: "var(--font-body)", marginTop: "2px" }}>Founder & AI Industry Advisor</div>
             </div>
           </div>
           {/* Text content */}
