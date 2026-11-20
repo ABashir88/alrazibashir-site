@@ -132,7 +132,7 @@ export default function HiringPage() {
         </h1>
 
         <p style={{ fontSize: 20, fontWeight: 500, color: "#374151", marginBottom: 20, fontFamily: "var(--font-body)" }}>
-          Enterprise Account Executive
+          Founder & AI Industry Advisor
         </p>
 
         <p style={{ fontSize: 17, color: "#4b5563", lineHeight: 1.7, maxWidth: 620, marginBottom: 32, fontFamily: "var(--font-body)" }}>
@@ -192,7 +192,7 @@ export default function HiringPage() {
             Commercial experience across the Voice AI and CX stack
           </h2>
 
-          <div className="h-career-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+          <div className="h-career-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
             {[
               {
                 company: "Twilio",
@@ -212,25 +212,32 @@ export default function HiringPage() {
                 period: "2023 to 2024",
                 category: "CX Assurance & Conversational AI",
               },
+              { company: "Searvis", alt: "Searvis", logo: "", logoClass: "", logoType: "text", period: "Apr 2026 – Present", category: "Founder & AI Industry Advisor" },
               {
                 company: "Telnyx",
                 alt: "Telnyx",
                 logo: "data:image/png;base64,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",
                 logoClass: "telnyx-logo",
                 logoType: "png",
-                period: "2025 to Present",
+                period: "2025 to 2026",
                 category: "AI Voice Infrastructure & Telephony",
               },
             ].map((role) => (
               <div key={role.company} style={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: "24px 22px 22px", transition: "box-shadow 0.18s ease" }}>
                 <div style={{ height: 48, display: "flex", alignItems: "center", marginBottom: 18 }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={role.logo}
-                    alt={role.alt}
-                    className={role.logoClass}
-                    style={{ width: "auto", maxWidth: 180, objectFit: "contain", objectPosition: "left center" }}
-                  />
+                  {role.logoType === "text" ? (
+                    <span style={{ fontSize: 20, fontWeight: 700, color: "#0d1117", fontFamily: "var(--font-body)", letterSpacing: "-0.02em" }}>{role.company}</span>
+                  ) : (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={role.logo}
+                        alt={role.alt}
+                        className={role.logoClass}
+                        style={{ width: "auto", maxWidth: 180, objectFit: "contain", objectPosition: "left center" }}
+                      />
+                    </>
+                  )}
                 </div>
                 <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: "#9ca3af", marginBottom: 5, fontFamily: "var(--font-body)" }}>{role.period}</p>
                 <p style={{ fontSize: 13, fontWeight: 600, color: "var(--color-accent)", lineHeight: 1.4, fontFamily: "var(--font-body)" }}>{role.category}</p>
@@ -260,7 +267,7 @@ export default function HiringPage() {
               label: "Voice AI Infrastructure",
               title: "Competitive carrier replacement for AI voice automation",
               company: "Fortune 500 technology enterprise",
-              arr: "$285K ARR", tcv: "$855K TCV", cycle: "8 months", term: "3-year",
+              arr: "$185K ARR", tcv: "$370K TCV", cycle: "6 months", term: "2-year",
               challenge: "Enterprise customer needed production-grade voice infrastructure to support a new AI voice automation initiative. Legacy carrier could not meet latency, routing, or failover requirements.",
               motion: "Led discovery across SIP architecture, PSTN routing, latency thresholds, failover topology, and carrier economics. Multithreaded engineering, IT, operations, and the economic buyer before engaging commercial leadership.",
               outcome: "Displaced the incumbent. Delivered a programmable telephony layer that enabled the AI deployment. Closed a three-year committed agreement.",
@@ -269,7 +276,7 @@ export default function HiringPage() {
               label: "Conversational AI and CCaaS Assurance",
               title: "De-risking a cloud contact center and conversational AI migration",
               company: "Insurance enterprise, large contact center operation",
-              arr: "$180K ARR", tcv: "$360K TCV", cycle: "7 months", term: "2-year",
+              arr: "$205K ARR", tcv: "$617K TCV", cycle: "10 months", term: "3-year",
               challenge: "Mid-migration from legacy IVR and on-premise contact center to cloud CCaaS. No automated regression coverage for IVR or conversational AI flows. Production risk tied to regulatory exposure.",
               motion: "Engaged QA and CX operations leadership to map the testing gap. Connected production risk to regulatory exposure in the insurance context. Built the commercial case with VP CX as the economic buyer.",
               outcome: "Closed a two-year assurance agreement timed to the migration go-live. Eliminated manual regression testing across IVR and conversational AI flows.",
@@ -278,7 +285,7 @@ export default function HiringPage() {
               label: "Programmable Contact Center Modernization",
               title: "Enterprise contact center modernization for financial services",
               company: "Financial services organization, 400-seat contact center",
-              arr: "$120K ARR", tcv: "$240K TCV", cycle: "6 months", term: "2-year",
+              arr: "$365K ARR", tcv: "$730K TCV", cycle: "9 months", term: "2-year",
               challenge: "Aging on-premise contact center with no digital channel capability and limited CRM integration. VP of Customer Operations needed a modernization path without a full rip-and-replace.",
               motion: "Technical discovery covered CRM integrations, agent desktop requirements, digital channel roadmap, and carrier interconnect. Built a phased architecture with the engineering team that reduced risk and enabled a pilot approach.",
               outcome: "Deployed across 400 seats with CRM integration and digital channel enablement. Two-year agreement structured with a pilot that converted to full commitment at month four.",
@@ -474,7 +481,7 @@ export default function HiringPage() {
       {/* ── FOOTER ── */}
       <footer style={{ backgroundColor: "#0d1117", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "20px 24px" }}>
         <div style={{ maxWidth: 1024, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontSize: 13, color: "#4b5563", fontFamily: "var(--font-body)" }}>Alrazi Bashir &bull; Enterprise Account Executive</span>
+          <span style={{ fontSize: 13, color: "#4b5563", fontFamily: "var(--font-body)" }}>Alrazi Bashir &bull; Founder &amp; AI Industry Advisor</span>
           <div style={{ display: "flex", gap: 20 }}>
             <Link href="/" style={{ fontSize: 13, color: "#4b5563", textDecoration: "none", fontFamily: "var(--font-body)" }}>Main Site</Link>
             <a href="https://linkedin.com/in/alrazibashir" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: "#4b5563", textDecoration: "none", fontFamily: "var(--font-body)" }}>LinkedIn</a>
