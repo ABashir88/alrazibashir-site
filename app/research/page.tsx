@@ -15,7 +15,9 @@ export const metadata: Metadata = {
     url: `${siteConfig.baseUrl}/research`,
     siteName: siteConfig.name,
     type: "website",
+    images: ["/opengraph-image"],
   },
+  twitter: { card: "summary_large_image", images: ["/opengraph-image"] },
 };
 
 export default function ResearchIndexPage() {
