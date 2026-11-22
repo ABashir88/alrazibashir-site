@@ -1,9 +1,8 @@
 export const siteConfig = {
   name: "Alrazi Bashir",
-  title:
-    "Alrazi Bashir | Enterprise Account Executive – AI Voice, CPaaS, CCaaS, Conversational AI",
+  title: "Alrazi Bashir | CX & Voice AI Research and Advisory",
   description:
-    "Enterprise Account Executive specializing in AI voice infrastructure, CPaaS/CCaaS, and conversational AI—running engineering-led sales motions for $65K–$550K ACV deals across 5–9 month enterprise cycles.",
+    "Practical research and frameworks for enterprise leaders evaluating Voice AI, contact center platforms, and AI agents. Founder of Searvis; former enterprise AE at Twilio, Cyara, and Telnyx.",
   email: "alrazi@alrazibashir.com",
   baseUrl: "https://alrazibashir.com",
   resumeUrl: "/Alrazi Bashir Resume.docx",
@@ -19,7 +18,8 @@ export const siteConfig = {
   ],
   // Pill button at the end of the homepage nav (replaces the Resume button).
   navCta: { label: "Hiring", href: "/hiring" },
-  // Homepage "CX Intelligence Library" cards. Assets without an href show a "Coming soon" badge.
+  // "CX Intelligence Library" — homepage cards and the /research index.
+  // Assets without an href show a "Coming soon" badge.
   research: {
     heading: "CX Intelligence Library",
     subheading:
@@ -28,6 +28,8 @@ export const siteConfig = {
       {
         title: "Enterprise Voice AI Production-Readiness Checklist",
         category: "Voice AI",
+        format: "Checklist",
+        date: "November 2026",
         description:
           "What a Voice AI pilot should prove before it reaches customers — from turn-taking and tool actions to handoff, monitoring, and cost per resolution.",
         href: "/research/voice-ai-production-readiness",
@@ -36,16 +38,27 @@ export const siteConfig = {
       {
         title: "Enterprise CX Technology Stack Explained",
         category: "CCaaS · CPaaS · MCP",
+        format: "Explainer",
+        date: "November 2026",
         description:
           "How contact center platforms, communications APIs, AI agents, and MCP fit together — and where the layers are starting to blur.",
+        href: "/research/cx-technology-stack",
+        linkLabel: "Read",
       },
       {
         title: "The Conversation-to-Resolution Framework",
         category: "CX Assurance",
+        format: "Framework",
+        date: "November 2026",
         description:
           "Why operational resolution, not conversational fluency, is becoming the criterion that matters when enterprises buy AI for customer service.",
+        href: "/research/conversation-to-resolution",
+        linkLabel: "Read",
       },
-    ] as { title: string; category: string; description: string; href?: string; linkLabel?: string }[],
+    ] as {
+      title: string; category: string; format: string; date: string;
+      description: string; href?: string; linkLabel?: string;
+    }[],
   },
   social: {
     github: "https://github.com/ABashir88",

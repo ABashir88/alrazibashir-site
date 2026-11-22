@@ -1,23 +1,10 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { siteConfig } from "../../../src/config";
+import { ArticleShell, articleMetadata } from "@/components/research/ArticleShell";
 
 const TITLE = "Enterprise Voice AI Production-Readiness Checklist";
 const DESCRIPTION =
   "What an enterprise Voice AI pilot should prove before it reaches customers: voice conditions, accuracy, tool actions, human handoff, privacy, observability, and cost per successful resolution.";
 
-export const metadata: Metadata = {
-  title: `${TITLE} | ${siteConfig.name}`,
-  description: DESCRIPTION,
-  alternates: { canonical: "/research/voice-ai-production-readiness" },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${siteConfig.baseUrl}/research/voice-ai-production-readiness`,
-    siteName: siteConfig.name,
-    type: "article",
-  },
-};
+export const metadata = articleMetadata({ slug: "voice-ai-production-readiness", title: TITLE, description: DESCRIPTION });
 
 type Section = {
   id: string;
@@ -153,111 +140,48 @@ const EXIT_CRITERIA = [
 
 export default function VoiceAiReadinessPage() {
   return (
-    <main style={{ background: "var(--color-bg)", color: "var(--color-text)", fontFamily: "var(--font-body)" }}>
-      {/* Top bar */}
-      <header style={{ borderBottom: "1px solid var(--color-border)", background: "#fff" }}>
-        <div style={{ maxWidth: "760px", margin: "0 auto", padding: "0 24px", height: "58px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
-          <Link href="/" style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--color-text)" }}>
-            {siteConfig.name}
-          </Link>
-          <Link href="/#research" className="rr-link" style={{ fontSize: "0.825rem", fontWeight: 500 }}>
-            ← All research
-          </Link>
-        </div>
-      </header>
-
-      <article style={{ maxWidth: "760px", margin: "0 auto", padding: "56px 24px 80px" }}>
-        {/* Title block */}
-        <p style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--color-accent)", fontWeight: 600, margin: "0 0 14px" }}>
-          Voice AI · Checklist
+    <ArticleShell
+      eyebrow="Voice AI · Checklist"
+      title={TITLE}
+      lead="A Voice AI demo can sound excellent and still tell you very little about how it will behave in production. The hard questions start when the conversation leaves the script: the caller interrupts, an API times out, the agent is confident but wrong, or the customer needs a person."
+    >
+      <div className="rr-box">
+        <p className="rr-box-label">How to use this</p>
+        <p className="rr-p" style={{ margin: 0 }}>
+          Use it to scope a pilot and to compare vendors on the same terms. Each section lists what to test and the evidence to ask for. It does not set numeric thresholds, because the right ones depend on your callers, use cases, and risk tolerance. Agree on them in writing before the pilot starts.
         </p>
-        <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.9rem, 4vw, 2.7rem)", fontWeight: 400, lineHeight: 1.15, margin: "0 0 18px", letterSpacing: "-0.01em" }}>
-          {TITLE}
-        </h1>
-        <p style={{ fontSize: "1.05rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 18px" }}>
-          A Voice AI demo can sound excellent and still tell you very little about how it will behave in production. The hard questions start when the conversation leaves the script: the caller interrupts, an API times out, the agent is confident but wrong, or the customer needs a person.
-        </p>
-        <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", margin: "0 0 36px" }}>
-          {siteConfig.name} · Working draft · November 2026
-        </p>
+      </div>
 
-        {/* How to use */}
-        <div style={{ background: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "12px", padding: "20px 22px", margin: "0 0 40px" }}>
-          <p style={{ fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-muted)", margin: "0 0 8px" }}>
-            How to use this
-          </p>
-          <p style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: 0 }}>
-            Use it to scope a pilot and to compare vendors on the same terms. Each section lists what to test and the evidence to ask for. It does not set numeric thresholds, because the right ones depend on your callers, use cases, and risk tolerance. Agree on them in writing before the pilot starts.
-          </p>
-        </div>
+      <nav aria-label="Checklist sections">
+        <ol className="rr-toc">
+          {SECTIONS.map((s) => (
+            <li key={s.id}><a href={`#${s.id}`} className="rr-link">{s.title}</a></li>
+          ))}
+          <li><a href="#exit-criteria" className="rr-link">Pilot exit criteria</a></li>
+        </ol>
+      </nav>
 
-        {/* Contents */}
-        <nav aria-label="Checklist sections" style={{ margin: "0 0 48px" }}>
-          <ol style={{ margin: 0, paddingLeft: "1.2rem", display: "grid", gap: "6px" }}>
-            {SECTIONS.map((s) => (
-              <li key={s.id} style={{ fontSize: "0.92rem" }}>
-                <a href={`#${s.id}`} className="rr-link">{s.title}</a>
-              </li>
-            ))}
-            <li style={{ fontSize: "0.92rem" }}>
-              <a href="#exit-criteria" className="rr-link">Pilot exit criteria</a>
-            </li>
-          </ol>
-        </nav>
-
-        {/* Sections */}
-        {SECTIONS.map((s, i) => (
-          <section key={s.id} id={s.id} style={{ borderTop: "1px solid var(--color-border)", padding: "36px 0", scrollMarginTop: "24px" }}>
-            <p style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-text-muted)", margin: "0 0 6px", letterSpacing: "0.08em" }}>
-              {String(i + 1).padStart(2, "0")}
-            </p>
-            <h2 style={{ fontSize: "1.3rem", fontWeight: 700, margin: "0 0 10px", lineHeight: 1.3 }}>{s.title}</h2>
-            <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 18px" }}>{s.why}</p>
-            <ul className="rr-checks">
-              {s.checks.map((c) => <li key={c}>{c}</li>)}
-            </ul>
-            <p style={{ fontSize: "0.875rem", lineHeight: 1.65, color: "var(--color-text-secondary)", margin: "18px 0 0", padding: "12px 16px", borderLeft: "3px solid var(--color-accent-border)", background: "var(--color-accent-dim)", borderRadius: "0 8px 8px 0" }}>
-              <strong style={{ color: "var(--color-text)" }}>Evidence to ask for:</strong> {s.evidence}
-            </p>
-          </section>
-        ))}
-
-        {/* Exit criteria */}
-        <section id="exit-criteria" style={{ borderTop: "1px solid var(--color-border)", padding: "36px 0", scrollMarginTop: "24px" }}>
-          <h2 style={{ fontSize: "1.3rem", fontWeight: 700, margin: "0 0 10px" }}>Pilot exit criteria</h2>
-          <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 18px" }}>
-            A pilot should make failure modes visible before customers find them. Before moving to production, confirm:
-          </p>
+      {SECTIONS.map((s, i) => (
+        <section key={s.id} id={s.id} className="rr-section">
+          <p className="rr-num">{String(i + 1).padStart(2, "0")}</p>
+          <h2 className="rr-h2">{s.title}</h2>
+          <p className="rr-p" style={{ marginBottom: "18px" }}>{s.why}</p>
           <ul className="rr-checks">
-            {EXIT_CRITERIA.map((c) => <li key={c}>{c}</li>)}
+            {s.checks.map((c) => <li key={c}>{c}</li>)}
           </ul>
+          <p className="rr-callout"><strong>Evidence to ask for:</strong> {s.evidence}</p>
         </section>
+      ))}
 
-        {/* Feedback */}
-        <section style={{ borderTop: "1px solid var(--color-border)", paddingTop: "36px" }}>
-          <p style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 8px" }}>
-            This is a working draft. If you run Voice AI in production and think something is missing or wrong, I would like to hear it.
-          </p>
-          <p style={{ fontSize: "0.95rem", margin: 0 }}>
-            <a href={`mailto:${siteConfig.email}`} className="rr-link" style={{ fontWeight: 600 }}>{siteConfig.email}</a>
-          </p>
-        </section>
-      </article>
-
-      <style>{`
-        .rr-link { color: var(--color-accent); text-decoration: none; }
-        .rr-link:hover { text-decoration: underline; }
-        .rr-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-        .rr-checks li {
-          position: relative; padding-left: 30px;
-          font-size: 0.95rem; line-height: 1.65; color: var(--color-text);
-        }
-        .rr-checks li::before {
-          content: ""; position: absolute; left: 0; top: 0.2em;
-          width: 16px; height: 16px; border-radius: 4px;
-          border: 1.5px solid var(--color-border-strong); background: #fff;
-        }
-      `}</style>
-    </main>
+      <section id="exit-criteria" className="rr-section">
+        <h2 className="rr-h2">Pilot exit criteria</h2>
+        <p className="rr-p" style={{ marginBottom: "18px" }}>
+          A pilot should make failure modes visible before customers find them. Before moving to production, confirm:
+        </p>
+        <ul className="rr-checks">
+          {EXIT_CRITERIA.map((c) => <li key={c}>{c}</li>)}
+        </ul>
+      </section>
+    </ArticleShell>
   );
 }

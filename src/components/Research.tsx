@@ -88,9 +88,17 @@ export function Research() {
             );
           })}
         </div>
+
+        <Link href="/research" className="research-all">View all research →</Link>
       </div>
 
       <style>{`
+        .research-all {
+          display: inline-block; margin-top: 24px;
+          font-size: 0.875rem; font-weight: 600; color: var(--color-accent);
+          text-decoration: none; font-family: var(--font-body);
+        }
+        .research-all:hover { text-decoration: underline; }
         .research-card {
           display: flex; flex-direction: column;
           background: var(--color-surface-card);
