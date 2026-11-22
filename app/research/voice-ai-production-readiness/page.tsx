@@ -188,9 +188,9 @@ export default function VoiceAiReadinessPage() {
         <h2 className="rr-h2">Sources and method</h2>
         <p className="rr-p">This is a proposed practitioner checklist, not a validated universal standard. Controls, test thresholds, disclosures, and escalation policies depend on the use case, caller population, risk profile, and applicable law. The references below inform risk management and testing practices; they do not mandate every individual item listed here.</p>
         <ol className="rr-sources">
-          <li><a className="rr-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework — guidance for managing AI risks</a></li>
-          <li><a className="rr-link" href="https://genai.owasp.org/" target="_blank" rel="noopener noreferrer">OWASP GenAI Security Project — security risks and mitigations for AI applications</a></li>
-          <li><a className="rr-link" href="https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents" target="_blank" rel="noopener noreferrer">Microsoft real-time voice agent transparency guidance — product-specific engineering considerations</a></li>
+          <li><a className="rr-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework: guidance for managing AI risks</a></li>
+          <li><a className="rr-link" href="https://genai.owasp.org/" target="_blank" rel="noopener noreferrer">OWASP GenAI Security Project: security risks and mitigations for AI applications</a></li>
+          <li><a className="rr-link" href="https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents" target="_blank" rel="noopener noreferrer">Microsoft real-time voice agent transparency guidance: product-specific engineering considerations</a></li>
         </ol>
         <p className="rr-p" style={{ marginTop: 16 }}>Editorial update: November 21, 2026. Clarified the checklist&apos;s proposed status, removed unsupported generalizations, and added references. No independent deployment benchmark is claimed.</p>
       </section>
