@@ -18,10 +18,10 @@ const SECTIONS: Section[] = [
   {
     id: "voice-conditions",
     title: "Voice conditions and turn-taking",
-    why: "A demo over a clean browser connection says little about a real caller on a mobile phone in a car. Conversation quality breaks first at the audio layer.",
+    why: "A demo over a clean browser connection says little about a real caller on a mobile phone in a car. Audio and telephony conditions can cause failures before downstream reasoning or business workflows are evaluated.",
     checks: [
       "Response latency is measured end to end on real phone connections (PSTN or SIP), not in a browser or a vendor sandbox.",
-      "Time to first audio is reported as a distribution (median and worst cases), not a single average.",
+      "Request distributional latency statistics (such as median and tail percentiles) under specified phone and network conditions.",
       "Barge-in works: the agent stops speaking when the caller interrupts, and recovers the thread.",
       "Tested with background noise, speakerphone, poor mobile coverage, and degraded network conditions.",
       "Silence, hold, and “one moment, let me find that” are handled without the agent talking over the caller or hanging up.",
@@ -70,7 +70,7 @@ const SECTIONS: Section[] = [
   {
     id: "outcomes",
     title: "Task completion and outcome verification",
-    why: "“The call ended politely” and “the customer’s problem was solved” are different measurements. Many pilots only report the first.",
+    why: "“The call ended politely” and “the customer’s problem was solved” are different measurements. A pilot that only reports conversational completion may miss whether the requested business action actually happened.",
     checks: [
       "Completion is defined per use case before the pilot starts (for example: address updated in the CRM, appointment confirmed in the scheduling system).",
       "Completion is verified in the system of record, not inferred from the transcript.",
@@ -84,7 +84,7 @@ const SECTIONS: Section[] = [
     title: "Human handoff",
     why: "Handoff is where customer trust is usually won or lost. A caller who has to repeat everything to a person counts as a failure.",
     checks: [
-      "A caller can always reach a person, and the path is easy to find.",
+      "Define when and how customers can request or be routed to an appropriately staffed human channel, including after-hours exceptions.",
       "Escalation triggers are defined: caller request, low confidence, repeated failure, negative sentiment, and regulated topics.",
       "Context passes to the human agent: a summary, authentication status, actions already taken, and the reason for escalation.",
       "Escalation accuracy is measured both ways: unnecessary escalations and missed ones.",
@@ -98,7 +98,7 @@ const SECTIONS: Section[] = [
     why: "Voice adds disclosure, recording, and authentication obligations that chat pilots often skip.",
     checks: [
       "Callers are authenticated before any account-specific information is shared or any action is taken.",
-      "Callers are told they are speaking with an AI, and recording consent follows the rules in each jurisdiction you serve.",
+      "Assess the applicable AI disclosure, recording-consent, and privacy requirements in every jurisdiction and service context; obtain legal review where needed.",
       "Sensitive data (card numbers, government IDs, health details) is redacted from transcripts, logs, and model inputs where required.",
       "Data retention, data residency, and the vendor’s use of your data for model training are agreed in writing.",
       "Your security and compliance teams have reviewed the full data flow, including any sub-processors.",
@@ -143,6 +143,7 @@ export default function VoiceAiReadinessPage() {
     <ArticleShell
       eyebrow="Voice AI · Checklist"
       title={TITLE}
+      slug="voice-ai-production-readiness"
       lead="A Voice AI demo can sound excellent and still tell you very little about how it will behave in production. The hard questions start when the conversation leaves the script: the caller interrupts, an API times out, the agent is confident but wrong, or the customer needs a person."
     >
       <div className="rr-box">
@@ -181,6 +182,17 @@ export default function VoiceAiReadinessPage() {
         <ul className="rr-checks">
           {EXIT_CRITERIA.map((c) => <li key={c}>{c}</li>)}
         </ul>
+      </section>
+
+      <section id="sources" className="rr-section">
+        <h2 className="rr-h2">Sources and method</h2>
+        <p className="rr-p">This is a proposed practitioner checklist, not a validated universal standard. Controls, test thresholds, disclosures, and escalation policies depend on the use case, caller population, risk profile, and applicable law. The references below inform risk management and testing practices; they do not mandate every individual item listed here.</p>
+        <ol className="rr-sources">
+          <li><a className="rr-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework — guidance for managing AI risks</a></li>
+          <li><a className="rr-link" href="https://genai.owasp.org/" target="_blank" rel="noopener noreferrer">OWASP GenAI Security Project — security risks and mitigations for AI applications</a></li>
+          <li><a className="rr-link" href="https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents" target="_blank" rel="noopener noreferrer">Microsoft real-time voice agent transparency guidance — product-specific engineering considerations</a></li>
+        </ol>
+        <p className="rr-p" style={{ marginTop: 16 }}>Editorial update: November 21, 2026. Clarified the checklist's proposed status, removed unsupported generalizations, and added references. No independent deployment benchmark is claimed.</p>
       </section>
     </ArticleShell>
   );
