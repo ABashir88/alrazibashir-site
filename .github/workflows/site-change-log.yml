@@ -1,0 +1,39 @@
+name: Record website changes
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/SITE_CHANGELOG.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-changelog-main
+  cancel-in-progress: false
+
+jobs:
+  append:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Update documentation changelog
+        run: python3 scripts/update_site_changelog.py
+      - name: Commit changed log (when needed)
+        shell: bash
+        run: |
+          if git diff --quiet -- docs/SITE_CHANGELOG.md; then
+            echo "No new entries."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/SITE_CHANGELOG.md
+          git commit -m "docs: update website change log [skip ci]"
+          git push origin HEAD:main
