@@ -15,7 +15,9 @@ export function articleMetadata({ slug, title, description }: { slug: string; ti
       url: `${siteConfig.baseUrl}${path}`,
       siteName: siteConfig.name,
       type: "article",
+      images: ["/research/" + slug + "/opengraph-image"],
     },
+    twitter: { card: "summary_large_image", images: ["/research/" + slug + "/opengraph-image"] },
   };
 }
 
@@ -36,16 +38,26 @@ export function ResearchTopBar({ back }: { back: { label: string; href: string }
 }
 
 /** Layout for a long-form research article: title block, body, feedback footer, shared prose styles. */
-export function ArticleShell({ eyebrow, title, lead, status = "Working draft", date = "November 2026", children }: {
+export function ArticleShell({ eyebrow, title, lead, slug, status = "Working draft", date = "November 2026", reviewed = "November 21, 2026", children }: {
   eyebrow: string;
   title: string;
   lead: string;
+  slug: string;
+  reviewed?: string;
   status?: string;
   date?: string;
   children: React.ReactNode;
 }) {
   return (
     <main style={{ background: "var(--color-bg)", color: "var(--color-text)", fontFamily: "var(--font-body)", minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "Article",
+        headline: title, description: lead,
+        mainEntityOfPage: `${siteConfig.baseUrl}/research/${slug}`,
+        author: { "@type": "Person", name: siteConfig.name, url: siteConfig.baseUrl },
+        publisher: { "@type": "Person", name: siteConfig.name, url: siteConfig.baseUrl },
+        dateModified: "2026-11-21",
+      }).replace(/</g, "\\u003c") }} />
       <ResearchTopBar back={{ label: "All research", href: "/research" }} />
 
       <article style={{ maxWidth: "760px", margin: "0 auto", padding: "56px 24px 80px" }}>
@@ -55,7 +67,7 @@ export function ArticleShell({ eyebrow, title, lead, status = "Working draft", d
         </h1>
         <p style={{ fontSize: "1.05rem", lineHeight: 1.7, color: "var(--color-text-secondary)", margin: "0 0 18px" }}>{lead}</p>
         <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)", margin: "0 0 36px" }}>
-          {siteConfig.name} · {status} · {date}
+          {siteConfig.name} · {status} · Published {date} · Last reviewed {reviewed}
         </p>
 
         {children}
