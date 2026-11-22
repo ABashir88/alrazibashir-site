@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...siteConfig.research.assets.filter((asset) => asset.href).map((asset) => asset.href!),
     "/hiring",
   ];
-  return [...new Set(paths)].map((path) => ({
+  return [...new Set(paths)].map((path): MetadataRoute.Sitemap[number] => ({
     url: `${base}${path === "/" ? "" : path}`,
     changeFrequency: path === "/" || path === "/research" ? "weekly" : "monthly",
     priority: path === "/" ? 1 : path === "/research" ? 0.9 : path === "/hiring" ? 0.5 : 0.8,
