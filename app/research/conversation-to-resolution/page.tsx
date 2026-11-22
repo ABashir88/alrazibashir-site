@@ -79,7 +79,7 @@ const STAGES: Stage[] = [
   {
     id: "close",
     name: "Close the loop",
-    mustBeTrue: "The customer does not need to come back about the same issue.",
+    mustBeTrue: "The customer's issue is resolved and avoidable repeat contacts are minimized; legitimate follow-up contacts may still be necessary.",
     failure: "Containment looks high because the call ended, but the customer calls again two days later through a different channel.",
     measure: [
       "Repeat contact within a defined window, across channels",
@@ -102,16 +102,17 @@ export default function ConversationToResolutionPage() {
     <ArticleShell
       eyebrow="CX Assurance · Framework"
       title={TITLE}
+      slug="conversation-to-resolution"
       lead="Most metrics for AI in customer service measure the conversation: containment, handle time, sentiment. Customers care whether their problem was solved. This framework traces the path from a conversation to a completed, accountable outcome, and names what has to be true, and measured, at each step."
       status="Proposed framework · Working draft"
     >
       <section className="rr-section" style={{ borderTop: "none", paddingTop: 0 }}>
-        <h2 className="rr-h2">Why fluency is no longer the differentiator</h2>
+        <h2 className="rr-h2">Why fluency alone may not differentiate production systems</h2>
         <p className="rr-p">
-          Language models made fluent conversation cheap. Most serious platforms now sound good in a demo. What separates them in production is what happens around the conversation: whether the right action was taken, under the right authority, and whether anyone can prove it.
+          Fluent demos are increasingly common. Production evaluations still need to establish authorization, verified actions, handoffs, and recovery, including whether teams can prove that the right action happened under the right authority.
         </p>
         <p className="rr-p">
-          The vendor announcements of November 17–20, 2026 point the same way. In four days, the notable launches were about resolution and assurance: agentic back-office workflows, post-conversation task-completion scoring, and real-call-condition testing. None were about making agents more conversational.
+          The vendor announcements reviewed here from November 17–20, 2026 emphasize resolution, supervision, and testing under real-call conditions rather than conversational style. They signal areas of vendor investment, not independently proven production results.
         </p>
         <p className="rr-quote">How does an enterprise turn a customer conversation into a completed, accountable outcome?</p>
       </section>
@@ -152,7 +153,7 @@ export default function ConversationToResolutionPage() {
       <section id="ownership" className="rr-section">
         <h2 className="rr-h2">Who owns the outcome?</h2>
         <p className="rr-p">
-          As vendors move from handling conversations to completing work, a new question appears: which system holds the record of what was decided and done? A contact center vendor that owns the full resolution workflow can make that workflow simpler. It can also become a new system of record that sits outside your existing controls.
+          As vendors move from handling conversations to completing work, a new question appears: which system holds the record of what was decided and done? A contact center vendor that owns the full resolution workflow can make that workflow simpler. It could also create a new operational record outside existing governance controls; buyers should verify which system owns decisions, actions, and audit evidence.
         </p>
         <p className="rr-p">Before a pilot, write down for each stage:</p>
         <ul className="rr-bullets">
@@ -169,6 +170,7 @@ export default function ConversationToResolutionPage() {
         </p>
       </section>
 
+      <p className="rr-p" style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>Editorial review: November 21, 2026. Updated phrasing to distinguish judgment and proposed evaluation questions from vendor-announced capabilities.</p>
       <section id="sources" className="rr-section">
         <h2 className="rr-h2">Sources</h2>
         <ol className="rr-sources">
