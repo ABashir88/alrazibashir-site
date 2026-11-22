@@ -35,7 +35,7 @@ const LAYERS: Layer[] = [
     job: "Routes work to people and manages them",
     body: [
       "Contact Center as a Service: routing and queues, IVR, the agent desktop, recording, workforce management, quality management, and reporting. It is where human agents work and where most operational data about customer contact lives.",
-      "For most enterprises this is the hardest layer to replace, which is why so many recent AI announcements are designed to work alongside an existing platform rather than require a migration.",
+      "Replacing a CCaaS platform can be disruptive because routing, agent workflows, and operations are tightly integrated; the difficulty varies by environment. Recent AI announcements also describe ways to add capabilities alongside existing platforms without a complete migration.",
     ],
     ask: "Which AI capabilities must live inside the contact center platform, and which can sit beside it?",
   },
@@ -116,6 +116,7 @@ export default function CxStackPage() {
     <ArticleShell
       eyebrow="CCaaS · CPaaS · MCP · Explainer"
       title={TITLE}
+      slug="cx-technology-stack"
       lead="Enterprise CX technology is usually described by vendor category: CCaaS, CPaaS, conversational AI. It is more useful to describe it by job: what carries the call, what routes it, what understands it, what acts on it, and what proves it worked. This explainer maps those layers, then looks at where recent announcements are blurring them."
     >
       <div className="rr-box">
@@ -175,6 +176,7 @@ export default function CxStackPage() {
         </ul>
       </section>
 
+      <p className="rr-p" style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>Editorial review: November 21, 2026. Updated phrasing to distinguish judgment and proposed evaluation questions from vendor-announced capabilities.</p>
       <section id="sources" className="rr-section">
         <h2 className="rr-h2">Sources</h2>
         <p className="rr-p">Primary vendor sources, checked against their publication dates. Vendor statements describe announced capabilities and are not independent proof of results.</p>
