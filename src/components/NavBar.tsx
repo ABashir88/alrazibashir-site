@@ -104,9 +104,7 @@ export function NavBar() {
             })}
 
             <Link
-              href={siteConfig.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={siteConfig.navCta.href}
               style={{
                 marginLeft: "0.5rem",
                 fontSize: "0.8rem",
@@ -127,7 +125,7 @@ export function NavBar() {
                 (e.currentTarget as HTMLElement).style.borderColor = "var(--color-accent-border)";
               }}
             >
-              Resume
+              {siteConfig.navCta.label}
             </Link>
           </div>
 
@@ -182,9 +180,7 @@ export function NavBar() {
               </Link>
             ))}
             <Link
-              href={siteConfig.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={siteConfig.navCta.href}
               onClick={() => setMenuOpen(false)}
               style={{
                 marginTop: "1rem",
@@ -194,7 +190,7 @@ export function NavBar() {
                 textAlign: "center", fontFamily: "var(--font-body)",
               }}
             >
-              Download Resume
+              {siteConfig.navCta.label}
             </Link>
           </nav>
         </div>

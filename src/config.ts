@@ -9,39 +9,37 @@ export const siteConfig = {
   resumeUrl: "/Alrazi Bashir Resume.docx",
   resumeLabel: "Resume",
   logoInitials: "AB",
+  // Homepage nav only — /hiring keeps its own standalone nav.
+  // Planned additions once their sections exist: Resources, Advisory.
   nav: [
-    { label: "What I Do", href: "#what-i-do" },
-    { label: "Experience", href: "#experience" },
-    { label: "Wins", href: "#wins" },
-    { label: "Projects", href: "#projects" },
+    // Points at the section the Research section replaces (Phase 2 → "#research").
+    { label: "Research", href: "#projects" },
+    { label: "About", href: "#experience" },
     { label: "Contact", href: "#contact" },
-    { label: "Hiring", href: "/hiring" },
   ],
+  // Pill button at the end of the homepage nav (replaces the Resume button).
+  navCta: { label: "Hiring", href: "/hiring" },
   social: {
     github: "https://github.com/ABashir88",
     dealCommandCenter: "/deal-command-center.xlsx",
     searvis: "https://searvis.io",
   },
   hero: {
-    eyebrow: "Enterprise Account Executive · AI Voice · CPaaS/CCaaS",
+    eyebrow: "Voice AI · CCaaS · Conversational AI",
     headline:
-      "Enterprise Account Executive turning AI infrastructure, voice platforms, and contact center systems into revenue.",
+      "Making sense of enterprise CX, Voice AI, and intelligent automation.",
+    // Phrase within the headline rendered in the accent color + italic.
+    headlineAccent: "Making sense",
     subheadline:
-      "I specialize in AI voice infrastructure, CPaaS/CCaaS, and conversational AI—running engineering-led enterprise cycles that connect architecture decisions to pipeline, NRR, and transformation outcomes.",
-    metrics: [
-      { label: "Annual quota", value: "$1.2M" },
-      { label: "Deal size", value: "$65K–$550K ACV" },
-      { label: "Cycle length", value: "5–9 month enterprise cycles" },
-      { label: "Segments", value: "Mid-market & Fortune 1000" },
-      { label: "Focus", value: "AI voice, CPaaS, CCaaS, conversational AI" },
-    ],
+      "Practical research and frameworks for enterprise leaders evaluating Voice AI, contact center platforms, and AI agents — built around one question: how does a customer conversation become a completed, accountable outcome?",
     primaryCta: {
-      label: "Email me",
-      href: "mailto:alrazi@alrazibashir.com",
+      // Points at the section the Research section replaces (Phase 2 → "#research").
+      label: "Explore research",
+      href: "#projects",
     },
     secondaryCta: {
-      label: "View resume",
-      href: "/resume.pdf",
+      label: "About my experience",
+      href: "#experience",
     },
     tertiaryCta: {
       label: "Connect on LinkedIn",

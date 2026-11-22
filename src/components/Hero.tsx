@@ -87,37 +87,23 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
         fontWeight: 400, lineHeight: 1.18, color: "var(--color-text)",
         margin: "0 0 1rem", letterSpacing: "-0.01em"
       }}>
-        {hero.headline.split("turning").map((part, i) => i === 0 ? (
-          <span key={i}>{part}<span style={{ color: "var(--color-accent)", fontStyle: "italic" }}>turning</span></span>
-        ) : <span key={i}>{part}</span>)}
+        {hero.headline.split(hero.headlineAccent).map((part, i, parts) => (
+          <span key={i}>
+            {part}
+            {i < parts.length - 1 && (
+              <span style={{ color: "var(--color-accent)", fontStyle: "italic" }}>{hero.headlineAccent}</span>
+            )}
+          </span>
+        ))}
       </h1>
 
       <p style={{
         fontSize: "clamp(0.85rem, 1.8vw, 0.98rem)", lineHeight: 1.65,
-        color: "var(--color-text-secondary)", margin: "0 0 1.25rem",
-        fontFamily: "var(--font-body)", maxWidth: "520px"
+        color: "var(--color-text-secondary)", margin: "0 0 1.5rem",
+        fontFamily: "var(--font-body)", maxWidth: "540px"
       }}>
-        Engineering-led enterprise sales across AI voice, CPaaS, and CCaaS — $65K to $550K ACV across 6–10 month cycles with Fortune 1000 and mid-market buyers.
+        {hero.subheadline}
       </p>
-
-      {/* Stats */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginBottom: "1.5rem" }}>
-        {[
-          { value: "$1.2M", label: "Annual Quota" },
-          { value: "$550K", label: "Max ACV" },
-          { value: "6–10mo", label: "Avg Cycle" },
-        ].map((stat) => (
-          <div key={stat.label} style={{
-            display: "flex", flexDirection: "column", alignItems: "center",
-            backgroundColor: "var(--color-surface-card)", border: "1px solid var(--color-border)",
-            borderRadius: "10px", padding: "0.6rem 1.1rem", minWidth: "85px",
-            boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
-          }}>
-            <span style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--color-text)", fontFamily: "var(--font-body)", lineHeight: 1 }}>{stat.value}</span>
-            <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "var(--color-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "var(--font-body)", marginTop: "0.25rem" }}>{stat.label}</span>
-          </div>
-        ))}
-      </div>
 
       {/* CTAs */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: "0.7rem", alignItems: "center", marginBottom: "1.1rem" }}>
@@ -133,7 +119,7 @@ function HeroContent({ hero, email }: { hero: typeof siteConfig.hero; email: str
           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "scale(1)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
         >{hero.primaryCta.label}</Link>
 
-        <Link href={hero.secondaryCta.href} target="_blank"
+        <Link href={hero.secondaryCta.href}
           style={{
             display: "inline-flex", alignItems: "center", justifyContent: "center",
             border: "1px solid var(--color-border-strong)", color: "var(--color-text)",
