@@ -13,7 +13,7 @@ export function createResearchOg(title: string, label: string) {
     }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
         <div style={{ fontSize: 26, letterSpacing: 3, fontWeight: 700, color: "#356d83" }}>
-          ALRAZI BASHIR · {label.toUpperCase()}
+          {`ALRAZI BASHIR · ${label.toUpperCase()}`}
         </div>
         <div style={{ width: 115, height: 6, background: "#356d83", borderRadius: 3 }} />
       </div>

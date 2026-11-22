@@ -192,7 +192,7 @@ export default function VoiceAiReadinessPage() {
           <li><a className="rr-link" href="https://genai.owasp.org/" target="_blank" rel="noopener noreferrer">OWASP GenAI Security Project — security risks and mitigations for AI applications</a></li>
           <li><a className="rr-link" href="https://learn.microsoft.com/en-us/dynamics365/contact-center/implement/transparency-note-real-time-voice-agents" target="_blank" rel="noopener noreferrer">Microsoft real-time voice agent transparency guidance — product-specific engineering considerations</a></li>
         </ol>
-        <p className="rr-p" style={{ marginTop: 16 }}>Editorial update: November 21, 2026. Clarified the checklist's proposed status, removed unsupported generalizations, and added references. No independent deployment benchmark is claimed.</p>
+        <p className="rr-p" style={{ marginTop: 16 }}>Editorial update: November 21, 2026. Clarified the checklist&apos;s proposed status, removed unsupported generalizations, and added references. No independent deployment benchmark is claimed.</p>
       </section>
     </ArticleShell>
   );
