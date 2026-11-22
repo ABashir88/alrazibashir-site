@@ -4,7 +4,7 @@ import { ProofBar } from "@/components/ProofBar";
 import Wins from "@/components/Wins";
 import DealProcess from "@/components/DealProcess";
 import Experience from "@/components/Experience";
-import { Projects } from "@/components/Projects";
+import { Research } from "@/components/Research";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <Wins />
       <DealProcess />
       <Experience />
-      <Projects />
+      <Research />
       <Contact />
     </main>
   );

@@ -12,13 +12,40 @@ export const siteConfig = {
   // Homepage nav only — /hiring keeps its own standalone nav.
   // Planned additions once their sections exist: Resources, Advisory.
   nav: [
-    // Points at the section the Research section replaces (Phase 2 → "#research").
-    { label: "Research", href: "#projects" },
+    { label: "Research", href: "#research" },
     { label: "About", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
   // Pill button at the end of the homepage nav (replaces the Resume button).
   navCta: { label: "Hiring", href: "/hiring" },
+  // Homepage "CX Intelligence Library" cards. Assets without an href show a "Coming soon" badge.
+  research: {
+    heading: "CX Intelligence Library",
+    subheading:
+      "Original analysis, vendor comparisons, technical explainers, and production-readiness guides.",
+    assets: [
+      {
+        title: "Enterprise Voice AI Production-Readiness Checklist",
+        category: "Voice AI",
+        description:
+          "What a Voice AI pilot should prove before it reaches customers — from turn-taking and tool actions to handoff, monitoring, and cost per resolution.",
+        href: "/research/voice-ai-production-readiness",
+        linkLabel: "Read",
+      },
+      {
+        title: "Enterprise CX Technology Stack Explained",
+        category: "CCaaS · CPaaS · MCP",
+        description:
+          "How contact center platforms, communications APIs, AI agents, and MCP fit together — and where the layers are starting to blur.",
+      },
+      {
+        title: "The Conversation-to-Resolution Framework",
+        category: "CX Assurance",
+        description:
+          "Why operational resolution, not conversational fluency, is becoming the criterion that matters when enterprises buy AI for customer service.",
+      },
+    ] as { title: string; category: string; description: string; href?: string; linkLabel?: string }[],
+  },
   social: {
     github: "https://github.com/ABashir88",
     dealCommandCenter: "/deal-command-center.xlsx",
@@ -33,9 +60,8 @@ export const siteConfig = {
     subheadline:
       "Practical research and frameworks for enterprise leaders evaluating Voice AI, contact center platforms, and AI agents — built around one question: how does a customer conversation become a completed, accountable outcome?",
     primaryCta: {
-      // Points at the section the Research section replaces (Phase 2 → "#research").
       label: "Explore research",
-      href: "#projects",
+      href: "#research",
     },
     secondaryCta: {
       label: "About my experience",

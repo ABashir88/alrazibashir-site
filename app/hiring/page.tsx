@@ -456,6 +456,26 @@ export default function HiringPage() {
             </div>
           ))}
         </div>
+
+        {/* Deal Command Center */}
+        <div className="h-deal-hd" style={{ marginTop: 20, backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: 10, padding: "24px 28px", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 24 }}>
+          <div>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "#9ca3af", marginBottom: 6, fontFamily: "var(--font-body)" }}>Featured tool</p>
+            <h3 style={{ fontSize: 17, fontWeight: 700, color: "#0d1117", marginBottom: 8, fontFamily: "var(--font-body)" }}>Deal Command Center</h3>
+            <p style={{ fontSize: 14, color: "#4b5563", lineHeight: 1.7, marginBottom: 14, maxWidth: 560, fontFamily: "var(--font-body)" }}>
+              A single spreadsheet that does what most CRMs can&apos;t: track deal stage, stakeholder mapping, multi-threading coverage, next steps, and close probability in one view. Built to run $65K–$550K enterprise cycles.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              {["Enterprise Pipeline", "Multi-threading", "Stakeholder Mapping", "Close Planning"].map((t) => (
+                <span key={t} style={{ fontSize: 11, padding: "2px 8px", borderRadius: 4, color: "#6b7280", border: "1px solid #e5e7eb", fontWeight: 500, fontFamily: "var(--font-body)" }}>{t}</span>
+              ))}
+            </div>
+          </div>
+          <a href={siteConfig.social.dealCommandCenter} download
+            style={{ fontSize: 12, fontWeight: 600, color: "var(--color-accent)", border: "1px solid var(--color-accent-border)", padding: "5px 12px", borderRadius: 6, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "var(--font-body)" }}>
+            Download .xlsx
+          </a>
+        </div>
       </section>
 
       {/* ── HIRING CTA ── */}
