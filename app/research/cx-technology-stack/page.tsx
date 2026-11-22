@@ -2,7 +2,7 @@ import { ArticleShell, articleMetadata } from "@/components/research/ArticleShel
 
 const TITLE = "Enterprise CX Technology Stack Explained";
 const DESCRIPTION =
-  "How network transport, CPaaS, CCaaS, AI agents, APIs and MCP, resolution workflows, and assurance tooling fit together in enterprise customer service — and where the layers are starting to blur.";
+  "How network transport, CPaaS, CCaaS, AI agents, APIs and MCP, resolution workflows, and assurance tooling fit together in enterprise customer service, and where the layers are starting to blur.";
 
 export const metadata = articleMetadata({ slug: "cx-technology-stack", title: TITLE, description: DESCRIPTION });
 
@@ -17,7 +17,7 @@ const LAYERS: Layer[] = [
       "The public phone network (PSTN), SIP trunks, carriers, and phone numbers. This layer sets the floor for audio quality and latency, decides which countries you can reach, and determines what happens when a carrier or region fails.",
       "It is easy to ignore until a Voice AI agent mishears a caller on a poor mobile connection. Everything above it inherits its limits.",
     ],
-    ask: "Who owns carrier redundancy, number porting, and failover — and how is call quality measured on real connections?",
+    ask: "Who owns carrier redundancy, number porting, and failover? And how is call quality measured on real connections?",
   },
   {
     id: "cpaas",
@@ -68,7 +68,7 @@ const LAYERS: Layer[] = [
       "A newer layer: AI-driven workflows that complete back-office work after or beyond the conversation, such as refunds, disputes, fraud reviews, and claims. These combine model-led steps with deterministic rules, human approvals, and exception handling.",
       "Amazon Connect Resolutions, which AWS announced as generally available on November 19, 2026, is one example. AWS describes managers supplying standard operating procedures that generate work plans, with AI and deterministic steps processing cases alongside human approvals and action logs.",
     ],
-    ask: "Which system becomes the record of what was decided and done — and can we extract that evidence?",
+    ask: "Which system becomes the record of what was decided and done, and can we extract that evidence?",
   },
   {
     id: "assurance",
@@ -91,7 +91,7 @@ const BLURS = [
   {
     title: "Conversation and screen are merging",
     body: "On November 20, 2026, AWS published guidance on Amazon Connect Modalities (structured visual components such as option cards) and Live Sync (commands passed between an AI agent and an existing web or mobile interface). The agent is no longer confined to the conversation panel; it can act in the surrounding application.",
-    question: "If the AI fills in the customer’s form, who is accountable for the final action — and what proof of consent is recorded?",
+    question: "If the AI fills in the customer’s form, who is accountable for the final action, and what proof of consent is recorded?",
   },
   {
     title: "Pricing is shifting from seats to work",
@@ -101,14 +101,14 @@ const BLURS = [
 ];
 
 const SOURCES = [
-  { label: "AWS — Amazon Connect Resolutions general availability (Nov 19, 2026)", href: "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-resolutions/" },
-  { label: "AWS — Modalities and Live Sync in Amazon Connect (Nov 20, 2026)", href: "https://aws.amazon.com/blogs/contact-center/modalities-and-live-sync-give-agents-the-screen-in-amazon-connect-customer/" },
-  { label: "Microsoft — Contact Center Intelligence generally available (Nov 18, 2026)", href: "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/11/18/microsoft-contact-center-intelligence-now-generally-available-transform-customer-interactions/" },
-  { label: "Genesys — Standalone AI Agents and Genesys Arena (Nov 17, 2026)", href: "https://www.genesys.com/company/newsroom/announcements/genesys-launches-standalone-ai-agents-and-genesys-arena-for-faster-agentic-ai-deployment" },
-  { label: "Cresta — Soundcheck (Nov 19, 2026)", href: "https://cresta.com/blog/test-and-evaluate-voice-ai-agents-under-real-call-conditions-with-soundcheck" },
-  { label: "Twilio — Conversation Intelligence operators, public beta (Nov 17, 2026)", href: "https://www.twilio.com/en-us/blog/products/launches/conversation-intelligence-operators-ai-agent-supervision" },
-  { label: "Model Context Protocol — introduction", href: "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro" },
-  { label: "Model Context Protocol — server concepts", href: "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts" },
+  { label: "AWS: Amazon Connect Resolutions general availability (Nov 19, 2026)", href: "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-resolutions/" },
+  { label: "AWS: Modalities and Live Sync in Amazon Connect (Nov 20, 2026)", href: "https://aws.amazon.com/blogs/contact-center/modalities-and-live-sync-give-agents-the-screen-in-amazon-connect-customer/" },
+  { label: "Microsoft: Contact Center Intelligence generally available (Nov 18, 2026)", href: "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/11/18/microsoft-contact-center-intelligence-now-generally-available-transform-customer-interactions/" },
+  { label: "Genesys: Standalone AI Agents and Genesys Arena (Nov 17, 2026)", href: "https://www.genesys.com/company/newsroom/announcements/genesys-launches-standalone-ai-agents-and-genesys-arena-for-faster-agentic-ai-deployment" },
+  { label: "Cresta: Soundcheck (Nov 19, 2026)", href: "https://cresta.com/blog/test-and-evaluate-voice-ai-agents-under-real-call-conditions-with-soundcheck" },
+  { label: "Twilio: Conversation Intelligence operators, public beta (Nov 17, 2026)", href: "https://www.twilio.com/en-us/blog/products/launches/conversation-intelligence-operators-ai-agent-supervision" },
+  { label: "Model Context Protocol: introduction", href: "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro" },
+  { label: "Model Context Protocol: server concepts", href: "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts" },
 ];
 
 export default function CxStackPage() {
@@ -116,7 +116,7 @@ export default function CxStackPage() {
     <ArticleShell
       eyebrow="CCaaS · CPaaS · MCP · Explainer"
       title={TITLE}
-      lead="Enterprise CX technology is usually described by vendor category: CCaaS, CPaaS, conversational AI. It is more useful to describe it by job — what carries the call, what routes it, what understands it, what acts on it, and what proves it worked. This explainer maps those layers, then looks at where recent announcements are blurring them."
+      lead="Enterprise CX technology is usually described by vendor category: CCaaS, CPaaS, conversational AI. It is more useful to describe it by job: what carries the call, what routes it, what understands it, what acts on it, and what proves it worked. This explainer maps those layers, then looks at where recent announcements are blurring them."
     >
       <div className="rr-box">
         <p className="rr-box-label">The short version</p>

@@ -31,9 +31,9 @@ const STAGES: Stage[] = [
   {
     id: "authorize",
     name: "Authorize",
-    mustBeTrue: "The customer is who they claim to be, the AI is permitted to take this action, and — increasingly — any AI agent acting for the customer is legitimate.",
+    mustBeTrue: "The customer is who they claim to be, the AI is permitted to take this action, and (increasingly) any AI agent acting for the customer is legitimate.",
     context: "On November 19, 2026, ThreatFabric announced Know Your Agent capabilities for banks, aimed at distinguishing legitimate personal AI assistants from malicious or compromised ones during banking sessions. Its detection accuracy is not independently verified, but the problem it names is real: authorization now has to consider whose agent is acting, not just which credentials are used.",
-    failure: "An action runs without adequate authentication — or, in the other direction, legitimate delegated or accessibility use is blocked as fraud.",
+    failure: "An action runs without adequate authentication. Or, in the other direction, legitimate delegated or accessibility use is blocked as fraud.",
     measure: [
       "Authentication completed before any account-specific action",
       "Unauthorized action attempts blocked",
@@ -67,7 +67,7 @@ const STAGES: Stage[] = [
   {
     id: "handoff",
     name: "Hand off and record",
-    mustBeTrue: "When a person takes over or follows up, the record preserves decisions, obligations, and next steps accurately — without exposing sensitive data.",
+    mustBeTrue: "When a person takes over or follows up, the record preserves decisions, obligations, and next steps accurately, without exposing sensitive data.",
     context: "On November 19, 2026, AWS extended AI-generated post-contact summaries to chat in Amazon Connect, alongside the summaries it already offered for voice and email. The relevant measure is whether a summary is faithful to the underlying transcript, not whether it exists.",
     failure: "A summary drops the commitment the agent made, so the next person contradicts it and the customer calls back.",
     measure: [
@@ -90,11 +90,11 @@ const STAGES: Stage[] = [
 ];
 
 const SOURCES = [
-  { label: "Cresta — Soundcheck (Nov 19, 2026)", href: "https://cresta.com/blog/test-and-evaluate-voice-ai-agents-under-real-call-conditions-with-soundcheck" },
-  { label: "ThreatFabric — Agentic AI Risk and Know Your Agent (Nov 19, 2026)", href: "https://www.threatfabric.com/press-releases/agentic-ai-risk" },
-  { label: "AWS — Amazon Connect Resolutions general availability (Nov 19, 2026)", href: "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-resolutions/" },
-  { label: "Twilio — Conversation Intelligence operators, public beta (Nov 17, 2026)", href: "https://www.twilio.com/en-us/blog/products/launches/conversation-intelligence-operators-ai-agent-supervision" },
-  { label: "AWS — AI post-contact summaries for chat in Amazon Connect (Nov 19, 2026)", href: "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-ai-chat-summaries-ccp/" },
+  { label: "Cresta: Soundcheck (Nov 19, 2026)", href: "https://cresta.com/blog/test-and-evaluate-voice-ai-agents-under-real-call-conditions-with-soundcheck" },
+  { label: "ThreatFabric: Agentic AI Risk and Know Your Agent (Nov 19, 2026)", href: "https://www.threatfabric.com/press-releases/agentic-ai-risk" },
+  { label: "AWS: Amazon Connect Resolutions general availability (Nov 19, 2026)", href: "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-resolutions/" },
+  { label: "Twilio: Conversation Intelligence operators, public beta (Nov 17, 2026)", href: "https://www.twilio.com/en-us/blog/products/launches/conversation-intelligence-operators-ai-agent-supervision" },
+  { label: "AWS: AI post-contact summaries for chat in Amazon Connect (Nov 19, 2026)", href: "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-ai-chat-summaries-ccp/" },
 ];
 
 export default function ConversationToResolutionPage() {
@@ -102,7 +102,7 @@ export default function ConversationToResolutionPage() {
     <ArticleShell
       eyebrow="CX Assurance · Framework"
       title={TITLE}
-      lead="Most metrics for AI in customer service measure the conversation: containment, handle time, sentiment. Customers care whether their problem was solved. This framework traces the path from a conversation to a completed, accountable outcome, and names what has to be true — and measured — at each step."
+      lead="Most metrics for AI in customer service measure the conversation: containment, handle time, sentiment. Customers care whether their problem was solved. This framework traces the path from a conversation to a completed, accountable outcome, and names what has to be true, and measured, at each step."
       status="Proposed framework · Working draft"
     >
       <section className="rr-section" style={{ borderTop: "none", paddingTop: 0 }}>
@@ -111,7 +111,7 @@ export default function ConversationToResolutionPage() {
           Language models made fluent conversation cheap. Most serious platforms now sound good in a demo. What separates them in production is what happens around the conversation: whether the right action was taken, under the right authority, and whether anyone can prove it.
         </p>
         <p className="rr-p">
-          The vendor announcements of November 17–20, 2026 point the same way. In four days, the notable launches were about resolution and assurance — agentic back-office workflows, post-conversation task-completion scoring, and real-call-condition testing — not about making agents more conversational.
+          The vendor announcements of November 17–20, 2026 point the same way. In four days, the notable launches were about resolution and assurance: agentic back-office workflows, post-conversation task-completion scoring, and real-call-condition testing. None were about making agents more conversational.
         </p>
         <p className="rr-quote">How does an enterprise turn a customer conversation into a completed, accountable outcome?</p>
       </section>

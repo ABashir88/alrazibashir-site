@@ -16,7 +16,7 @@ export default function Experience() {
         <SectionHeader
           eyebrow="Experience"
           title="Where the perspective comes from"
-          subtitle="Before founding Searvis, I spent years inside enterprise buying decisions for communications and CX technology at Twilio, Cyara, and Telnyx — working through long technical evaluations with engineering, CX, operations, and executive teams. That is the vantage point behind the research."
+          subtitle="Before founding Searvis, I spent years inside enterprise buying decisions for communications and CX technology at Twilio, Cyara, and Telnyx, working through long technical evaluations with engineering, CX, operations, and executive teams. That is the vantage point behind the research."
           marginBottom="32px"
         />
 

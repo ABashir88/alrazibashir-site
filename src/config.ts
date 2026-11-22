@@ -8,7 +8,7 @@ export const siteConfig = {
   resumeUrl: "/Alrazi Bashir Resume.docx",
   resumeLabel: "Resume",
   logoInitials: "AB",
-  // Homepage nav only — /hiring keeps its own standalone nav.
+  // Homepage nav only. /hiring keeps its own standalone nav.
   // Planned addition once its section exists: Resources.
   nav: [
     { label: "Research", href: "#research" },
@@ -18,7 +18,7 @@ export const siteConfig = {
   ],
   // Pill button at the end of the homepage nav (replaces the Resume button).
   navCta: { label: "Hiring", href: "/hiring" },
-  // "CX Intelligence Library" — homepage cards and the /research index.
+  // "CX Intelligence Library": homepage cards and the /research index.
   // Assets without an href show a "Coming soon" badge.
   research: {
     heading: "CX Intelligence Library",
@@ -31,7 +31,7 @@ export const siteConfig = {
         format: "Checklist",
         date: "November 2026",
         description:
-          "What a Voice AI pilot should prove before it reaches customers — from turn-taking and tool actions to handoff, monitoring, and cost per resolution.",
+          "What a Voice AI pilot should prove before it reaches customers, from turn-taking and tool actions to handoff, monitoring, and cost per resolution.",
         href: "/research/voice-ai-production-readiness",
         linkLabel: "Read",
       },
@@ -41,7 +41,7 @@ export const siteConfig = {
         format: "Explainer",
         date: "November 2026",
         description:
-          "How contact center platforms, communications APIs, AI agents, and MCP fit together — and where the layers are starting to blur.",
+          "How contact center platforms, communications APIs, AI agents, and MCP fit together, and where the layers are starting to blur.",
         href: "/research/cx-technology-stack",
         linkLabel: "Read",
       },
@@ -72,7 +72,7 @@ export const siteConfig = {
     // Phrase within the headline rendered in the accent color + italic.
     headlineAccent: "Making sense",
     subheadline:
-      "Practical research and frameworks for enterprise leaders evaluating Voice AI, contact center platforms, and AI agents — built around one question: how does a customer conversation become a completed, accountable outcome?",
+      "Practical research and frameworks for enterprise leaders evaluating Voice AI, contact center platforms, and AI agents, built around one question: how does a customer conversation become a completed, accountable outcome?",
     primaryCta: {
       label: "Explore research",
       href: "#research",
@@ -91,13 +91,13 @@ export const siteConfig = {
       eyebrow: "What I do",
       title: "I sell complex AI and communications platforms into the enterprise.",
       body:
-        "I work with product, engineering, CX, and RevOps teams to turn AI voice, CPaaS/CCaaS, and conversational AI platforms into production-grade revenue systems—aligning architecture, risk, and commercial outcomes.",
+        "I work with product, engineering, CX, and RevOps teams to turn AI voice, CPaaS/CCaaS, and conversational AI platforms into production-grade revenue systems, aligning architecture, risk, and commercial outcomes.",
     },
     sellingModel: {
       eyebrow: "How I sell",
       title: "How I sell enterprise AI and communications platforms",
       body:
-        "My career has moved from cloud engagement plumbing (Twilio), to CX reliability and conversational AI assurance (Cyara), to AI voice infrastructure (Telnyx)—building an orchestration-layer view of how platforms, data, and conversations drive enterprise outcomes.",
+        "My career has moved from cloud engagement plumbing (Twilio), to CX reliability and conversational AI assurance (Cyara), to AI voice infrastructure (Telnyx), building an orchestration-layer view of how platforms, data, and conversations drive enterprise outcomes.",
     },
     experience: {
       eyebrow: "Experience",
@@ -131,17 +131,17 @@ export const siteConfig = {
     {
       title: "Sell complex platforms into complex enterprises",
       description:
-        "Own full-cycle enterprise sales for AI voice, CPaaS/CCaaS, and conversational AI platforms—running multi-month, multi-stakeholder cycles from technical discovery through commercial close.",
+        "Own full-cycle enterprise sales for AI voice, CPaaS/CCaaS, and conversational AI platforms, running multi-month, multi-stakeholder cycles from technical discovery through commercial close.",
     },
     {
       title: "Connect architecture to revenue",
       description:
-        "Translate latency, reliability, routing, and integration requirements into clear commercial value for economic buyers—so infrastructure decisions map directly to pipeline, NRR, and cost-to-serve.",
+        "Translate latency, reliability, routing, and integration requirements into clear commercial value for economic buyers, so infrastructure decisions map directly to pipeline, NRR, and cost-to-serve.",
     },
     {
       title: "De-risk transformation programs",
       description:
-        "Position AI and communications platforms as risk mitigation layers during contact center and CX transformation—focusing on reliability, observability, and governance rather than just new features.",
+        "Position AI and communications platforms as risk mitigation layers during contact center and CX transformation, focusing on reliability, observability, and governance rather than just new features.",
     },
   ],
   experience: [
@@ -152,7 +152,7 @@ export const siteConfig = {
       location: "Remote",
       bullets: [
         "Carry a $1.2M annual quota and manage an enterprise territory across mid-market and large enterprise segments, running 6–9 month evaluation cycles with multi-stakeholder buying committees spanning engineering, product, and CX leadership.",
-        "Lead engineering-driven technical discovery across production requirements—latency, carrier-grade reliability, and scalability—to close AI voice infrastructure and conversational AI deployments in the $65K–$550K ACV range.",
+        "Lead engineering-driven technical discovery across production requirements (latency, carrier-grade reliability, and scalability) to close AI voice infrastructure and conversational AI deployments in the $65K–$550K ACV range.",
         "Displace incumbent CPaaS and legacy telecom providers by positioning Telnyx on cost efficiency, low-latency routing, and enterprise uptime, resulting in multi-year committed agreements.",
         "Manage the full sales motion from PoC scoping through commercial close with VP and C-suite economic buyers across parallel technical and business evaluation tracks.",
       ],
@@ -242,14 +242,14 @@ export const siteConfig = {
     {
       name: "Deal Command Center",
       description:
-        "A structured view of $65K–$550K+ ACV enterprise deals—mapping stakeholders, technical and commercial risk, approvals, and next actions so multi-month cycles stay controlled.",
+        "A structured view of $65K–$550K+ ACV enterprise deals, mapping stakeholders, technical and commercial risk, approvals, and next actions so multi-month cycles stay controlled.",
       hrefKey: "dealCommandCenter" as const,
       ctaLabel: "Download enterprise deal command center template →",
     },
     {
       name: "Searvis.io",
       description:
-        "A simple framework for how enterprises evaluate CX and AI platforms—making reliability, integration effort, and commercial tradeoffs visible beyond vendor marketing.",
+        "A simple framework for how enterprises evaluate CX and AI platforms, making reliability, integration effort, and commercial tradeoffs visible beyond vendor marketing.",
       hrefKey: "searvis" as const,
       ctaLabel: "Visit →",
     },
@@ -265,17 +265,17 @@ export const siteConfig = {
     {
       title: "Engineering-led discovery",
       description:
-        "Start with architecture diagrams, data flows, latency and reliability requirements—partnering with product and engineering to define what is actually feasible before translating options into clear tradeoffs for GTM and executive sponsors.",
+        "Start with architecture diagrams, data flows, latency and reliability requirements, partnering with product and engineering to define what is actually feasible before translating options into clear tradeoffs for GTM and executive sponsors.",
     },
     {
       title: "Multi-stakeholder enterprise deals",
       description:
-        "Run 5–9 month cycles that keep architecture, QA, contact center operations, security, finance, and procurement aligned—so technical risk, commercial terms, and day-two operations are all visible and de-risked.",
+        "Run 5–9 month cycles that keep architecture, QA, contact center operations, security, finance, and procurement aligned, so technical risk, commercial terms, and day-two operations are all visible and de-risked.",
     },
     {
       title: "Transformation risk mitigation",
       description:
-        "Position AI infrastructure, CPaaS/CCaaS, and conversational platforms as ways to reduce operational and transformation risk—grounded in reliability, observability, governance, and success metrics that executives and boards care about.",
+        "Position AI infrastructure, CPaaS/CCaaS, and conversational platforms as ways to reduce operational and transformation risk, grounded in reliability, observability, governance, and success metrics that executives and boards care about.",
     },
   ],
 };

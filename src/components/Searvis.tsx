@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 const HELPS_WITH = [
   {
     title: "Evaluating Voice AI and CX vendors",
-    body: "Comparing platforms on production readiness, integration depth, and cost per resolution — before a pilot is scoped.",
+    body: "Comparing platforms on production readiness, integration depth, and cost per resolution, before a pilot is scoped.",
   },
   {
     title: "Designing pilots that surface failure modes",
@@ -12,7 +12,7 @@ const HELPS_WITH = [
   },
   {
     title: "Diagnosing customer-operations breakdowns",
-    body: "Finding where conversations stop turning into completed, accountable outcomes — across people, platforms, and workflows.",
+    body: "Finding where conversations stop turning into completed, accountable outcomes, across people, platforms, and workflows.",
   },
 ];
 
@@ -25,7 +25,7 @@ export function Searvis() {
         <SectionHeader
           eyebrow="Searvis · Advisory"
           title="Customer-operations research and scoped advisory"
-          subtitle="Searvis is my independent practice. It researches how customer operations fail and how AI is reshaping CX, Voice AI, CCaaS, and CPaaS — and offers focused advisory work for teams building or buying in this space."
+          subtitle="Searvis is my independent practice. It researches how customer operations fail and how AI is reshaping CX, Voice AI, CCaaS, and CPaaS. It also offers focused advisory work for teams building or buying in this space."
           marginBottom="32px"
         />
 

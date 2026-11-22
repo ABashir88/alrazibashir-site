@@ -28,7 +28,7 @@ export function AreasOfFocus() {
         <SectionHeader
           eyebrow="Areas of Focus"
           title="How Voice AI systems are built, deployed, and fail"
-          subtitle="Hands-on projects and working frameworks behind the research — built to understand production constraints from the inside."
+          subtitle="Hands-on projects and working frameworks behind the research, built to understand production constraints from the inside."
         />
 
         <div className="aof-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
