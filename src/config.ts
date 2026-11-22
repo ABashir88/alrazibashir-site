@@ -148,13 +148,13 @@ export const siteConfig = {
     {
       company: "Telnyx · AI Voice & Communications Infrastructure",
       title: "Enterprise Account Executive",
-      period: "Jan 2025 – Present",
+      period: "Jan 2025 – Apr 2026",
       location: "Remote",
       bullets: [
-        "Carry a $1.2M annual quota and manage an enterprise territory across mid-market and large enterprise segments, running 6–9 month evaluation cycles with multi-stakeholder buying committees spanning engineering, product, and CX leadership.",
-        "Lead engineering-driven technical discovery across production requirements (latency, carrier-grade reliability, and scalability) to close AI voice infrastructure and conversational AI deployments in the $65K–$550K ACV range.",
-        "Displace incumbent CPaaS and legacy telecom providers by positioning Telnyx on cost efficiency, low-latency routing, and enterprise uptime, resulting in multi-year committed agreements.",
-        "Manage the full sales motion from PoC scoping through commercial close with VP and C-suite economic buyers across parallel technical and business evaluation tracks.",
+        "Carried a $1.2M annual quota and managed an enterprise territory across mid-market and large enterprise segments, running 6–9 month evaluation cycles with multi-stakeholder buying committees spanning engineering, product, and CX leadership.",
+        "Led engineering-driven technical discovery across production requirements (latency, carrier-grade reliability, and scalability) to close AI voice infrastructure and conversational AI deployments in the $65K–$550K ACV range.",
+        "Displaced incumbent CPaaS and legacy telecom providers by positioning Telnyx on cost efficiency, low-latency routing, and enterprise uptime, resulting in multi-year committed agreements.",
+        "Managed the full sales motion from PoC scoping through commercial close with VP and C-suite economic buyers across parallel technical and business evaluation tracks.",
       ],
     },
     {
