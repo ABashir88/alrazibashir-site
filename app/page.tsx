@@ -1,10 +1,9 @@
 import { NavBar } from "@/components/NavBar";
 import { Hero } from "@/components/Hero";
-import { ProofBar } from "@/components/ProofBar";
-import Wins from "@/components/Wins";
-import DealProcess from "@/components/DealProcess";
-import Experience from "@/components/Experience";
 import { Research } from "@/components/Research";
+import { AreasOfFocus } from "@/components/AreasOfFocus";
+import Experience from "@/components/Experience";
+import { Searvis } from "@/components/Searvis";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -12,11 +11,10 @@ export default function Home() {
     <main>
       <NavBar />
       <Hero />
-      <ProofBar />
-      <Wins />
-      <DealProcess />
-      <Experience />
       <Research />
+      <AreasOfFocus />
+      <Experience />
+      <Searvis />
       <Contact />
     </main>
   );

@@ -10,10 +10,11 @@ export const siteConfig = {
   resumeLabel: "Resume",
   logoInitials: "AB",
   // Homepage nav only — /hiring keeps its own standalone nav.
-  // Planned additions once their sections exist: Resources, Advisory.
+  // Planned addition once its section exists: Resources.
   nav: [
     { label: "Research", href: "#research" },
     { label: "About", href: "#experience" },
+    { label: "Advisory", href: "#advisory" },
     { label: "Contact", href: "#contact" },
   ],
   // Pill button at the end of the homepage nav (replaces the Resume button).
@@ -71,10 +72,6 @@ export const siteConfig = {
       label: "Connect on LinkedIn",
       href: "https://www.linkedin.com/in/alrazibashir",
     },
-  },
-  proofBar: {
-    label: "Enterprise experience with",
-    items: ["Telnyx", "Cyara", "Twilio"],
   },
   sections: {
     whatIDo: {
