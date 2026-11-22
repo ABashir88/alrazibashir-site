@@ -1,6 +1,6 @@
 # alrazibashir-site
 
-> Personal website and professional positioning platform for Alrazi Bashir — Enterprise SaaS Account Executive specializing in AI infrastructure, conversational AI, and CX technology.
+> **Current website strategy and agent context:** [Approved redesign decisions](docs/REDESIGN_DECISIONS.md) · [Automatic site change log](docs/SITE_CHANGELOG.md) · [Agent handoff instructions](docs/AGENT_HANDOFF.md). These records supersede outdated positioning in this README.\n\n> Personal website and professional positioning platform for Alrazi Bashir — Enterprise SaaS Account Executive specializing in AI infrastructure, conversational AI, and CX technology.
 
 ---
 
