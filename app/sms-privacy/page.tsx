@@ -15,7 +15,7 @@ export default function SmsPrivacy() {
 
       <p><strong>Sharing:</strong> We do not sell or share your SMS opt-in data or personal information with third parties for marketing purposes. Text messaging opt-in data and consent are not shared with any third parties. The number is processed only by the messaging provider (Twilio), and only to deliver messages.</p>
 
-      <p><strong>Retention:</strong> the number is kept only while the program is active, and is deleted when the program ends or after a STOP request.</p>
+      <p><strong>Retention:</strong> the number is kept only while the program is active, and is deleted when the program ends. After a STOP request, no further messages are sent; note that Twilio retains a record of the opt-out in accordance with its own data retention policies.</p>
 
       <p><strong>Contact:</strong> <a href="mailto:alrazi@alrazibashir.com">alrazi@alrazibashir.com</a></p>
 
